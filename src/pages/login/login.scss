@@ -1,45 +1,46 @@
 page-login {
-  [logoimg] {
+  [Logo-img] {
     width: 68px;
     height: 40px;
   }
 
-  [line] {
+  [Line] {
     display: flex;
     align-items: center;
   }
 
-  [check-left] {
+  [Check-left] {
     display: flex;
     justify-content: flex-end;
     align-items: center;
   }
 
-  [icon-facebook] {
+  [Icon-facebook] {
     color: rgb(61, 89, 155);
     background-color: white;
     font-size: 23px;
    
   }
 
-  [font-size ]{
+  [Font-size ]{
     font-size: 12px;
     color:#e07904;
   }
-
-  .login-input {
-    background-color: gray !important;
-    border-radius: 10px;
+  [Color-gray]{
+      color: rgb(140, 140, 140);
+  }
+  [Color-white]{
+      color: white;
+  }
+  .Login-input {
+   
+    border-radius: 4px;
     border-bottom: 1px solid #e07904;
   }
   .item-md.item-block .item-inner {
     border: none;
    
-    .login-input{
-        background-color: gray !important;
-        border-radius: 10px;
-        border-bottom: 1px solid #e07904;
-    }
+
     .item-md.item-block .item-inner {
        border: none;
    
