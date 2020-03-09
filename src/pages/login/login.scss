@@ -1,14 +1,31 @@
 page-login {
-   
-    .login-input{
-        background-color: gray !important;
-        border-radius: 10px;
-        border-bottom: 1px solid #e07904;
-    }
-    .item-md.item-block .item-inner {
-       border: none;
+  [logoimg] {
+    width: 68px;
+    height: 40px;
+  }
+
+  [line] {
+    display: flex;
+    align-items: center;
+  }
+
+  [check-left] {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  [icon-facebook] {
+    color: rgb(61, 89, 155);
+  }
+
+  .login-input {
+    background-color: gray !important;
+    border-radius: 10px;
+    border-bottom: 1px solid #e07904;
+  }
+  .item-md.item-block .item-inner {
+    border: none;
     //    background: transparent;
-       
-    }
-    
+  }
 }
