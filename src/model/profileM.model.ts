@@ -1,6 +1,6 @@
 export class ModelLoginTsPage {
- public user: string = " ";
- public password: string = " ";
+ public image: string = "";
+ public name: string = "";
 
   constructor() {}
 }
