@@ -5,45 +5,19 @@
 </ion-header>
 
 <ion-content padding>
+
   <ion-card>
     <ion-row>
-      <ion-col col-6>
-        <img
-          src="https://abrilexame.files.wordpress.com/2018/10/8dicas8.jpg?quality=70&strip=info&w=1000&h=1000"
-          alt=""
-        />
-        <ion-card-title>
-          Usuário 2
-        </ion-card-title>
+      <ion-col col-6 *ngFor="let user of listUser">
+        <img [src]="" />
+        <ion-card-title>  </ion-card-title>
       </ion-col>
 
       <ion-col col-6>
-        <img
-          src="https://abrilexame.files.wordpress.com/2018/10/8dicas8.jpg?quality=70&strip=info&w=1000&h=1000"
-          alt=""
-        />
-        <ion-card-title>
-          Usuário 
-        </ion-card-title>
-      </ion-col>
-
-      <ion-col col-6>
-        <img
-          src="https://abrilexame.files.wordpress.com/2018/10/8dicas8.jpg?quality=70&strip=info&w=1000&h=1000"
-          alt=""
-        />
-        <ion-card-title>
-          Usuário 3
-        </ion-card-title>
-      </ion-col>
-
-      <ion-col col-6>
-        <button ion-button>
+        <button ion-button (click)="addUser()">
           <ion-icon name="md-add-circle"></ion-icon>
         </button>
-        <ion-card-title>
-          Adicionar perfil
-        </ion-card-title>
+        <ion-card-title>Adicionar perfil</ion-card-title>
       </ion-col>
     </ion-row>
   </ion-card>
