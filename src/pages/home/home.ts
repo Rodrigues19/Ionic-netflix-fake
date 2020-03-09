@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { CommonEnum } from '../../enums/common.enum';
 
 
 @IonicPage()
@@ -17,7 +18,16 @@ export class HomePage {
   }
 
   openDetailPage(){
+    // get (CommonEnum.HOST+'/movie/popular' + CommonEnum.API_KEY)
+
+    // CommonEnum.HOST+'movie/popular?api_keys'+CommonEnum.API_KEY
+
+
     this.navCtrl.push('DetailPage')
+    
+     
   }
+
+  
 
 }
