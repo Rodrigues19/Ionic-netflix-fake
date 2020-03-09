@@ -1,3 +1,21 @@
 page-login {
+[logoimg]{
+    width: 68px;
+    height:40px ;
+}
+[line]{
+    display: flex;
+    align-items: center;
+}
+
+[check-left ]{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+[icon-facebook]{
+    color: rgb(61, 89, 155);
+}
 
 }
