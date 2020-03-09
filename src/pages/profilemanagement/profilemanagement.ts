@@ -3,7 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ProfileModel } from '../../model/profile.model';
 import { Storage } from '@ionic/storage';
 
-
 @IonicPage()
 @Component({
   selector: 'page-profilemanagement',
