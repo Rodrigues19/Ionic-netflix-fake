@@ -1,5 +1,5 @@
 page-login {
-  [Logoimg] {
+  [Logo-img] {
     width: 68px;
     height: 40px;
   }
@@ -26,7 +26,12 @@ page-login {
     font-size: 12px;
     color:#e07904;
   }
-
+  [Color-gray]{
+      color: rgb(140, 140, 140);
+  }
+  [Color-white]{
+      color: white;
+  }
   .Login-input {
    
     border-radius: 4px;
