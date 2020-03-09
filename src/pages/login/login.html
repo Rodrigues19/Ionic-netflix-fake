@@ -1,19 +1,23 @@
 <ion-header>
-  <img logoimg src="../../assets/imgs/logo-netflix.png" />
+  <ion-navbar>
+    <img />
+  </ion-navbar>
 </ion-header>
 
 <ion-content padding>
   <form>
     <ion-title>Sig In</ion-title>
-    <ion-item>
+    <ion-item class="login-input">
       <ion-input type="text" placeholder="Email or phone number"> </ion-input>
-      <ion-item>
-        <p>Please enter a valid email address or phone number</p>
-      </ion-item>
     </ion-item>
     <ion-item>
-      <p>aaaaaaaaaaaaaaa</p>
+      <p>Please enter a valid email address or phone number</p>
+    </ion-item>
+    <ion-item class="login-input">
       <ion-input type="password" placeholder="Password"> </ion-input>
+    </ion-item>
+    <ion-item>
+      <p>Your password must contain between 4 and 60 characters</p>
     </ion-item>
     <ion-row>
       <button ion-button block>Sign in</button>
@@ -37,6 +41,6 @@
       <ion-input type="password" placeholder="Password"></ion-input>
     </ion-item>
 
-    <button ion-button type="submit">Login</button>
+    <button ion-button type="submit">Sing In</button>
   </form>
 </ion-content>
