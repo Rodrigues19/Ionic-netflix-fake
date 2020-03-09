@@ -19,4 +19,8 @@ export class LoginPage {
     console.log('ionViewDidLoad LoginPage');
   }
 
+  openHomePage(){
+    this.navCtrl.push('HomePage')
+  }
+
 }

@@ -22,7 +22,7 @@
       <p>Your password must contain between 4 and 60 characters</p>
     </label>
     <ion-row>
-      <button text-capitalize="false" ion-button block>Sign in</button>
+      <button text-capitalize="false"  (click)="openHomePage()" ion-button block>Sign in</button>
     </ion-row>
     <ion-grid>
       <ion-row>
@@ -35,10 +35,9 @@
         </ion-col>
       </ion-row>
     </ion-grid>
-   
     
   </form>
-  <button  text-capitalize="false" clear ion-button  icon-start>
+  <button  text-capitalize="false" clear ion-button  icon-start >
     <ion-icon name="logo-facebook"></ion-icon>
     Login with Facebook
   </button>
