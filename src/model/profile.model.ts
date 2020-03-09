@@ -1,6 +1,6 @@
-export class ModelLoginTsPage {
- public user: string = " ";
- public password: string = " ";
+export class ProfileModel {
+ public image: string = "";
+ public name: string = "";
 
   constructor() {}
 }
