@@ -2,7 +2,7 @@ export class ModelLoginTsPage {
  
 
     User: string = " ";
-    password: string = " ";
+    Password: string = " ";
 
   
     constructor(){
