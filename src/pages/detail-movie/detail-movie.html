@@ -1,7 +1,5 @@
 <ion-header>
-  <ion-navbar>
-    <ion-icon name="close"></ion-icon>
-  </ion-navbar>
+  <ion-icon name="arrow-back" color="light"></ion-icon>
 </ion-header>
 
 <ion-content padding>
@@ -30,16 +28,16 @@
 
           <ion-card>
             <ion-fab side="end">
-              <button ion-fab-button>
+              <button ion-fab-button clear>
                 <ion-icon name="add"></ion-icon>
                 Minha lista
               </button>
               <button ion-fab-button>
-                <ion-icon name="heart"></ion-icon>
+                <ion-icon name="thumbs-up"></ion-icon>
                 Classifique
               </button>
               <button ion-fab-button>
-                <ion-icon name="bookmark"></ion-icon>
+                <ion-icon name="md-share"></ion-icon>
                 Compartilhe
               </button>
             </ion-fab>
@@ -49,7 +47,8 @@
     </ion-grid>
   </ion-card>
 
-  <ion-segment>
+  <ion-segment [(ngModel)]="type" (ionChange)="onChangePage()">
+
     <ion-segment-button value="episodes">
       <ion-label>EPISÓDIOS</ion-label>
     </ion-segment-button>
@@ -62,4 +61,35 @@
       <ion-label>OPÇÕES SEMELHANTES</ion-label>
     </ion-segment-button>
   </ion-segment>
+
+  <ion-card [ngSwitch]="type">
+    <ion-list *ngSwitchCase="'episodes'">
+      <ion-item>
+        <img
+        src="https://i2.wp.com/mixdeseries.com.br/wp-content/uploads/2018/07/Anne.jpg?fit=1920%2C1080&ssl=1"
+        alt=""
+      />
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'trailers'">
+      <ion-item>
+        <img
+        src="https://i.ytimg.com/vi/TTIbWKEUPnc/maxresdefault.jpg"
+        alt=""
+      />
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'options'">
+      <ion-item>
+        <img
+        src="https://a-static.mlcdn.com.br/470x352/tnt-painel-minnie-piffer/extrafestas/10096/163f4936e5f5e3ceb2de38860e216563.jpg"
+        alt=""
+      />
+      </ion-item>
+    </ion-list>
+  </ion-card>
+ 
+
 </ion-content>
