@@ -10,16 +10,24 @@
 </ion-header>
 
 <ion-content padding>
-  <form>
+  <form [formGroup]="formProfile" (ngSubmit)="submit()">
+    <button (click)="cancelEdit()" ion-button clear>
+      <ion-icon name="close"></ion-icon>
+      Cancelar</button>
+
+    <button type=submit ion-button clear>
+      <ion-icon name="checkmark"></ion-icon>
+      Salvar</button>
     <ion-item>
       <ion-label>
         Nome
       </ion-label>
-      <ion-input type="text" name="nome"></ion-input>
+      <ion-input type="text" name="name" formControlName="name"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label>
+<<<<<<< HEAD
         Imagem
         <ion-avatar>
           <img
@@ -27,7 +35,11 @@
             alt=""
           />
         </ion-avatar>
+=======
+        <p>Imagem</p>
+>>>>>>> ee77748e00f824f1a772def253c60776ccf62e3b
       </ion-label>
+        <ion-input type="text" name="image" formControlName="image" alt=""></ion-input>
     </ion-item>
   </form>
 </ion-content>

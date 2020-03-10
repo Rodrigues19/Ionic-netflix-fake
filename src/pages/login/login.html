@@ -3,25 +3,33 @@
 </ion-header>
 
 <ion-content padding>
-  <form>
+  <form [formGroup]="form" (ngSubmit)="submit()">
     <h1>Sign In</h1>
     <ion-item class="Login-input">
-      <ion-input type="text" placeholder="Email or phone number"> </ion-input>
-      <ion-item>
-        <p>Please enter a valid email address or phone number</p></ion-item
+      <ion-input
+        type="email"
+        placeholder="Email or phone number"
+        formControlName="user"
       >
+      </ion-input>
     </ion-item>
-    <label Font-size>
-      <p>Please enter a valid email address or phone number</p>
-    </label>
+    <ion-item background *ngIf="!form.controls.user.valid">
+      <p Font-size>Please enter a valid email address or phone number</p>
+    </ion-item>
     <ion-item class="Login-input">
-      <ion-input type="password" placeholder="Password"> </ion-input>
+      <ion-input 
+      type="password" 
+      placeholder="Password" 
+      formControlName="password"> 
+    </ion-input>
     </ion-item>
-    <label Font-size>
-      <p>Your password must contain between 4 and 60 characters</p>
-    </label>
+    <ion-item  background *ngIf="!form.controls.password.valid">
+      <p Font-size > Your password must contain between 4 and 60 characters</p>
+    </ion-item>
     <ion-row>
-      <button text-capitalize="false"  (click)="openHomePage()" ion-button block>Sign in</button>
+      <button text-capitalize="false" ion-button block>
+        Sign in
+      </button>
     </ion-row>
     <ion-grid>
       <ion-row>
@@ -34,7 +42,6 @@
         </ion-col>
       </ion-row>
     </ion-grid>
-    
   </form>
   <button color="light" text-capitalize="false" clear ion-button icon-start>
     <ion-icon name="logo-facebook"></ion-icon>

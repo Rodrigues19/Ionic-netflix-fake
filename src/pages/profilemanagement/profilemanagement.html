@@ -11,19 +11,25 @@
 <ion-content padding>
   <ion-card>
     <ion-row>
+<<<<<<< HEAD
       <ion-col col-6 *ngFor="let user of listUser">
         <img [src]="" />
         <button ion-button clear>
           <ion-icon name="create"></ion-icon>
         </button>
         <ion-card-title></ion-card-title>
+=======
+      <ion-col col-6 *ngFor="let user of listProfiles">
+        <img [src]="user.image" />
+        <ion-title>{{user.name}}</ion-title>
+>>>>>>> ee77748e00f824f1a772def253c60776ccf62e3b
       </ion-col>
 
       <ion-col col-6>
         <button ion-button (click)="addUser()">
           <ion-icon name="md-add-circle"></ion-icon>
         </button>
-        <ion-card-title>Adicionar perfil</ion-card-title>
+        <ion-title>Adicionar perfil</ion-title>
       </ion-col>
     </ion-row>
   </ion-card>
