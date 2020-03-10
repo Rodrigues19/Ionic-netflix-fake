@@ -4,8 +4,8 @@
 
 <ion-content padding>
   <form [formGroup]="form" (ngSubmit)="submit()">
-    <h1>Sign In</h1>
-    <ion-item class="Login-input">
+    <h1 padding-bottom >Sign In</h1>
+    <ion-item  margin-bottom  class="Login-input">
       <ion-input
         type="email"
         placeholder="Email or phone number"
@@ -13,37 +13,37 @@
       >
       </ion-input>
     </ion-item>
-    <ion-item background *ngIf="!form.controls.user.valid">
-      <p Font-size>Please enter a valid email address or phone number</p>
+    <ion-item  text-wrap background *ngIf="form.controls.user.errors.required=== false">
+      <p  p-style >Please enter a valid email address or phone number</p>
     </ion-item>
     <ion-item class="Login-input">
-      <ion-input 
+      <ion-input  
       type="password" 
       placeholder="Password" 
       formControlName="password"> 
-    </ion-input>
+    </ion-input >
     </ion-item>
-    <ion-item  background *ngIf="!form.controls.password.valid">
-      <p Font-size > Your password must contain between 4 and 60 characters</p>
+    <ion-item text-wrap background *ngIf="!form.controls.password.invalid&& submitAttempt===true">
+      <p  p-style> Your password must contain between 4 and 60 characters</p>
     </ion-item>
     <ion-row>
-      <button text-capitalize="false" ion-button block>
+      <button padding-vertical padding-horizontal margin-bottom margin-top color="danger" text-capitalize="false" ion-button block>
         Sign in
       </button>
     </ion-row>
     <ion-grid>
       <ion-row>
-        <ion-col Line>
+        <ion-row Line>
           <ion-checkbox color="dark"></ion-checkbox>
           <p P-check Color-gray>Remember me</p>
-        </ion-col>
+        </ion-row>
         <ion-col Check-left>
           <a Color-gray>Need help?</a>
         </ion-col>
       </ion-row>
     </ion-grid>
   </form>
-  <button color="light" text-capitalize="false" clear ion-button icon-start>
+  <button no-padding  color="light" text-capitalize="false" clear ion-button icon-start>
     <ion-icon name="logo-facebook"></ion-icon>
     Login with Facebook
   </button>
