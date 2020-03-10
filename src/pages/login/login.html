@@ -13,7 +13,7 @@
       >
       </ion-input>
     </ion-item>
-    <ion-item  text-wrap background *ngIf="form.controls.user.errors.required=== false">
+    <ion-item  text-wrap background *ngIf="!form.controls.user.valid && submitAttempt ">
       <p  p-style >Please enter a valid email address or phone number</p>
     </ion-item>
     <ion-item class="Login-input">
@@ -23,18 +23,18 @@
       formControlName="password"> 
     </ion-input >
     </ion-item>
-    <ion-item text-wrap background *ngIf="!form.controls.password.invalid&& submitAttempt===true">
+    <ion-item text-wrap background *ngIf="!form.controls.password.valid &&submitAttempt">
       <p  p-style> Your password must contain between 4 and 60 characters</p>
     </ion-item>
     <ion-row>
-      <button padding-vertical padding-horizontal margin-bottom margin-top color="danger" text-capitalize="false" ion-button block>
+      <button  type="submit" padding-vertical margin-top color="danger" text-capitalize="false" ion-button block>
         Sign in
       </button>
     </ion-row>
     <ion-grid>
       <ion-row>
         <ion-row Line>
-          <ion-checkbox color="dark"></ion-checkbox>
+          <ion-checkbox ></ion-checkbox>
           <p P-check Color-gray>Remember me</p>
         </ion-row>
         <ion-col Check-left>
