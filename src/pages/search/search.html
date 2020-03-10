@@ -1,10 +1,24 @@
+<ion-content>
+  <ion-searchbar
+    
+    placeholder="Busque por série,filmes,genero,etc."
+    (ionInput)="getItems($event)"
+  >
+  </ion-searchbar>
 
-<ion-header>
-  <ion-navbar>
-    <ion-title>Search</ion-title>
-  </ion-navbar>
-</ion-header>
+  <ion-list color="light">
+    <h1 font>Filmes populares</h1>
 
-<ion-content padding>
+    <ion-grid *ngFor="let item of items">
+      <ion-row>
+        <ion-col Line>
+          {{ item }}
+        </ion-col>
 
+        <ion-col Check-left >
+          <ion-icon name="play" padding-left></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-list>
 </ion-content>
