@@ -1,3 +1,4 @@
+import { ProfilemanagementPage } from './../profilemanagement/profilemanagement';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -6,6 +7,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   selector: 'page-detail-movie',
   templateUrl: 'detail-movie.html',
 })
+
 export class DetailMoviePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
@@ -15,6 +17,9 @@ export class DetailMoviePage {
     console.log('ionViewDidLoad DetailMoviePage');
   }
 
-  
+  onChangePage(){
+   
+  }
+
 
 }
