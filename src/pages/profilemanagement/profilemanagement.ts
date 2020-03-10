@@ -16,7 +16,10 @@ export class ProfilemanagementPage {
   }
 
   public addUser():void {
-    this.navCtrl.push('EditProfilePage');
+    this.navCtrl.push('EditProfilePage',{user:""});
+  }
+  public editProfile(profile: ProfileModel):void{
+    this.navCtrl.push('EditProfilePage',{user: profile});
   }
 
   ionViewDidEnter() {
