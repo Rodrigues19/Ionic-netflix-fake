@@ -12,38 +12,23 @@ import { ModelLogin } from "../../model/login.model";
 export class LoginPage {
   private form: FormGroup;
   public usersRegistered: ModelLogin[] = [];
-
+  public submitAttempt: boolean = false;
   constructor( public navCtrl: NavController,public navParams: NavParams,public formBuilder: FormBuilder,private storage: Storage) {
     this.form = formBuilder.group({
-      user: ["",[this.checkMail,Validators.required,Validators.pattern(
+      user: ["",[Validators.minLength(10),Validators.required,Validators.pattern(
             /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/)]],
       password: ["", [Validators.minLength(4), Validators.maxLength(60), Validators.required]]
     });
-    this.getUserRegistered();
   }
 
-  ionViewDidLoad() {
-    console.log("ionViewDidLoad LoginPage");
-  }
-
-  checkMail(controls: FormControl): any {
-    if (controls.value.length < 10) {
-      return {
-        small: true
-      };
+  private submit (): void{
+    this.submitAttempt=true
+    this.usersRegistered.push(this.form.value)
+    this.storage.set("usersRegistered", this.usersRegistered)
+    if(this.form.controls.valid){
+      this.navCtrl.push('HomePage')
     }
-    return null;
   }
+  
 
-  public submit(): void {
-    this.usersRegistered.push(this.form.value);
-    this.storage.set("usersRegistered", this.usersRegistered);
-    this.navCtrl.push('HomePage')
-  }
-
-  private getUserRegistered(): void {
-    this.storage
-      .get("usersRegistered")
-      .then(val => (this.usersRegistered = val || []));
-  }
 }

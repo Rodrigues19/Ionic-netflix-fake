@@ -3,16 +3,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-comming-soon',
-  templateUrl: 'comming-soon.html',
+  selector: 'page-detail-movie',
+  templateUrl: 'detail-movie.html',
 })
-export class CommingSoonPage {
+export class DetailMoviePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CommingSoonPage');
+    console.log('ionViewDidLoad DetailMoviePage');
   }
+
+  
 
 }

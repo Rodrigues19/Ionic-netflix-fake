@@ -1,13 +1,13 @@
 <ion-content>
   <ion-searchbar
-    color="dark"
-    placeholder="search for series, film, genre, etc."
+    
+    placeholder="Busque por série,filmes,genero,etc."
     (ionInput)="getItems($event)"
   >
   </ion-searchbar>
 
   <ion-list color="light">
-    <h1 font>Popular Searches</h1>
+    <h1 font>Filmes populares</h1>
 
     <ion-grid *ngFor="let item of items">
       <ion-row>
