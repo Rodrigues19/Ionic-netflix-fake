@@ -1,3 +1,20 @@
 page-edit-profile {
 
+    .button-nav{
+        color: gray;
+        font-size: 20px;
+    }
+
+    ion-avatar, ion-thumbnail {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    ion-icon{
+        display: inline-block;
+        font-size: 40px;
+        margin: 10px;
+        color: gray;
+    }
+
 }
