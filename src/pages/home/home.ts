@@ -14,16 +14,14 @@ export class HomePage {
   public api:any =[]
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private httpRequest: HttpRequestProvider) {
-  this.apitest()
+  this.requestPopularMovie()
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad HomePage');
-  }
-  public apitest(){
-    this.httpRequest.getMovies().subscribe((response:any) => {
+ 
+  public requestPopularMovie(){
+    this.httpRequest.getPopularMovies().subscribe((response:any) => {
       // this.api=response
-      console.log(response)
+      
     })
   }
 
