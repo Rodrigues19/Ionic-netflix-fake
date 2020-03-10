@@ -17,17 +17,9 @@ export class HomePage {
     console.log('ionViewDidLoad HomePage');
   }
 
-  openDetailPage(){
-    // get (CommonEnum.HOST+'/movie/popular' + CommonEnum.API_KEY)
 
-    // CommonEnum.HOST+'movie/popular?api_keys'+CommonEnum.API_KEY
-
-
-    this.navCtrl.push('DetailPage')
-    
-     
+  openMyList(){
+    this.navCtrl.push('MyListPage')
   }
-
-  
 
 }
