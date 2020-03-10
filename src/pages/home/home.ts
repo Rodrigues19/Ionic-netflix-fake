@@ -1,3 +1,4 @@
+import { HttpRequestProvider } from './../../providers/http-request/http-request';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -10,11 +11,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  public api:any =[]
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private httpRequest: HttpRequestProvider) {
+  this.apitest()
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad HomePage');
+  }
+  public apitest(){
+    this.httpRequest.getMovies().subscribe((response:any) => {
+      // this.api=response
+      console.log(response)
+    })
   }
 
 
