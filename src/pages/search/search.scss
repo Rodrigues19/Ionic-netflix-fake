@@ -1,3 +1,30 @@
 page-search {
 
+
+    .searchbar-md .searchbar-input {
+        background-color: black;
+        color: white;
+    }
+    .searchbar-ios .searchbar-input {
+        background-color: gray;
+    }
+   [font]{
+       color: white;
+   }
+
+   .col{
+       padding: 0px;
+   }
+
+   [Line] {
+    display: flex;
+    align-items: center;
+  }
+
+  [Check-left] {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
 }
