@@ -6,7 +6,7 @@ import { CommonEnum } from '../../enums/common.enum';
 export class HttpRequestProvider {
 
   constructor(public http: HttpClient) {}
-  public getMovies(){
+  public getPopularMovies(){
     return this.http.get(CommonEnum.HOST+'movie/latest?api_key='+CommonEnum.API_KEY+`&language=pt-BR`)
   }
 }
