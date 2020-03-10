@@ -9,18 +9,19 @@
 </ion-header>
 
 <ion-content padding>
+  <h2 text-center margin-top>Quem está assistindo?</h2>
   <ion-card>
-    <ion-row>
+    <ion-row padding>
       <ion-col col-6 *ngFor="let user of listProfiles">
-        <button ion-button (click)="editProfile(user)">editar</button>
-        <img [src]="user.image" />
+        <div class="image-profile">
+          <button ion-button (click)="editProfile(user)">editar</button>
+          <img [src]="user.image" />
+        </div>
         <ion-title>{{user.name}}</ion-title>
       </ion-col>
 
       <ion-col col-6>
-        <button ion-button (click)="addUser()">
-          <ion-icon name="md-add-circle"></ion-icon>
-        </button>
+        <ion-icon name="md-add-circle" (click)="addUser()"></ion-icon>
         <ion-title>Adicionar perfil</ion-title>
       </ion-col>
     </ion-row>

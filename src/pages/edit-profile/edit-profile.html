@@ -1,23 +1,14 @@
-<ion-header>
-  <ion-navbar>
-    <button ion-button clear class="button-nav">
-      <ion-icon name="close"></ion-icon>
-      Cancelar</button>
-    <button ion-button clear class="button-nav">
-      <ion-icon name="checkmark"></ion-icon>
-      Salvar</button>
-  </ion-navbar>
-</ion-header>
-
-<ion-content padding>
+<ion-content>
   <form [formGroup]="formProfile" (ngSubmit)="submit()">
+    <ion-navbar hideBackButton>
     <button (click)="cancelEdit()" ion-button clear>
       <ion-icon name="close"></ion-icon>
       Cancelar</button>
 
-    <button [disabled]=!formProfile.valid type=submit ion-button clear>
+    <button [disabled]=!formProfile.valid type=submit ion-button clear class="second-button">
       <ion-icon name="checkmark"></ion-icon>
       Salvar</button>
+    </ion-navbar>
     <ion-item>
       <ion-label>
         Nome
