@@ -4,8 +4,7 @@ import { IonicPage, NavController, NavParams } from "ionic-angular";
 import {
   FormBuilder,
   FormGroup,
-  Validators,
-  FormControl
+  Validators
 } from "@angular/forms";
 import { ModelLogin } from "../../model/login.model";
 
@@ -32,7 +31,6 @@ export class LoginPage {
           Validators.pattern(
             /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
           ),
-          Validators.minLength(10),
           Validators.required
         ]
       ],
@@ -43,7 +41,7 @@ export class LoginPage {
     });
   }
 
-  private submit(): void {
+  private submit():void {
     this.submitAttempt = true;
     if (this.form.valid) {
       this.usersRegistered.push(this.form.value);

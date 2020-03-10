@@ -1,3 +1,4 @@
+import { ComponentsModule } from './../components/components.module';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
@@ -6,8 +7,9 @@ import { IonicStorageModule } from '@ionic/storage';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { HomeRequestProvider } from '../providers/home/home-request';
 import { HttpClientModule } from "@angular/common/http";
+import { HttpRequestProvider } from '../providers/http-request/http-request';
+import { DetailRequestProvider } from '../providers/detail-request/detail-request';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,7 @@ import { HttpClientModule } from "@angular/common/http";
     BrowserModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
+    ComponentsModule,
     HttpClientModule
   ],
   bootstrap: [IonicApp],
@@ -29,7 +32,8 @@ import { HttpClientModule } from "@angular/common/http";
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    HomeRequestProvider
+    HttpRequestProvider,
+    DetailRequestProvider
   ]
 })
 export class AppModule {}
