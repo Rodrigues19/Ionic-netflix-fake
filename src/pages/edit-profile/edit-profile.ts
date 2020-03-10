@@ -10,15 +10,17 @@ import { ProfileModel } from '../../model/profile.model';
 })
 export class EditProfilePage {
   public formProfile : FormGroup;
-  public profile : ProfileModel;
+  public user : ProfileModel;
   private listProfiles: ProfileModel[] = [];
 
 
 
   constructor(private storage: Storage, public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder) {
+    this.user = this.navParams.get('user');
+    console.log(this.user)
     this.formProfile = formBuilder.group({
-      name: ['', Validators.required],
-      image: ['', Validators.required]
+      name: [this.user.name, Validators.required],
+      image: [this.user.image]
     })
   }
 
@@ -33,19 +35,24 @@ export class EditProfilePage {
 
 
   async submit() {
-  //   let index = this.listProfiles.find(f => f == this.form.value);
-  //   if(element != -1){
-  //     let profileEdited: ProfileModel = this.profile[element]
-  //     profileEdited = this.formProfile.value;
-  //     this.profile[element] = profileEdited;
-  //   } else {
-  //     this.profile.push(this.form.value)
-  //   }
-  //   this.storage.set("userProfile", this.profile);
-  // }
-    this.listProfiles = await this.storage.get('userProfile') || [];
-    this.listProfiles.push(this.formProfile.value);
-    this.storage.set('userProfile',this.listProfiles);
-    this.formProfile.reset();
+    if(this.formProfile.valid){
+      this.listProfiles = await this.storage.get('userProfile') || [];
+
+      let index = this.listProfiles.findIndex(f => f.name == this.user.name);
+      if(index != -1){
+        let profileEdited: ProfileModel = this.listProfiles[index]
+        profileEdited = this.formProfile.value;
+        this.listProfiles[index] = profileEdited;
+      } else {
+        // let newUser = new ProfileModel();
+        // newUser.id =
+        this.listProfiles.push(this.formProfile.value)
+      }
+
+      this.storage.set('userProfile', this.listProfiles);
+      this.navCtrl.push('ProfilemanagementPage')
+      this.formProfile.reset();
+    }
   }
 }
+
