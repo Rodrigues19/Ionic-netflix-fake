@@ -1,16 +1,22 @@
-<ion-header>
-  <img Logo-img src="../../assets/imgs/logo-netflix.png" />
-  <ion-icon name="create" style="color: white;"></ion-icon>
+<ion-header class="ion-header">
+  <div class="cont-log-button">
+    <img Logo-img src="../../assets/imgs/logo-netflix.png" />
+    <button ion-button clear>
+      <ion-icon name="create"></ion-icon>
+    </button>
+  </div>
   <ion-title>Quem está assistindo?</ion-title>
 </ion-header>
 
 <ion-content padding>
-
   <ion-card>
     <ion-row>
       <ion-col col-6 *ngFor="let user of listUser">
         <img [src]="" />
-        <ion-card-title>  </ion-card-title>
+        <button ion-button clear>
+          <ion-icon name="create"></ion-icon>
+        </button>
+        <ion-card-title></ion-card-title>
       </ion-col>
 
       <ion-col col-6>

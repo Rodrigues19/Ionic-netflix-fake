@@ -1,3 +1,21 @@
 page-profilemanagement {
 
+    .ion-header{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+   .cont-log-button{
+       display: flex;
+       justify-content: space-around;
+       align-items: center;
+   }
+
+    img{
+        height: 95px;
+       
+    }
+}
+  
+    
 }
