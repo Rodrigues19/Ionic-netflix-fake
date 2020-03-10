@@ -3,40 +3,44 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-card>
-    <ion-grid>
-      <ion-row>
-        <ion-col>
-          <img
-            src="https://i2.wp.com/mixdeseries.com.br/wp-content/uploads/2018/07/Anne.jpg?fit=1920%2C1080&ssl=1"
-            alt=""
-          />
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <img
+          src="https://i2.wp.com/mixdeseries.com.br/wp-content/uploads/2018/07/Anne.jpg?fit=1920%2C1080&ssl=1"
+          alt=""
+        />
+        <button ion-button>
           <ion-icon name="play"></ion-icon>
-          <ion-title>
-            Anne witch an E
-          </ion-title>
+        </button>
+
+        <ion-fab>
+          <span>2019</span>
+          <span>12</span>
+         <span>3 Temporadas</span>
+        </ion-fab>
+
+            <ion-title size="large">Anne witch an E</ion-title>
+          
+            <ion-title size="small">A escolha de Cindy Bishop para o dia Internacional da Mulher</ion-title>
+
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint iure sunt sequi libero maxime modi possimus veniam. Optio ad, perspiciatis voluptates debitis, sit animi corporis illo non voluptas dignissimos quae.
+          </p>
+          <h6>Elenco:atriz 1, atriz 2, atriz 3</h6>
+          <h6>Criação: pessoa 1, pessoa 2, pessoa 3</h6>
 
           <ion-card>
-            <ion-item>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              </p>
-              <p>Elenco:atriz 1, atriz 2, atriz 3</p>
-              <p>Criação: pessoa 1, pessoa 2, pessoa 3</p>
-            </ion-item>
-          </ion-card>
-
-          <ion-card>
-            <ion-fab side="end">
-              <button ion-fab-button clear>
-                <ion-icon name="add"></ion-icon>
+            <ion-fab display side="end">
+              <button btn-detail>
+                <ion-icon (click)="addMyList()" [name]="add ? 'checkmark' : 'add'"></ion-icon>
                 Minha lista
               </button>
-              <button ion-fab-button>
+              <button btn-detail>
                 <ion-icon name="thumbs-up"></ion-icon>
                 Classifique
               </button>
-              <button ion-fab-button>
+              <button btn-detail>
                 <ion-icon name="md-share"></ion-icon>
                 Compartilhe
               </button>
@@ -45,10 +49,8 @@
         </ion-col>
       </ion-row>
     </ion-grid>
-  </ion-card>
 
-  <ion-segment [(ngModel)]="type" (ionChange)="onChangePage()">
-
+  <ion-segment [(ngModel)]="type" >
     <ion-segment-button value="episodes">
       <ion-label>EPISÓDIOS</ion-label>
     </ion-segment-button>
@@ -66,30 +68,30 @@
     <ion-list *ngSwitchCase="'episodes'">
       <ion-item>
         <img
-        src="https://i2.wp.com/mixdeseries.com.br/wp-content/uploads/2018/07/Anne.jpg?fit=1920%2C1080&ssl=1"
-        alt=""
-      />
+          src="https://i2.wp.com/mixdeseries.com.br/wp-content/uploads/2018/07/Anne.jpg?fit=1920%2C1080&ssl=1"
+          alt=""
+        />
       </ion-item>
     </ion-list>
 
     <ion-list *ngSwitchCase="'trailers'">
       <ion-item>
         <img
-        src="https://i.ytimg.com/vi/TTIbWKEUPnc/maxresdefault.jpg"
-        alt=""
-      />
+          src="https://i.ytimg.com/vi/TTIbWKEUPnc/maxresdefault.jpg"
+          alt=""
+        />
       </ion-item>
     </ion-list>
 
     <ion-list *ngSwitchCase="'options'">
       <ion-item>
         <img
-        src="https://a-static.mlcdn.com.br/470x352/tnt-painel-minnie-piffer/extrafestas/10096/163f4936e5f5e3ceb2de38860e216563.jpg"
-        alt=""
-      />
+          src="https://a-static.mlcdn.com.br/470x352/tnt-painel-minnie-piffer/extrafestas/10096/163f4936e5f5e3ceb2de38860e216563.jpg"
+          alt=""
+        />
       </ion-item>
     </ion-list>
   </ion-card>
- 
-
 </ion-content>
+
+
