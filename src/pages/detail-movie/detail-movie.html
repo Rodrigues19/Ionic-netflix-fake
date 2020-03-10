@@ -28,20 +28,38 @@
             </ion-item>
           </ion-card>
 
-          <ion-fab side="end">
-            <button ion-fab-button color="ligth">
-              <ion-icon name="add-outline"></ion-icon>
-              Minha lista
-            </button>
-            <button ion-fab-button>
-              Classifique
-            </button>
-            <button ion-fab-button>
-              Compartilhe
-            </button>
-          </ion-fab>
+          <ion-card>
+            <ion-fab side="end">
+              <button ion-fab-button>
+                <ion-icon name="add"></ion-icon>
+                Minha lista
+              </button>
+              <button ion-fab-button>
+                <ion-icon name="heart"></ion-icon>
+                Classifique
+              </button>
+              <button ion-fab-button>
+                <ion-icon name="bookmark"></ion-icon>
+                Compartilhe
+              </button>
+            </ion-fab>
+          </ion-card>
         </ion-col>
       </ion-row>
     </ion-grid>
   </ion-card>
+
+  <ion-segment>
+    <ion-segment-button value="episodes">
+      <ion-label>EPISÓDIOS</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="trailers">
+      <ion-label>TRAILERS E MAIS</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="options">
+      <ion-label>OPÇÕES SEMELHANTES</ion-label>
+    </ion-segment-button>
+  </ion-segment>
 </ion-content>
