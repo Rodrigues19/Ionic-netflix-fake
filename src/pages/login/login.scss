@@ -4,59 +4,54 @@ page-login {
     height: 49px;
     padding-left: 7px;
   }
+  
+  .Login-input {
+    border-radius: 4px;
+    border-bottom: 1px solid #e07904;
+  }
+  .item-md.item-block .item-inner {
+    border: none;
+  }
+  .item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus):not(.item-input-has-focus) .item-inner{
+    border: none;
+    box-shadow: none;
+  }
 
-  [h1-title]{
-      padding-bottom: 9px;
+  [background]{
+    background: transparent;
+  }
+
+  [p-style] {
+    font-size: 12px;
+    color: #e07904;
+    background: transparent;
   }
 
   [Line] {
     display: flex;
     align-items: center;
   }
-
+  [P-check] {
+    padding-left: 5px;
+  }
   [Check-left] {
     display: flex;
     justify-content: flex-end;
     align-items: center;
   }
-
-  [Icon-facebook] {
-    color: rgb(61, 89, 155);
-    background-color: white;
-    font-size: 23px;
-  }
-
-  [Font-size] {
-    font-size: 12px;
-    color: #e07904;
-    background: transparent;
-    text-align: left;
-  }
+  
   [Color-gray] {
     color: rgb(140, 140, 140);
   }
 
-  [P-check] {
-    padding-left: 5px;
-  }
   [Color-white] {
     color: white;
   }
-
-  [Color-red-login] {
-    background-color: rgb(229, 9, 20);
-    padding: 21px;
-  }
-  .Login-input {
-    border-radius: 4px;
-    border-bottom: 1px solid #e07904;
-  }
-  [background]{
-    background: transparent;
-  }
-  .item-md.item-block .item-inner {
-    border: none;
-  }
+  
+  
+  // .item-md.item-block .item-inner {
+  //   border: none;
+  // }
 
   .grid{
       padding: 0px;
@@ -65,7 +60,5 @@ page-login {
     padding: 0px;
   }
 
- [Btn-facebook]{
-    padding: 0px;
- }
+ 
 }
