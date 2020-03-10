@@ -23,7 +23,7 @@
       formControlName="password"> 
     </ion-input >
     </ion-item>
-    <ion-item text-wrap background *ngIf="!form.controls.password.valid &&submitAttempt">
+    <ion-item text-wrap background *ngIf="!form.controls.password.valid && submitAttempt">
       <p  p-style> Your password must contain between 4 and 60 characters</p>
     </ion-item>
     <ion-row>

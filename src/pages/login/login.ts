@@ -4,8 +4,7 @@ import { IonicPage, NavController, NavParams } from "ionic-angular";
 import {
   FormBuilder,
   FormGroup,
-  Validators,
-  FormControl
+  Validators
 } from "@angular/forms";
 import { ModelLogin } from "../../model/login.model";
 
@@ -42,7 +41,7 @@ export class LoginPage {
     });
   }
 
-  private submit(): void {
+  private submit():void {
     this.submitAttempt = true;
     if (this.form.valid) {
       this.usersRegistered.push(this.form.value);
