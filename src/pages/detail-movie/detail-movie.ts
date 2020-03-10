@@ -17,9 +17,6 @@ export class DetailMoviePage {
     console.log('ionViewDidLoad DetailMoviePage');
   }
 
-  onChangePage(){
-   
-  }
-
+ 
 
 }
