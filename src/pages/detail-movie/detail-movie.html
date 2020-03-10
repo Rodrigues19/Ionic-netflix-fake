@@ -28,8 +28,8 @@
 
           <ion-card>
             <ion-fab side="end">
-              <button ion-fab-button clear>
-                <ion-icon name="add"></ion-icon>
+              <button ion-fab-button clear >
+                <ion-icon (click)="addMyList()" [name]="add ? 'checkmark' : 'add'"></ion-icon>
                 Minha lista
               </button>
               <button ion-fab-button>
@@ -47,7 +47,7 @@
     </ion-grid>
   </ion-card>
 
-  <ion-segment [(ngModel)]="type" (ionChange)="onChangePage()">
+  <ion-segment [(ngModel)]="type">
 
     <ion-segment-button value="episodes">
       <ion-label>EPISÓDIOS</ion-label>
@@ -90,6 +90,6 @@
       </ion-item>
     </ion-list>
   </ion-card>
- 
+
 
 </ion-content>
