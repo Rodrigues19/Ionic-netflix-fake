@@ -21,4 +21,7 @@ export class DetailMoviePage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad DetailMoviePage');
   }
+
+ 
+
 }
