@@ -26,10 +26,10 @@ export class LoginPage {
     console.log("ionViewDidLoad LoginPage");
   }
 
-  checkMail(controls: FormControl): object {
+  checkMail(controls: FormControl): any {
     if (controls.value.length < 10) {
       return {
-        samll: true
+        small: true
       };
     }
     return null;
