@@ -11,16 +11,18 @@ import { Storage } from '@ionic/storage';
 })
 export class ProfilemanagementPage {
 
-  public listUser: ProfileModel [] = [];
+  public listProfiles: ProfileModel [] = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private storage: Storage, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   public addUser():void {
-    // this.navCtrl.push(EditPage)
-  }
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ProfilemanagementPage');
+    this.navCtrl.push('EditProfilePage');
   }
 
+  ionViewDidEnter() {
+    this.storage.get('userProfile').then(val=>{
+      this.listProfiles = val || [];
+    })
+  }
 }
