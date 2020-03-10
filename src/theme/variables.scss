@@ -40,6 +40,11 @@ $colors: (
   blue:       #488aff
 );
 
+$searchbar-md-input-placeholder-color :map-get($colors, light);
+$searchbar-ios-input-placeholder-color:map-get($colors, light);
+$searchbar-ios-input-search-icon-color:map-get($colors, light);
+
+
 
 // App iOS Variables
 // --------------------------------------------------
