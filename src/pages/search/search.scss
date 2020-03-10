@@ -1,14 +1,15 @@
 page-search {
-
-
     .searchbar-md .searchbar-input {
         background-color: black;
         color: white;
+        font-size: 15px;
     }
     .searchbar-ios .searchbar-input {
-        background-color: gray;
+        background-color: black;
+        color: white;
+        font-size: 15px;
     }
-   [font]{
+   [Font-h1]{
        color: white;
    }
 
@@ -27,4 +28,7 @@ page-search {
     align-items: center;
   }
 
+.padding{
+padding: 0px;
+}
 }
