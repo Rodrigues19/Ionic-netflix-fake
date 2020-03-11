@@ -14,7 +14,7 @@ export class CommingSoonRequestProvider {
     return  this.http.get(CommonEnum.HOST+'movie/upcoming?api_key='+CommonEnum.API_KEY+`&language=pt-BR`);
 
   }
-  public getGenre(){
+  public getGenre(): any{
     return  this.http.get(CommonEnum.HOST+'genre/movie/list?api_key='+CommonEnum.API_KEY+`&language=pt-BR`);
 
   }
