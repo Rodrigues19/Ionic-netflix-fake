@@ -11,7 +11,7 @@ import { IonicPage, NavController, NavParams } from "ionic-angular";
 export class HomePage {
   public popularMovies: MovieModel[]=[]
   public add: boolean;
-  public rateMovies:[]
+  public rateMovies:MovieModel[]=[]
 
   constructor(
     public navCtrl: NavController,
