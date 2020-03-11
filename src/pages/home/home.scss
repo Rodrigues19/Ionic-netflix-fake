@@ -41,9 +41,9 @@ page-home {
     overflow: scroll;
     overflow-y: hidden;
   }
-  li:first-of-type {
-    list-style-type: none;
-  }
+  // li:first-of-type {
+  //   list-style-type: none;
+  // }
 
   .toolbar-title-md {
     font-weight: 100;
@@ -52,5 +52,8 @@ page-home {
   .toolbar-title-ios {
     font-weight: 100;
     font-size: 15px;
+  }
+  [size]{
+    font-size: 10px;
   }
 }

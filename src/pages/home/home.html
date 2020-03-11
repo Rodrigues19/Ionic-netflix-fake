@@ -10,46 +10,66 @@
     <ion-title text-center>Minha lista</ion-title>
   </nav>
 </header>
+
 <ion-content padding>
   <section Size-banner>
     <!-- <img src="" class="img-banner" alt="serie" /> -->
   </section>
 
-  <ion-row justify-content-between>
-    <ion-col Flex-direction-row  >
-      <li margin-left>Alto Astral</li>
-      <li margin-left>Crianças</li>
-      <li margin-left>Série</li>
-      <li margin-left>Crescer não é fácil</li>
-      <li margin-left>Irmãos</li>
+  <ion-row justify-content-between  >
+    <ion-col   no-padding >
+      Alto astral
     </ion-col>
-  </ion-row>
-  <ion-row justify-content-center>
-  <ion-fab btn-detail>
-    <ion-icon
-      (click)="addMyList()"
-      [name]="add ? 'checkmark' : 'add'"
-    ></ion-icon>
-    Minha lista
-  </ion-fab>
-  <button margin-left margin-right text-capitalize="false" ion-button  icon-start>
-    <ion-icon
-      name="play"
-    ></ion-icon>
-    Assistir
-  </button>
-  <ion-fab btn-detail>
-    <ion-icon
-      name="ios-alert-outline"
-    ></ion-icon>
-    Saiba mais
-  </ion-fab>
-</ion-row>
-  <ion-row  nowrap overflow-x >
-    <ion-col col-4 *ngFor="let movie of popularMovies">
-      <card-movie [movie]="movie" ></card-movie>
-    </ion-col>
-  </ion-row>
-  
 
+    <ion-col no-padding >
+      • Crianças
+    </ion-col>
+    <ion-col    no-padding >
+      • Série 
+    </ion-col>
+    <ion-col  no-padding nowrap >
+      • Crescer não é facil
+    </ion-col>
+    <ion-col  no-padding >
+      • irmãos
+    </ion-col>
+  </ion-row>
+
+  <ion-row justify-content-center align-items-center>
+    <ion-col>
+      <ion-fab btn-detail>
+        <ion-icon
+          (click)="addMyList()"
+          [name]="add ? 'checkmark' : 'add'"
+        ></ion-icon>
+        Minha lista
+      </ion-fab>
+    </ion-col>
+    <ion-col>
+      <button
+        margin-left
+        margin-right
+        text-capitalize="false"
+        ion-button
+        icon-start
+      >
+        <ion-icon name="play"></ion-icon>
+        Assistir
+      </button>
+    </ion-col>
+
+    <ion-col>
+      <ion-fab btn-detail>
+        <ion-icon name="ios-alert-outline"></ion-icon>
+        Saiba mais
+      </ion-fab>
+    </ion-col>
+  </ion-row>
+
+  <h2>Prévias</h2>
+  <ion-row nowrap overflow-x>
+    <ion-col col-4 *ngFor="let movie of popularMovies">
+      <card-movie [movie]="movie"></card-movie>
+    </ion-col>
+  </ion-row>
 </ion-content>
