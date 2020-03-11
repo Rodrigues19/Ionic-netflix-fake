@@ -54,7 +54,7 @@ export class CommingSoonPage {
   }
 
   getNameGener(movie: CommingSoonModel): string[] {
-    return this.genres.filter((g) => movie.genreIds.indexOf(g.id) != -1).map(ge => ' '+ge.name);
+    return this.genres.filter((g) => movie.genreIds.indexOf(g.id) != -1).map(ge => ' ' + ge.name);
   }
 
 }

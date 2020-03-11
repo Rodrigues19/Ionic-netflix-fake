@@ -3,8 +3,11 @@ page-comming-soon {
     height: 10px;
     // padding: 0;
   }
-  [ion-fab]{
-    border-radius: 1px white;
+  [ion-fab] {
+    position: relative;
+    left: 180px;
+    bottom: 150px;
+    border: 1.5px solid white;
   }
 
   // [Line] {
@@ -13,7 +16,7 @@ page-comming-soon {
   //   justify-content: space-between;
   //   height: 90px;
   // }
-  
+
   [Logo-breve] {
     display: flex;
     align-items: center;
@@ -22,6 +25,4 @@ page-comming-soon {
     height: 15px;
     width: 15px;
   }
-
-
 }
