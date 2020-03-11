@@ -1,4 +1,31 @@
 page-comming-soon {
+
+  .button-ios{
+    height: 10px;
+    // padding: 0;
+  }
+
+    
+    [Line] {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 90px;
+        
+      }
+      [Logo-breve] {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        font-size: 10px;
+        height: 15px;
+        width: 15px;
+      }
+      [Genre] {
+        display: flex;
+        align-items: center;
+        justify-content: center; 
+      }
     
         // [Ion-icon] {
         //     display: flex;
@@ -8,24 +35,24 @@ page-comming-soon {
         //     padding: 5px;
         // }
         
-        [Line] {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+        // [Line] {
+        //     display: flex;
+        //     align-items: center;
+        //     justify-content: space-between;
             
-          }
-          [Logo-breve] {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            height: 20px;
-            width: 20px;
-          }
-          [Genre] {
-            display: flex;
-            align-items: center;
-            justify-content: center; 
-          }
+        //   }
+        //   [Logo-breve] {
+        //     display: flex;
+        //     align-items: center;
+        //     justify-content: flex-start;
+        //     height: 20px;
+        //     width: 20px;
+        //   }
+        //   [Genre] {
+        //     display: flex;
+        //     align-items: center;
+        //     justify-content: center; 
+        //   }
     
     
 }

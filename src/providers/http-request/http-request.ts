@@ -4,9 +4,10 @@ import { CommonEnum } from '../../enums/common.enum';
 
 @Injectable()
 export class HttpRequestProvider {
-
+  
   constructor(public http: HttpClient) {}
   public getPopularMovies(){
-    return this.http.get(CommonEnum.HOST+'movie/latest?api_key='+CommonEnum.API_KEY+`&language=pt-BR`)
+    return this.http.get(CommonEnum.HOST+'movie/latest?api_key='+CommonEnum.API_KEY+`&language=pt-BR`);
   }
+
 }
