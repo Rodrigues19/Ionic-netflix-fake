@@ -1,33 +1,30 @@
-import { HttpRequestProvider } from './../../providers/http-request/http-request';
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-
+import { HttpRequestProvider } from "./../../providers/http-request/http-request";
+import { Component } from "@angular/core";
+import { IonicPage, NavController, NavParams } from "ionic-angular";
 
 @IonicPage()
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html',
+  selector: "page-home",
+  templateUrl: "home.html"
 })
 export class HomePage {
+  public popularMovies: any = [];
 
-  public api:any =[]
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, private httpRequest: HttpRequestProvider) {
-  this.requestPopularMovie()
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private httpRequest: HttpRequestProvider
+  ) {
+    this.requestPopularMovie();
   }
 
- 
-  public requestPopularMovie(){
-    this.httpRequest.getPopularMovies().subscribe((response:any) => {
-      // this.api=response
-      
-    })
+  public requestPopularMovie() {
+    this.httpRequest.getPopularMovies().subscribe((response: any) => {
+      this.popularMovies = response;
+    });
   }
 
-
-  openMyList(){
-    this.navCtrl.push('MyListPage')
+  openMyList() {
+    this.navCtrl.push("MyListPage");
   }
-
 }
