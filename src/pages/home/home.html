@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+<header>
+  <nav Flex-direction-row justify-content-around header-position>
+    <img
+      src="../../assets//imgs/logo-netflix-2.png"
+      Image-size
+      align-self-start
+    />
+    <ion-title text-center>Séries</ion-title>
+    <ion-title text-center>Filmes</ion-title>
+    <ion-title (click)="openMyList()" text-center>Minha lista</ion-title>
+  </nav>
+=======
 <header >
   <nav flex-direction-row justify-content-around>
   <img src="../../assets//imgs/logo-netflix-2.png" Image-size align-self-start />
@@ -5,6 +18,7 @@
   <ion-title (click)="goMovie()" text-center>Filmes</ion-title>
   <ion-title (click)="goMyList()" text-center>Minha lista</ion-title>
 </nav>
+>>>>>>> 91974e464f58a6cdcbc7d805aeb605a1e69e849c
 </header>
 
 <ion-content padding>
@@ -31,35 +45,37 @@
       • irmãos
     </ion-col>
   </ion-row>
-
-  <ion-row justify-content-center align-items-center>
-    <ion-col>
-      <ion-fab btn-detail>
-        <ion-icon
-          (click)="addMyList()"
-          [name]="add ? 'checkmark' : 'add'"
-        ></ion-icon>
-        Minha lista
-      </ion-fab>
+  <ion-row justify-content-center>
+  <ion-fab btn-detail>
+    <ion-icon
+      (click)="addMyList()"
+      [name]="add ? 'checkmark' : 'add'"
+    ></ion-icon>
+    Minha lista
+  </ion-fab>
+  <button margin-left margin-right text-capitalize="false" ion-button  icon-start>
+    <ion-icon
+      name="play"
+    ></ion-icon>
+    Assistir
+  </button>
+  <ion-fab btn-detail>
+    <ion-icon
+      name="ios-alert-outline"
+    ></ion-icon>
+    Saiba mais
+  </ion-fab>
+</ion-row>
+  <h2>Prévias</h2>
+  <ion-row  nowrap overflow-x >
+    <ion-col margin-rigth margin-left  col-4 *ngFor="let movie of popularMovies">
+      <img [src]="'https://image.tmdb.org/t/p/w154'+movie?.image" class="imgPrevias">
     </ion-col>
-    <ion-col>
-      <button
-        margin-left
-        margin-right
-        text-capitalize="false"
-        ion-button
-        icon-start
-      >
-        <ion-icon name="play"></ion-icon>
-        Assistir
-      </button>
-    </ion-col>
-
-    <ion-col>
-      <ion-fab btn-detail>
-        <ion-icon name="ios-alert-outline"></ion-icon>
-        Saiba mais
-      </ion-fab>
+  </ion-row>
+  <h2>Continuar Assistindo como usuário 2</h2>
+  <ion-row  nowrap overflow-x >
+    <ion-col margin-rigth margin-left  col-4 *ngFor="let movie of rateMovies">
+      <card-movie [movie]="movie" ></card-movie>
     </ion-col>
   </ion-row>
 
