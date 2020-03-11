@@ -1,6 +1,7 @@
 import { HttpRequestProvider } from "./../../providers/http-request/http-request";
 import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
+import { MovieModel } from "../../model/movie.model";
 
 @IonicPage()
 @Component({
@@ -8,8 +9,7 @@ import { IonicPage, NavController, NavParams } from "ionic-angular";
   templateUrl: "home.html"
 })
 export class HomePage {
-  public popularMovies: any = [];
-
+  public popularMovies: MovieModel[]=[]
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -20,7 +20,13 @@ export class HomePage {
 
   public requestPopularMovie() {
     this.httpRequest.getPopularMovies().subscribe((response: any) => {
-      this.popularMovies = response;
+      this.popularMovies = response.results.map(movie =>{
+       return{
+          backdrop_path: movie.backdrop_path,
+          title: movie.title,
+          image:movie.poster_path
+      }
+      })    
     });
   }
 
