@@ -1,5 +1,5 @@
 <header >
-  <nav flex-direction-row justify-content-around>
+  <nav flex-direction-row justify-content-around header-position>
   <img src="../../assets//imgs/logo-netflix-2.png" Image-size align-self-start />
   <ion-title (click)="goSeries()" text-center>Séries</ion-title>
   <ion-title (click)="goMovie()" text-center>Filmes</ion-title>
@@ -22,7 +22,7 @@
       • Crianças
     </ion-col>
     <ion-col    no-padding >
-      • Série 
+      • Série
     </ion-col>
     <ion-col  no-padding nowrap >
       • Crescer não é facil
@@ -31,38 +31,39 @@
       • irmãos
     </ion-col>
   </ion-row>
-
-  <ion-row justify-content-center align-items-center>
-    <ion-col>
-      <ion-fab btn-detail>
-        <ion-icon
-          (click)="addMyList()"
-          [name]="add ? 'checkmark' : 'add'"
-        ></ion-icon>
-        Minha lista
-      </ion-fab>
-    </ion-col>
-    <ion-col>
-      <button
-        margin-left
-        margin-right
-        text-capitalize="false"
-        ion-button
-        icon-start
-      >
-        <ion-icon name="play"></ion-icon>
-        Assistir
-      </button>
-    </ion-col>
-
-    <ion-col>
-      <ion-fab btn-detail>
-        <ion-icon name="ios-alert-outline"></ion-icon>
-        Saiba mais
-      </ion-fab>
+  <ion-row justify-content-center>
+  <ion-fab btn-detail>
+    <ion-icon
+      (click)="addMyList()"
+      [name]="add ? 'checkmark' : 'add'"
+    ></ion-icon>
+    Minha lista
+  </ion-fab>
+  <button margin-left margin-right text-capitalize="false" ion-button  icon-start>
+    <ion-icon
+      name="play"
+    ></ion-icon>
+    Assistir
+  </button>
+  <ion-fab btn-detail>
+    <ion-icon
+      name="ios-alert-outline"
+    ></ion-icon>
+    Saiba mais
+  </ion-fab>
+</ion-row>
+  <h2>Prévias</h2>
+  <ion-row  nowrap overflow-x >
+    <ion-col margin-rigth margin-left  col-4 *ngFor="let movie of popularMovies">
+      <img [src]="'https://image.tmdb.org/t/p/w154'+movie?.image" class="imgPrevias">
     </ion-col>
   </ion-row>
-
+  <h2>Continuar Assistindo como usuário 2</h2>
+  <ion-row  nowrap overflow-x >
+    <ion-col margin-rigth margin-left  col-4 *ngFor="let movie of rateMovies">
+      <card-movie [movie]="movie" ></card-movie>
+    </ion-col>
+  </ion-row>
 
   <h2>Prévias</h2>
   <ion-row nowrap overflow-x>
