@@ -1,32 +1,3 @@
-<<<<<<< HEAD
-<ion-content>
-  <form [formGroup]="formProfile" (ngSubmit)="submit()">
-    <ion-navbar hideBackButton>
-    <button (click)="cancelEdit()" ion-button clear>
-      <ion-icon name="close"></ion-icon>
-      Cancelar</button>
-</ion-navbar>
-
-    <button [disabled]=!formProfile.valid type=submit ion-button clear class="second-button">
-      <ion-icon name="checkmark"></ion-icon>
-      Salvar</button>
-   
-      <ion-item>
-      <ion-label>
-        Nome
-      </ion-label>
-      <ion-input type="text" name="name" formControlName="name"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>
-        <p>Imagem</p>
-      </ion-label>
-        <ion-input type="text" name="image" formControlName="image" alt=""></ion-input>
-    </ion-item>
-
-</form>
-=======
 <ion-content >
   <form [formGroup]="formProfile" (ngSubmit)="submit()">
     <ion-navbar hideBackButton no-padding >
@@ -76,5 +47,4 @@
       </ion-item >
     </ion-list>
   </form>
->>>>>>> c27e5b1230dfadd05c0fbff051b22ff57eb17fc5
 </ion-content>
