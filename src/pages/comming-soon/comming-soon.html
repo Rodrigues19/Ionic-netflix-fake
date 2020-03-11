@@ -1,65 +1,49 @@
 <ion-header>
-    <ion-navbar>
-      <ion-title>comming-soon</ion-title>
-    </ion-navbar>
-  </ion-header>
-  
-  <ion-content >
-    <ion-card>
-      
-        <img src="https://miro.medium.com/max/3200/1*IKIUoKCXTS6n2n72-h3MLw.jpeg"  alt="justice league"/>
-      
-    </ion-card>  
-     
-        <ion-row align-items-center>
-          <ion-col Line>
-            <img src="https://i.pinimg.com/originals/60/b9/b1/60b9b11b28fde9cc13dd039ce8514076.png" Logo-breve alt=""/>
-            <p Logo-breve>Filme</p>
-  
-            <button color="light" text-capitalize="false" clear ion-button icon-start>
-              <ion-icon name="notifications"></ion-icon>
-              Receber aviso
-          
-            </button>
-            <button color="light" text-capitalize="false" clear ion-button icon-start>
-              <ion-icon name="md-share" ></ion-icon>
-              Compartilhe
-          
-            </button>
-          
-            
-          </ion-col>
-        </ion-row>  
-        <ion-title>Justice League</ion-title>
-        
-        <p>Impulsionado pela restauração de sua fé na humanidade e inspirado pelo ato altruísta do Superman, Bruce Wayne convoca sua nova aliada Diana Prince para o combate contra um inimigo ainda maior, recém-despertado. </p>
-        <p Genre>Ação . Super-Herói . Aventura . Ficção Científica . Série</p>
-        <ion-card>
-          <img src="https://cdn.telecineplay.com.br/isl/api/v1/dataservice/ResizeImage/$value?Format=%27jpg%27&Quality=90&ImageId=%27180077%27&EntityType=%27Item%27&EntityId=%2710811%27&Width=1440&Height=810&device=%27web_browser%27&subscriptions=%27Anonymous%27&ResizeAction=%27fill%27&HorizontalAlignment=%27center%27&VerticalAlignment=%27top%27"  alt="justice league"/>
-        </ion-card> 
-        <ion-row align-items-center>
-          <ion-col Line>
-            <img src="https://i.pinimg.com/originals/60/b9/b1/60b9b11b28fde9cc13dd039ce8514076.png" Logo-breve alt=""/>
-            
-            <p Logo-breve>Filme</p>
-  
-           <button color="light" text-capitalize="false" clear ion-button icon-start>
-              <ion-icon name="notifications"></ion-icon>
-              Receber aviso
-          
-            </button>
-            
-            <button color="light" text-capitalize="false" clear ion-button icon-start>
-              <ion-icon name="md-share" ion-grid-columns></ion-icon>
-              Compartilhe
-          
-            </button>
-            
-          </ion-col>
-        </ion-row>  
-        <ion-title>Um Lugar Silencioso - Parte II</ion-title>
-        <p>Um Lugar Silencioso - Parte 2, logo após os acontecimentos mortais, a família Abbott precisa agora encarar o terror mundo afora, continuando a lutar para sobreviver em silêncio. </p>      
-        <p Genre>Terror . Drama . Mistério . Ficção Científica . Suspense</p>
-    
-  </ion-content>
-  
+  <ion-navbar>
+    <ion-title>comming-soon</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-row *ngFor="let filme of movies">
+
+    <div>
+      <img [src]="'https://image.tmdb.org/t/p/w780'+filme.backdropPath" alt="imagem filme">
+      <button ion-fab color="opacity">
+        <ion-icon name="play" color="light"></ion-icon>
+      </button>
+      <ion-title>{{filme.title}}</ion-title>
+
+
+      <p>{{filme.overview}}</p>
+      <p justify-content-around>{{getNameGener(filme)}}</p>
+    </div>
+
+    <ion-col Line>
+      <img src="../../assets/imgs/logo-netflix-2.png" Logo-breve alt="" />
+      <p Logo-breve>Filme</p>
+
+      <button color="light" text-capitalize="false" clear align-items-center justify-content-center ion-button
+        icon-start>
+        <ion-icon name="notifications"></ion-icon>
+        Receber aviso
+      </button>
+
+      <button color="light" text-capitalize="false" clear align-items-center justify-content-center ion-button
+        icon-start>
+        <ion-icon name="md-share"></ion-icon>
+        Compartilhe
+
+      </button>
+
+
+    </ion-col>
+  </ion-row>
+
+
+
+
+
+
+
+</ion-content>

@@ -1,7 +1,7 @@
 <ion-header>
     <img Logo-img src="../../assets/imgs/logo-netflix.png" />
     <div text-end>
-      <ion-icon name="brush" (click)="edit()"></ion-icon>
+      <ion-icon name="brush" (click)="editIcon()"></ion-icon>
     </div>
 </ion-header>
 
@@ -15,7 +15,7 @@
           <div [class]= "edited ? 'ion-show' : 'ion-hidden'" class="ion-icon">
             <ion-icon flexcenter name="brush" (click)="editProfile(user)"></ion-icon>
           </div>
-          <img [src]="user.image">
+          <img (click)="goHome()" [src]="user.image">
         </div>
         <ion-title>{{user.name}}</ion-title>
       </ion-col>

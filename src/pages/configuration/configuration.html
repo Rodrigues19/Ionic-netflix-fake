@@ -1,15 +1,154 @@
-<!--
-  Generated template for the ConfigurationPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
   <ion-navbar>
-    <ion-title>configuration</ion-title>
+    <ion-title text-center>Configurações do aplicativo</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
+  <ion-list no-border>
 
+    <ion-list-header margin-top transparentnoborder>
+      Reprodução de vídeo
+    </ion-list-header>
+    <ion-item>
+      <img src="../../assets/icon/icon-network.png" item-start marginleft/>
+      <ion-title>Uso de dados da rede celular</ion-title>
+      <ion-note>Automático</ion-note>
+    </ion-item>
+
+    <ion-list-header margin-top transparentnoborder>
+      Notificações
+    </ion-list-header>
+    <ion-item>
+      <ion-icon name="notifications" item-start></ion-icon>
+      <ion-label>
+        <ion-title>Permitir notificações</ion-title>
+      </ion-label>
+      <ion-toggle checked="true" color="blue" item-end></ion-toggle>
+    </ion-item>
+
+    <ion-list-header margin-top transparentnoborder>
+      Downloads
+    </ion-list-header>
+    <ion-item>
+      <ion-icon name="ios-wifi" item-start></ion-icon>
+      <ion-label>
+        <ion-title>Somente WiFi</ion-title>
+      </ion-label>
+      <ion-toggle checked="false" color="blue" item-end></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="download" item-start></ion-icon>
+      <ion-label>
+        <ion-title>Smart Downloads</ion-title>
+       <ion-note>Espisódios já assistidos serão deletados e substituídos pelos próximos episódios quando o Wi-Fi estiver ligado.</ion-note>
+    </ion-label>
+      <ion-toggle checked="true" color="blue" item-end></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="browsers" item-start></ion-icon>
+      <ion-title>Qualidade dos vídeos baixados</ion-title>
+      <ion-note>Padrão</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="list" item-start></ion-icon>
+      <ion-title>Localização dos downloads</ion-title>
+      <ion-note>Armazenamento interno</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="trash" item-start></ion-icon>
+      <ion-title>Excluir todos os downloads</ion-title>
+    </ion-item>
+    <ion-item>
+      <ion-row>
+        <ion-col col-10>Armazenamento interno</ion-col>
+        <ion-col col-2 text-end>Padrão</ion-col>
+        <ion-col col-9>
+          <div class="col-9"></div>
+        </ion-col>
+        <ion-col col-1>
+          <div class="col-1"></div>
+        </ion-col>
+        <ion-col col-2>
+          <div class="col-2"></div>
+        </ion-col>
+        <ion-col col-4>
+          <ion-icon name="md-square" color="gray"></ion-icon>
+          Usados • 45 GB
+        </ion-col>
+        <ion-col col-4>
+          <ion-icon name="md-square" color="blue"></ion-icon>
+          Netflix • 642 GB
+        </ion-col>
+        <ion-col col-4>
+          <ion-icon name="md-square" color="fontgray"></ion-icon>
+          Livres • 10 GB</ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-list-header margin-top transparentnoborder>
+      Sobre
+    </ion-list-header>
+    <ion-item>
+      <ion-icon name="phone-portrait" item-start></ion-icon>
+      <ion-title>Aparelho</ion-title>
+      <ion-note>
+        Versão: 7.48.0 build 4
+        Modelo: moto g(6) play
+        PL: 0
+        Versão: PPPS29.55-35.18.2
+        ESN: NFANDROID927193o919368193861983619836AJKSJAKJSBAJKSBJASBQKSANKSJBASLAKSMALSKMALSLAKSMLAKMSLAKMSLAKMSLAKMSLAKMS
+      </ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="ios-contact-outline" item-start></ion-icon>
+      <ion-title>Conta</ion-title>
+      <ion-note>
+        Email: antoniojosejoao@gmail.com
+        Sessão iniciada com Google Smart Lock
+      </ion-note>
+      <ion-icon name="ios-log-in" item-end></ion-icon>
+    </ion-item>
+
+    <ion-list-header margin-top transparentnoborder>
+      Diagnóstico
+    </ion-list-header>
+    <ion-item>
+      <ion-icon name="md-wifi" item-start></ion-icon>
+      <ion-title>Verifique a rede</ion-title>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="md-repeat" item-start></ion-icon>
+      <ion-title>Especificação de reprodução</ion-title>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="speedometer" item-start></ion-icon>
+      <ion-title>Teste a velocidade da internet</ion-title>
+      <ion-icon name="ios-log-in" item-end></ion-icon>
+    </ion-item>
+
+    <ion-list-header margin-top transparentnoborder>
+      Termos legais
+    </ion-list-header>
+    <ion-item>
+      <ion-icon name="document" item-start></ion-icon>
+      <ion-title>Licenças de código aberto</ion-title>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="document" item-start></ion-icon>
+      <ion-title>Privacidade</ion-title>
+      <ion-icon name="ios-log-in" item-end></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="document" item-start></ion-icon>
+      <ion-title>Preferências de cookies</ion-title>
+      <ion-icon name="ios-log-in" item-end></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="document" item-start></ion-icon>
+      <ion-title>Termos de uso</ion-title>
+      <ion-icon name="ios-log-in" item-end></ion-icon>
+    </ion-item>
+
+  </ion-list>
 </ion-content>

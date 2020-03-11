@@ -19,15 +19,14 @@ export class ProfilemanagementPage {
   public addUser():void {
     this.navCtrl.push('EditProfilePage',{user:""});
   }
+  public goHome():void {
+    this.navCtrl.push('TabsPage');
+  }
   public editProfile(profile: ProfileModel):void{
     this.navCtrl.push('EditProfilePage',{user: profile});
   }
-
-  public edit() {
+  public editIcon():void {
     this.edited = !this.edited
-    return (
-      console.log(this.edited)
-    )
   }
 
   ionViewDidEnter() {

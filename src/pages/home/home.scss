@@ -1,3 +1,65 @@
 page-home {
+  [Image-size] {
+    width: 45px;
+    height: 40px;
+  }
+  [Size-banner] {
+    margin-bottom: 20px;
+    background-color: yellow;
+    z-index: 4;
+    height: 20%;
+  }
+  .imgPrevias{
+    width: 115px;
+    height: 107px;
+    border-radius: 90%;
+    border: solid 2px white;
+  }
+  [btn-detail] {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: transparent;
+    color: #fff;
+    text-align: center;
+    position: relative;
+  }
+  [ion-button] {
+    background-color: #fff;
+    color: #222;
+  }
+  [Flex-direction-row] {
+    display: flex;
+    flex-direction: row;
+  }
+  [header-position] {
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+    height: 50px;
+  }
+  
+  [title-size] {
+    width: 30%;
+  }
+  [overflow-x] {
+    overflow: scroll;
+    overflow-y: hidden;
+  }
+  // li:first-of-type {
+  //   list-style-type: none;
+  // }
 
+  .toolbar-title-md {
+    font-weight: 100;
+    font-size: 15px;
+  }
+  .toolbar-title-ios {
+    font-weight: 100;
+    font-size: 15px;
+  }
+  [size]{
+    font-size: 10px;
+  }
 }

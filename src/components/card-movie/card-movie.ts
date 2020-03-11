@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { MovieModel } from './../../model/movie.model';
+import { Component, Input } from '@angular/core';
 
 /**
  * Generated class for the CardMovieComponent component.
@@ -11,12 +12,10 @@ import { Component } from '@angular/core';
   templateUrl: 'card-movie.html'
 })
 export class CardMovieComponent {
-
-  text: string;
+  @Input() movie:MovieModel
 
   constructor() {
-    console.log('Hello CardMovieComponent Component');
-    this.text = 'Hello World';
+   
   }
 
 }
