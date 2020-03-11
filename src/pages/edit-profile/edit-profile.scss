@@ -1,20 +1,14 @@
-page-edit-profile {
+ page-edit-profile {
 
-    .button-nav{
-        color: gray;
-        font-size: 20px;
-    }
 
-    ion-avatar, ion-thumbnail {
-        display: flex;
-        justify-content: flex-end;
-    }
+[color-btn-black]{
+    color: #c4c4c4;
+    background-color: black;
+    font-weight: 100;
+}
 
-    ion-icon{
-        display: inline-block;
-        font-size: 40px;
-        margin: 10px;
-        color: gray;
-    }
+[border-left]{
+    border-left: 0.5px solid #c4c4c4;
+}
 
 }
