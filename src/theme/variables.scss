@@ -37,15 +37,17 @@ $colors: (
   secondary:  #32db64,
   danger:     #e50814,
   light:      #f4f4f4,
-  blue:       #488aff
+  blue:       #488aff,
+  gray:       gray,
+  fontgray:   #c4c4c4,
 );
 
 $searchbar-md-input-placeholder-color :map-get($colors, light);
 $searchbar-ios-input-placeholder-color:map-get($colors, light);
 $searchbar-ios-input-search-icon-color:map-get($colors, light);
-
-
-
+$toggle-md-handle-background-color-off: map-get($colors, gray);
+$toggle-ios-background-color-off: map-get($colors, gray);
+$toggle-ios-handle-background-color:map-get($colors, light);
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
