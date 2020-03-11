@@ -1,17 +1,17 @@
 <header >
   <nav flex-direction-row justify-content-around>
   <img src="../../assets//imgs/logo-netflix-2.png" Image-size align-self-start />
-  <ion-title text-center>Séries</ion-title>
-  <ion-title text-center>Filmes</ion-title>
-  <ion-title text-center>Minha lista</ion-title>
+  <ion-title (click)="goSeries()" text-center>Séries</ion-title>
+  <ion-title (click)="goMovie()" text-center>Filmes</ion-title>
+  <ion-title (click)="goMyList()" text-center>Minha lista</ion-title>
 </nav>
 </header>
 <ion-content padding>
   <section size-h>
     <!-- <img src="" class="img-banner" alt="serie" /> -->
-    
+
   </section>
-    
+
       <ion-row justify-content-between>
         <ion-col Flex-direction-row list>
           <li margin-left>sadawd</li>
@@ -22,11 +22,11 @@
         </ion-col>
       </ion-row>
       <ion-row>
-        <!-- <ion-col movie *ngFor="let f of popularMovies"> -->
+        <ion-col movie *ngFor="let f of popularMovies"> -->
           <img [src]="'https://image.tmdb.org/t/p/w154'+f.image">
           <p>{{f.title}}</p>
           <p></p>
-        <!-- </ion-col> -->
+        </ion-col>
       </ion-row>
 
       <ion-row>

@@ -18,6 +18,16 @@ export class HomePage {
     this.requestPopularMovie();
   }
 
+  public goSeries():void {
+    this.navCtrl.push('SeriesPage')
+  }
+  public goMovie():void {
+    this.navCtrl.push('MoviesPage')
+  }
+  public goMyList():void {
+    this.navCtrl.push('MyListPage')
+  }
+
   public requestPopularMovie() {
     this.httpRequest.getPopularMovies().subscribe((response: any) => {
       this.popularMovies = response.results.map(movie =>{
@@ -26,7 +36,7 @@ export class HomePage {
           title: movie.title,
           image:movie.poster_path
       }
-      })    
+      })
     });
   }
 
