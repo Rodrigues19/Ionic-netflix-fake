@@ -10,12 +10,23 @@ import { MovieModel } from "../../model/movie.model";
 })
 export class HomePage {
   public popularMovies: MovieModel[]=[]
+  public add: boolean;
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     private httpRequest: HttpRequestProvider
   ) {
     this.requestPopularMovie();
+  }
+
+  public goSeries():void {
+    this.navCtrl.push('SeriesPage')
+  }
+  public goMovie():void {
+    this.navCtrl.push('MoviesPage')
+  }
+  public goMyList():void {
+    this.navCtrl.push('MyListPage')
   }
 
   public requestPopularMovie() {
@@ -26,8 +37,11 @@ export class HomePage {
           title: movie.title,
           image:movie.poster_path
       }
-      })    
+      })
     });
+  }
+  public addMyList() {
+    this.add = !this.add;
   }
 
   openMyList() {
