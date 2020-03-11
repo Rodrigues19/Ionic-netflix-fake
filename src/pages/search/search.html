@@ -1,7 +1,7 @@
 <ion-content>
   <ion-grid>
     <ion-row align-items-center>
-      <ion-col>
+      <ion-col no-padding>
         <ion-searchbar
           padding-vertical
           placeholder="Busque por série,filmes,genero,etc."
@@ -9,7 +9,7 @@
         >
         </ion-searchbar>
       </ion-col>
-      <ion-col col-1 align-left margin-end>
+      <ion-col  no-padding col-1 align-left margin-end>
         <button color="dark" ion-button>
           <ion-icon color="light" name="mic" Font-h1></ion-icon>
         </button>
@@ -17,20 +17,21 @@
     </ion-row>
   </ion-grid>
 
-  <ion-list color="light">
-    <h1 Font-h1>Filmes populares</h1>
+  
+    <h1 padding-horizontal color="light">Filmes populares</h1>
 
-    <ion-grid *ngFor="let item of items">
-      <ion-row>
-        <ion-col Line>
-          {{ item }}
-        </ion-col>
+    
 
-        <ion-col Check-left>
-          <ion-icon name="play" padding padding-left></ion-icon>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-list>
+    <ion-list no-margin *ngFor="let item of items">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="img/thumbnail-totoro.png">
+        </ion-thumbnail>
+        <h2>{{ item }}</h2>
+        <ion-icon name="play" item-end padding padding-left></ion-icon>
+      </ion-item>
+    </ion-list>
+
+  
   
 </ion-content>

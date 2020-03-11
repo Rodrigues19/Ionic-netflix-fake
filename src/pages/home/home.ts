@@ -10,6 +10,7 @@ import { MovieModel } from "../../model/movie.model";
 })
 export class HomePage {
   public popularMovies: MovieModel[]=[]
+  public add: boolean;
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -38,6 +39,9 @@ export class HomePage {
       }
       })
     });
+  }
+  public addMyList() {
+    this.add = !this.add;
   }
 
   openMyList() {
