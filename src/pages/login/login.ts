@@ -46,7 +46,7 @@ export class LoginPage {
     if (this.form.valid) {
       this.usersRegistered.push(this.form.value);
       this.storage.set("usersRegistered", this.usersRegistered);
-      this.navCtrl.push('HomePage')
+      this.navCtrl.push('ProfilemanagementPage')
     }
   }
 }

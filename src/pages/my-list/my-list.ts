@@ -1,13 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the MyListPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-my-list',
@@ -18,8 +10,11 @@ export class MyListPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
+  public backHome():void {
+    this.navCtrl.push('HomePage');
+  }
+
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MyListPage');
   }
 
 }

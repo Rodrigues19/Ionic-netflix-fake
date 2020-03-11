@@ -10,6 +10,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpClientModule } from "@angular/common/http";
 import { HttpRequestProvider } from '../providers/http-request/http-request';
 import { DetailRequestProvider } from '../providers/detail-request/detail-request';
+import { CommingSoonRequestProvider } from '../providers/comming-soon-request/comming-soon-request';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { DetailRequestProvider } from '../providers/detail-request/detail-reques
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     HttpRequestProvider,
-    DetailRequestProvider
+    DetailRequestProvider,
+    CommingSoonRequestProvider
   ]
 })
 export class AppModule {}

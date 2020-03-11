@@ -33,13 +33,16 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #222,
+  primary:    #488aff,
   secondary:  #32db64,
   danger:     #e50814,
   light:      #f4f4f4,
   blue:       #488aff,
   gray:       gray,
   fontgray:   #c4c4c4,
+  dark:       #222,
+  opacity:    rgba(229, 219, 219, 0.315),
+  
 );
 
 $searchbar-md-input-placeholder-color :map-get($colors, light);

@@ -1,6 +1,7 @@
 import { HttpRequestProvider } from "./../../providers/http-request/http-request";
 import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
+import { MovieModel } from "../../model/movie.model";
 
 @IonicPage()
 @Component({
@@ -8,8 +9,8 @@ import { IonicPage, NavController, NavParams } from "ionic-angular";
   templateUrl: "home.html"
 })
 export class HomePage {
-  public popularMovies: any = [];
-
+  public popularMovies: MovieModel[]=[]
+  public add: boolean;
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -18,13 +19,32 @@ export class HomePage {
     this.requestPopularMovie();
   }
 
+  public goSeries():void {
+    this.navCtrl.push('SeriesPage')
+  }
+  public goMovie():void {
+    this.navCtrl.push('MoviesPage')
+  }
+  public goMyList():void {
+    this.navCtrl.push('MyListPage')
+  }
+
   public requestPopularMovie() {
     this.httpRequest.getPopularMovies().subscribe((response: any) => {
-      this.popularMovies = response;
+      this.popularMovies = response.results.map(movie =>{
+       return{
+          backdrop_path: movie.backdrop_path,
+          title: movie.title,
+          image:movie.poster_path
+      }
+      })
     });
+  }
+  public addMyList() {
+    this.add = !this.add;
   }
 
   openMyList() {
-    this.navCtrl.push("MyListPage");
+    // this.navCtrl.push("MyListPage");
   }
 }
