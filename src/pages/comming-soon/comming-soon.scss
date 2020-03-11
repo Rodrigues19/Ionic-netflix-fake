@@ -21,7 +21,8 @@ page-comming-soon {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    font-size: 10px;
+    flex-direction: row;
+    font-size: 8px;
     height: 15px;
     width: 15px;
   }
