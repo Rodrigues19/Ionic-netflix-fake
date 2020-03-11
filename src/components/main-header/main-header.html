@@ -1,20 +1,25 @@
 <!-- Generated template for the MainHeaderComponent component -->
-<div background-image>
-  <header>
-  <img src="../../assets//imgs/logo-netflix-2.png" Image-size>
-  <a href="#" >Séries</a>
-  <a href="#" color="light">Filmes</a>
-  <a href="#" color="light">Minha lista</a>
-</header>
-    <ion-row justify-content-between>
-     <ion-col flex-direction-row>
-        <p >sadawd</p>
-        <p >sadawd</p>
-        <p >sadawd</p>
-        <p >sadawd</p>
-        <p >sadawd</p>
-      </ion-col> 
-    </ion-row>
- 
+<div  >
+  <header flex-direction-row justify-content-around>
+    <img src="../../assets//imgs/logo-netflix-2.png" Image-size align-self-start />
+    <ion-title text-center>Séries</ion-title>
+    <ion-title text-center>Filmes</ion-title>
+    <ion-title text-center>Minha lista</ion-title>
+  </header>
+  <ion-row justify-content-between>
+    <ion-col Flex-direction-row list>
+      <li margin-left>sadawd</li>
+      <li margin-left>sadawd</li>
+      <li margin-left>sadawd</li>
+      <li margin-left>sadawd</li>
+      <li margin-left>sadawd</li>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col movie *ngFor="let f of popularMovies">
+      <img [src]=`https://image.tmdb.org/t/p/w92{{f.poster_path}}`>
+      <p>{{f.title}}</p>
+      <p><img ></p>
+    </ion-col>
+  </ion-row>
 </div>
-

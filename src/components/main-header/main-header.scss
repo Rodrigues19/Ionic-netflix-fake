@@ -1,10 +1,30 @@
 main-header {
+  [background]{
+    background-image: url();
+  }
   [Image-size]{
-      width: 50px;
+      width: 45px;
       height: 40px;
   }
-  [flex-direction-row]{
+  [Flex-direction-row]{
       display: flex;
       flex-direction: row;
+  }
+  [title-size]{
+    width: 30%;
+  }
+
+  li:first-of-type{
+    list-style-type: none;
+  }
+  
+  .toolbar-title-md{
+    font-weight: 100;
+    font-size: 15px;
+
+  }
+  .toolbar-title-ios{
+    font-weight: 100;
+    font-size: 15px;
   }
 }
