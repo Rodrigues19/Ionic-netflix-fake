@@ -1,85 +1,104 @@
-page-detail-movie {
+page-detail-movie{
 
-    [btn-detail] {
-        margin:0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background: transparent;
-        color: #fff;
-        text-align: center;
-    }
+[btn-detail] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: transparent;
+    color: #fff;
+    text-align: center;
+    margin-top: 5px;
+    padding-left: 5px;
+}
 
-    [display] {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        width: 100%;
-        // background: red;
-    }
+[cont-img]{
+    position:relative;
+    margin: 0;
+}
 
-    [icon-button-play]{
+[title-h1]{
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0,0,0,0.1), rgba(0, 0, 0, 0.8));
+    position: absolute;
+    margin-top:-33px;
+    width: 100%;
+}
+
+[container-col]{
+    margin:0;
+    padding: 0;
+}
+
+[ion-p]{
+    color: gray;
+    margin: 5px;
+}
+
+ [ion-segmet-button]{
+   color: gray;
+}
+
+.ion-md-add:before {
+    content: "\f273";
+    font-size: 30px;
+}
+
+.ion-md-thumbs-up:before {
+    content: "\f392";
+    font-size: 30px;
+}
+
+.ion-md-share:before {
+    content: "\f379";
+    font-size: 30px;
+}
+[linear] {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0,0,0,0.1), rgba(0, 0, 0, 0.8));
+    position: relative;
+    top: 16px;
+    left: 5px;
+    bottom: none;
+}
+
+.header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
+    left: 0;
+    background-position: left 0 top -2px;
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAHBAMAAADzDtBxAAAAD1BMV…h/TXEAAAAaSURBVAjXYxCEAgY4UIICBmMogMsgFLtAAQCNSwXZKOdPxgAAAABJRU5ErkJggg==);
+    background-repeat: repeat-x;
+    content: "";
+}
+
+[ion-label]{
+    color: gray;
+}  
+
+.segment-md .segment-button.activated, .segment-md .segment-button.segment-activated {
+    border-top: 2px solid red;
+    opacity: 1;
+}
+
+[ion-segment-options]{
+    margin: 15px;
+}
+
+[overflow-x]{
+    overflow: scroll;
+    overflow-y: hidden;
+}
+
+[icon-button-play]{
         position: relative;
-        left: 155px;
-        bottom: 280px;
+        left: 170px;
+        bottom: 150px;
         border-radius: 50%;
         background: rgba(0,0,0,0.5);
         border: 1px solid white;
         width: 50px;
         height: 50px;
-    }
-
-    [recomend-fab]{
-        margin-right: 10px;
-        background: #ffd700;
-        font-size: 20px;
-        color: black;
-        font-weight: bold;
-        border-radius: 3px;
-    }
-    
-
-    .ion-md-play:before {
-        content: "\f357";
-        font-size: 30px;
         color: white;
     }
 
-    [p-segment]{
-        font-size: 15px;
-        margin-right: 10px;
-        color: gray;
-    }
-
-    [p-content]{
-        color: gray;
-    }
-
-    [p-cont]{
-        color: gray;
-        
-    }
-
-    [title-h4]{
-        margin: 0;
-    }
-
-    [fab-ion]{
-        display: flex;
-        justify-content: flex-start;
-      
-    }
-
-
-    [ion-segmet-button]{
-        margin-top: 35px;
-        padding: 0;
-    }
-
-    [ion-label]{
-        margin: 0;
-        color: gray;
-
-    }
-    
 }
+
