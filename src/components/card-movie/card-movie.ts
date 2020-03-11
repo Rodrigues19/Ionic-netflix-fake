@@ -15,8 +15,7 @@ export class CardMovieComponent {
   text: string;
 
   constructor() {
-    console.log('Hello CardMovieComponent Component');
-    this.text = 'Hello World';
+   
   }
 
 }
