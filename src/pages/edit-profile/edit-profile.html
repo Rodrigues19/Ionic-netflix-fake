@@ -1,35 +1,50 @@
-<ion-header>
-  <ion-navbar>
-    <button ion-button clear class="button-nav">
-      <ion-icon name="close"></ion-icon>
-      Cancelar</button>
-    <button ion-button clear class="button-nav">
-      <ion-icon name="checkmark"></ion-icon>
-      Salvar</button>
-  </ion-navbar>
-</ion-header>
-
-<ion-content padding>
+<ion-content >
   <form [formGroup]="formProfile" (ngSubmit)="submit()">
-    <button (click)="cancelEdit()" ion-button clear>
-      <ion-icon name="close"></ion-icon>
-      Cancelar</button>
+    <ion-navbar hideBackButton no-padding >
+      <ion-row justify-content-between>
+        <ion-col color-btn-black  >
+          <button color-btn-black  (click)="cancelEdit()" ion-button clear>
+            <ion-icon padding name="close"></ion-icon>
+            <p>Cancelar</p>
+          </button>
+        </ion-col>
 
-    <button [disabled]=!formProfile.valid type=submit ion-button clear>
-      <ion-icon name="checkmark"></ion-icon>
-      Salvar</button>
-    <ion-item>
-      <ion-label>
-        Nome
-      </ion-label>
-      <ion-input type="text" name="name" formControlName="name"></ion-input>
-    </ion-item>
+        
+        <ion-col border-left color-btn-black  >
+          <button 
+          
+          color="light"
+            ion-button
+            clear
+            [disabled]="!formProfile.valid" 
+            type="submit"
+            item-end
+          >
+          <ion-icon padding name="checkmark"></ion-icon>
+            <p item-end >Salvar</p>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-navbar>
+    
+    <ion-list padding-horizontal>
+      <ion-item >
+        <ion-label stacked>NOME</ion-label>
 
-    <ion-item>
-      <ion-label>
-        <p>Imagem</p>
-      </ion-label>
-        <ion-input type="text" name="image" formControlName="image" alt=""></ion-input>
-    </ion-item>
+        <ion-input type="text" name="name" formControlName="name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>
+          <p>Imagem</p>
+        </ion-label>
+        <ion-input
+          type="text"
+          name="image"
+          formControlName="image"
+          alt=""
+        ></ion-input>
+      </ion-item >
+    </ion-list>
   </form>
 </ion-content>

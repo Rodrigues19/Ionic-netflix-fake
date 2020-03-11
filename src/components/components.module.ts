@@ -1,12 +1,10 @@
 import { IonicModule } from 'ionic-angular';
 import { NgModule } from '@angular/core';
 import { CardMovieComponent } from './card-movie/card-movie';
-import { MainHeaderComponent } from './main-header/main-header';
+
 @NgModule({
-	declarations: [CardMovieComponent,
-    MainHeaderComponent],
+	declarations: [CardMovieComponent],
 	imports: [IonicModule],
-	exports: [CardMovieComponent,
-    MainHeaderComponent]
+	exports: [CardMovieComponent,]
 })
 export class ComponentsModule {}
