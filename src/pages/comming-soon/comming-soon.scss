@@ -1,58 +1,28 @@
 page-comming-soon {
-
-  .button-ios{
+  .button-ios {
     height: 10px;
     // padding: 0;
   }
+  [ion-fab] {
+    position: relative;
+    left: 180px;
+    bottom: 150px;
+    border: 1.5px solid white;
+  }
 
-    
-    [Line] {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: 90px;
-        
-      }
-      [Logo-breve] {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        font-size: 10px;
-        height: 15px;
-        width: 15px;
-      }
-      [Genre] {
-        display: flex;
-        align-items: center;
-        justify-content: center; 
-      }
-    
-        // [Ion-icon] {
-        //     display: flex;
-        //     align-items: center;
-        //     justify-content: center; 
-        //     margin: 10px;
-        //     padding: 5px;
-        // }
-        
-        // [Line] {
-        //     display: flex;
-        //     align-items: center;
-        //     justify-content: space-between;
-            
-        //   }
-        //   [Logo-breve] {
-        //     display: flex;
-        //     align-items: center;
-        //     justify-content: flex-start;
-        //     height: 20px;
-        //     width: 20px;
-        //   }
-        //   [Genre] {
-        //     display: flex;
-        //     align-items: center;
-        //     justify-content: center; 
-        //   }
-    
-    
+  // [Line] {
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: space-between;
+  //   height: 90px;
+  // }
+
+  [Logo-breve] {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 10px;
+    height: 15px;
+    width: 15px;
+  }
 }

@@ -1,19 +1,16 @@
-<header>
-  <nav Flex-direction-row justify-content-around header-position>
-    <img
-      src="../../assets//imgs/logo-netflix-2.png"
-      Image-size
-      align-self-start
-    />
-    <ion-title text-center>Séries</ion-title>
-    <ion-title text-center>Filmes</ion-title>
-    <ion-title text-center>Minha lista</ion-title>
-  </nav>
+<header >
+  <nav flex-direction-row justify-content-around>
+  <img src="../../assets//imgs/logo-netflix-2.png" Image-size align-self-start />
+  <ion-title (click)="goSeries()" text-center>Séries</ion-title>
+  <ion-title (click)="goMovie()" text-center>Filmes</ion-title>
+  <ion-title (click)="goMyList()" text-center>Minha lista</ion-title>
+</nav>
 </header>
 
 <ion-content padding>
   <section Size-banner>
     <!-- <img src="" class="img-banner" alt="serie" /> -->
+
   </section>
 
   <ion-row justify-content-between  >
@@ -65,6 +62,7 @@
       </ion-fab>
     </ion-col>
   </ion-row>
+
 
   <h2>Prévias</h2>
   <ion-row nowrap overflow-x>
