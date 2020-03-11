@@ -11,6 +11,7 @@ import { Storage } from '@ionic/storage';
 export class ProfilemanagementPage {
 
   public listProfiles: ProfileModel [] = [];
+  public edited: boolean;
 
   constructor(private storage: Storage, public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -20,6 +21,13 @@ export class ProfilemanagementPage {
   }
   public editProfile(profile: ProfileModel):void{
     this.navCtrl.push('EditProfilePage',{user: profile});
+  }
+
+  public edit() {
+    this.edited = !this.edited
+    return (
+      console.log(this.edited)
+    )
   }
 
   ionViewDidEnter() {
