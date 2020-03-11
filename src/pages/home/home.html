@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <header>
   <nav Flex-direction-row justify-content-around header-position>
     <img
@@ -9,19 +10,39 @@
     <ion-title text-center>Filmes</ion-title>
     <ion-title (click)="openMyList()" text-center>Minha lista</ion-title>
   </nav>
+=======
+<header >
+  <nav flex-direction-row justify-content-around>
+  <img src="../../assets//imgs/logo-netflix-2.png" Image-size align-self-start />
+  <ion-title (click)="goSeries()" text-center>Séries</ion-title>
+  <ion-title (click)="goMovie()" text-center>Filmes</ion-title>
+  <ion-title (click)="goMyList()" text-center>Minha lista</ion-title>
+</nav>
+>>>>>>> 91974e464f58a6cdcbc7d805aeb605a1e69e849c
 </header>
+
 <ion-content padding>
   <section Size-banner>
     <!-- <img src="" class="img-banner" alt="serie" /> -->
+
   </section>
 
-  <ion-row justify-content-between>
-    <ion-col Flex-direction-row  >
-      <li margin-left>Alto Astral</li>
-      <li margin-left>Crianças</li>
-      <li margin-left>Série</li>
-      <li margin-left>Crescer não é fácil</li>
-      <li margin-left>Irmãos</li>
+  <ion-row justify-content-between  >
+    <ion-col   no-padding >
+      Alto astral
+    </ion-col>
+
+    <ion-col no-padding >
+      • Crianças
+    </ion-col>
+    <ion-col    no-padding >
+      • Série
+    </ion-col>
+    <ion-col  no-padding nowrap >
+      • Crescer não é facil
+    </ion-col>
+    <ion-col  no-padding >
+      • irmãos
     </ion-col>
   </ion-row>
   <ion-row justify-content-center>
@@ -57,6 +78,11 @@
       <card-movie [movie]="movie" ></card-movie>
     </ion-col>
   </ion-row>
-  
 
+  <h2>Prévias</h2>
+  <ion-row nowrap overflow-x>
+    <ion-col col-4 *ngFor="let movie of popularMovies">
+      <card-movie [movie]="movie"></card-movie>
+    </ion-col>
+  </ion-row>
 </ion-content>

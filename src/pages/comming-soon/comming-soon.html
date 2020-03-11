@@ -1,38 +1,49 @@
 <ion-header>
-    <ion-navbar>
-      <ion-title>comming-soon</ion-title>
-    </ion-navbar>
-  </ion-header>
-  
-  <ion-content >
-    <ion-row *ngFor="let filme of movie" >
-      
-        <img [src]="'https://image.tmdb.org/t/p/w780'+filme.backdropPath" alt="imagem filme" >
-        <ion-title>{{filme.title}}</ion-title> <p>{{filme.genreIds}}</p>
-        <!-- <p>{{filme.Genre}}</p> -->
-        <p>{{filme.overview}}</p>
+  <ion-navbar>
+    <ion-title>comming-soon</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-row *ngFor="let filme of movies">
+
+    <div>
+      <img [src]="'https://image.tmdb.org/t/p/w780'+filme.backdropPath" alt="imagem filme">
+      <button ion-fab color="opacity">
+        <ion-icon name="play" color="light"></ion-icon>
+      </button>
+      <ion-title>{{filme.title}}</ion-title>
 
 
-        <ion-col>
-          <img src="https://i.pinimg.com/originals/60/b9/b1/60b9b11b28fde9cc13dd039ce8514076.png" Logo-breve alt=""/>
-          <p Logo-breve>Filme</p>
-    
-          <button color="light" text-capitalize="false" clear ion-button icon-start>
-            <ion-icon name="notifications"></ion-icon>
-            Receber aviso
-        
-          </button>
-          <button color="light" text-capitalize="false" clear ion-button icon-start>
-            <ion-icon name="md-share" ></ion-icon>
-            Compartilhe
-        
-          </button>
-        
-          
-        </ion-col>
-      
-    </ion-row>  
+      <p>{{filme.overview}}</p>
+      <p justify-content-around>{{getNameGener(filme)}}</p>
+    </div>
 
-    
-  </ion-content>
-  
+    <ion-col Line>
+      <img src="../../assets/imgs/logo-netflix-2.png" Logo-breve alt="" />
+      <p Logo-breve>Filme</p>
+
+      <button color="light" text-capitalize="false" clear align-items-center justify-content-center ion-button
+        icon-start>
+        <ion-icon name="notifications"></ion-icon>
+        Receber aviso
+      </button>
+
+      <button color="light" text-capitalize="false" clear align-items-center justify-content-center ion-button
+        icon-start>
+        <ion-icon name="md-share"></ion-icon>
+        Compartilhe
+
+      </button>
+
+
+    </ion-col>
+  </ion-row>
+
+
+
+
+
+
+
+</ion-content>

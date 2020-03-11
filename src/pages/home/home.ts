@@ -2,7 +2,6 @@ import { MovieModel } from './../../model/movie.model';
 import { HttpRequestProvider } from "./../../providers/http-request/http-request";
 import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
-import { MovieModel } from "../../model/movie.model";
 
 @IonicPage()
 @Component({
@@ -26,6 +25,16 @@ export class HomePage {
     this.requestMovieTopRated()
   }
 
+  public goSeries():void {
+    this.navCtrl.push('SeriesPage')
+  }
+  public goMovie():void {
+    this.navCtrl.push('MoviesPage')
+  }
+  public goMyList():void {
+    this.navCtrl.push('MyListPage')
+  }
+
   public requestPopularMovie() {
     this.httpRequest.getPopularMovies().subscribe((response: any) => {
       this.popularMovies = response.results.map(movie =>{
@@ -34,7 +43,7 @@ export class HomePage {
           title: movie.title,
           image:movie.poster_path
       }
-      })    
+      })
     });
   }
 
