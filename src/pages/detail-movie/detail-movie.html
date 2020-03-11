@@ -1,102 +1,108 @@
-<ion-header>
-  <ion-navbar>
-    <ion-icon name="arrow-back" color="light"></ion-icon>
-  </ion-navbar>
+<ion-header linear>
+  <ion-icon name="arrow-back" color="light"></ion-icon>
 </ion-header>
 
 <ion-content>
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-        <img
-          src="https://i2.wp.com/mixdeseries.com.br/wp-content/uploads/2018/07/Anne.jpg?fit=1920%2C1080&ssl=1"
-          alt=""
-        />
-        <ion-title size="large">Anne with an E</ion-title>
+<ion-row>
+  <ion-col>
+    <div>
+      <img
+        cont-img
+        src="https://i2.wp.com/mixdeseries.com.br/wp-content/uploads/2018/07/Anne.jpg?fit=1920%2C1080&ssl=1"
+        alt=""
+      />
+      <h1 title-h1>Anne with an E</h1>
+      <button icon-button-play size="large">
+        <ion-icon name="play"></ion-icon>
+      </button>
+    </div>
+  </ion-col>
+</ion-row>
 
-        <ion-segment fab-ion>
-          <p p-segment>2019</p>
-          <p recomend-fab>12</p>
-          <p p-segment>3 Temporadas</p>
-        </ion-segment>
+<div>
+  <ion-col>2019</ion-col>
+  <ion-col>12</ion-col>
+  <ion-col>3 Temporadas</ion-col>
+</div>
 
-        <ion-row>
-          <h4 title-h4>
-            A escolha de Cindy Bishop para o dia Internacional da Mulher
-          </h4>
+<ion-row ion-row>
+  <h2>
+    A escolha de Cindy Bishop para o dia Internacional da Mulher
+  </h2>
+  <p ion-p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint iure sunt
+    sequi libero maxime modi possimus veniam. Optio ad, perspiciatis
+    voluptates debitis, sit animi corporis illo non voluptas dignissimos quae.
+  </p>
 
-          <p p-content>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint iure
-            sunt sequi libero maxime modi possimus veniam. Optio ad,
-            perspiciatis voluptates debitis, sit animi corporis illo non
-            voluptas dignissimos quae.
-          </p>
-          
-          <p p-cont><b>Elenco:</b> Amybeth McNulty, Geraldine James, R.H Thomson</p>
-          <p p-cont><b>Criação:</b> Moira Walley-Beckett</p>
-        </ion-row>
+  <p ion-p>Elenco: Amybeth McNulty, Geraldine James, R.H Thomson</p>
+  <p ion-p>Criação: Moira Walley-Beckett</p>
+</ion-row>
 
-        <ion-fab display size="end">
-          <button btn-detail>
-            <ion-icon name="thumbs-up"></ion-icon>
-            Classifique
-          </button>
-          <ion-fab btn-detail>
-            <ion-icon
-              (click)="addMyList()"
-              [name]="add ? 'checkmark' : 'add'"
-            ></ion-icon>
-            Minha lista
-          </ion-fab>
-          <button btn-detail>
-            <ion-icon name="md-share"></ion-icon>
-            Compartilhe
-          </button>
-        </ion-fab>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+<ion-row>
+  <button btn-detail>
+    <ion-icon
+      (click)="addMyList()"
+      [name]="add ? 'checkmark' : 'add'"
+    ></ion-icon>
+    Minha lista
+  </button>
 
-  <ion-segment [(ngModel)]="type" ion-segmet-button>
-    <ion-segment-button value="episodes">
-      <ion-label ion-label>EPISÓDIOS</ion-label>
-    </ion-segment-button>
+  <button btn-detail>
+    <ion-icon name="thumbs-up"></ion-icon>
+    Classifique
+  </button>
 
-    <ion-segment-button value="trailers">
-      <ion-label ion-label>TRAILERS E MAIS</ion-label>
-    </ion-segment-button>
+  <button btn-detail>
+    <ion-icon name="md-share"></ion-icon>
+    Compartilhe
+  </button>
+</ion-row>
 
-    <ion-segment-button value="options">
-      <ion-label ion-label>OPÇÕES SEMELHANTES</ion-label>
-    </ion-segment-button>
-  </ion-segment>
+<ion-segment [(ngModel)]="type" ion-segment-options overflow-x>
 
-  <ion-card [ngSwitch]="type">
-    <ion-list *ngSwitchCase="'episodes'">
-      <ion-item>
-        <img
-          src="https://i2.wp.com/mixdeseries.com.br/wp-content/uploads/2018/07/Anne.jpg?fit=1920%2C1080&ssl=1"
-          alt=""
-        />
-      </ion-item>
-    </ion-list>
+  <ion-segment-button value="episodes">
+    <ion-label ion-label>EPISÓDIOS</ion-label>
+  </ion-segment-button>
 
-    <ion-list *ngSwitchCase="'trailers'">
-      <ion-item>
-        <img
-          src="https://i.ytimg.com/vi/TTIbWKEUPnc/maxresdefault.jpg"
-          alt=""
-        />
-      </ion-item>
-    </ion-list>
+  <ion-segment-button value="trailers">
+    <ion-label ion-label>TRAILERS E MAIS</ion-label>
+  </ion-segment-button>
 
-    <ion-list *ngSwitchCase="'options'">
-      <ion-item>
-        <img
-          src="https://a-static.mlcdn.com.br/470x352/tnt-painel-minnie-piffer/extrafestas/10096/163f4936e5f5e3ceb2de38860e216563.jpg"
-          alt=""
-        />
-      </ion-item>
-    </ion-list>
-  </ion-card>
+  <ion-segment-button value="options">
+    <ion-label ion-label>OPÇÕES SEMELHANTES</ion-label>
+  </ion-segment-button>
+
+
+</ion-segment>
+
+<ion-card [ngSwitch]="type">
+  <ion-list *ngSwitchCase="'episodes'">
+    <ion-item>
+      <img
+        src="https://i2.wp.com/mixdeseries.com.br/wp-content/uploads/2018/07/Anne.jpg?fit=1920%2C1080&ssl=1"
+        alt=""
+      />
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngSwitchCase="'trailers'">
+    <ion-item>
+      <img
+        src="https://i.ytimg.com/vi/TTIbWKEUPnc/maxresdefault.jpg"
+        alt=""
+      />
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngSwitchCase="'options'">
+    <ion-item>
+      <img
+        src="https://a-static.mlcdn.com.br/470x352/tnt-painel-minnie-piffer/extrafestas/10096/163f4936e5f5e3ceb2de38860e216563.jpg"
+        alt=""
+      />
+    </ion-item>
+  </ion-list>
+</ion-card> 
+
 </ion-content>
