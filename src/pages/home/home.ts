@@ -31,6 +31,6 @@ export class HomePage {
   }
 
   openMyList() {
-    this.navCtrl.push("MyListPage");
+    // this.navCtrl.push("MyListPage");
   }
 }
