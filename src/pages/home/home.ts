@@ -1,3 +1,4 @@
+import { MovieModel } from './../../model/movie.model';
 import { HttpRequestProvider } from "./../../providers/http-request/http-request";
 import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
@@ -11,12 +12,18 @@ import { MovieModel } from "../../model/movie.model";
 export class HomePage {
   public popularMovies: MovieModel[]=[]
   public add: boolean;
+  public rateMovies:[]
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     private httpRequest: HttpRequestProvider
   ) {
+    
+  }
+  ionViewDidEnter(){
     this.requestPopularMovie();
+    this.requestMovieTopRated()
   }
 
   public requestPopularMovie() {
@@ -30,11 +37,26 @@ export class HomePage {
       })    
     });
   }
+
+  public requestMovieTopRated(){
+    this.httpRequest.getMovieTopRated().subscribe((response) =>{
+      this.rateMovies = response.results.map(movieRate =>{
+        return{
+          image:movieRate.poster_path,
+          backdrop_path:movieRate.backdrop_path,
+        }
+      })    
+    })
+  }
   public addMyList() {
     this.add = !this.add;
   }
 
   openMyList() {
-    // this.navCtrl.push("MyListPage");
+    this.navCtrl.push("MyListPage");
   }
 }
+  
+ 
+
+  

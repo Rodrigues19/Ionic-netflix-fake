@@ -7,7 +7,7 @@
     />
     <ion-title text-center>Séries</ion-title>
     <ion-title text-center>Filmes</ion-title>
-    <ion-title text-center>Minha lista</ion-title>
+    <ion-title (click)="openMyList()" text-center>Minha lista</ion-title>
   </nav>
 </header>
 <ion-content padding>
@@ -45,8 +45,15 @@
     Saiba mais
   </ion-fab>
 </ion-row>
+  <h2>Prévias</h2>
   <ion-row  nowrap overflow-x >
-    <ion-col col-4 *ngFor="let movie of popularMovies">
+    <ion-col margin-rigth margin-left  col-4 *ngFor="let movie of popularMovies">
+      <img [src]="'https://image.tmdb.org/t/p/w154'+movie?.image" class="imgPrevias">
+    </ion-col>
+  </ion-row>
+  <h2>Continuar Assistindo como usuário 2</h2>
+  <ion-row  nowrap overflow-x >
+    <ion-col margin-rigth margin-left  col-4 *ngFor="let movie of rateMovies">
       <card-movie [movie]="movie" ></card-movie>
     </ion-col>
   </ion-row>
