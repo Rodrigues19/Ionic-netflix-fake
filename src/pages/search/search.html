@@ -3,16 +3,15 @@
     <ion-row align-items-center>
       <ion-col no-padding>
         <ion-searchbar
-
-        (ion-Input)="getComming($any)"
+          [(ngModel)]="title"
           padding-vertical
           placeholder="Busque por série,filmes,genero,etc."
-          
+          (ionChange)="search()"
         >
         </ion-searchbar>
       </ion-col>
       <ion-col no-padding col-1 align-left margin-end>
-        <button color="dark" ion-button>
+        <button color="dark" ion-button >
           <ion-icon color="light" name="mic" Font-h1></ion-icon>
         </button>
       </ion-col>
@@ -21,12 +20,12 @@
 
   <h1 padding-horizontal color="light">Filmes populares</h1>
 
-  <ion-list no-margin *ngFor="let filme of movies">
-    <ion-item>
-      <ion-thumbnail item-start>
-        <img [src]="'https://image.tmdb.org/t/p/w154'+filme.posterPath" />
+  <ion-list no-margin *ngFor="let movie of movies" >
+    <ion-item no-padding (click)="detail(movie)"  >
+      <ion-thumbnail no-margin item-start>
+        <img [src]="'https://image.tmdb.org/t/p/w154'+movie.poster_path"  />
       </ion-thumbnail>
-      <h2>{{ filme.title }}</h2>
+      <h2>{{ movie.title }}</h2>
       <ion-icon name="play" item-end padding padding-left></ion-icon>
     </ion-item>
   </ion-list>

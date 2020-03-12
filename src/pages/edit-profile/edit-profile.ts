@@ -50,6 +50,7 @@ export class EditProfilePage {
       } else {
         // let newUser = new ProfileModel();
         // newUser.id =
+
         this.listProfiles.push(this.formProfile.value)
       }
 

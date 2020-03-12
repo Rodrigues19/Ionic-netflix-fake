@@ -11,7 +11,13 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ListAvatarPage {
 
+<<<<<<< HEAD
   public user:ProfileModel;
+=======
+  // private click: boolean;
+  // private listAvatars: []
+
+>>>>>>> d8da125fee91d88458bd806cdebd7409b8bfc486
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
   }
@@ -42,5 +48,15 @@ export class ListAvatarPage {
    this.user= this.navParams.get('user') || new ProfileModel();
     console.log('ionViewDidLoad ListAvatarPage');
   }
+  // public getAvatar() {
+  //   this.click =! this.click;
+  //   this.listAvatars=this.storage.get('AvatarProfile')
+  //   console.log(this.listAvatars)
+  // }
+
+  // ionViewDidLoad() {
+  //   this.storage.set('AvatarProfile', this.listAvatars)
+  //   console.log('ionViewDidLoad ListAvatarPage');
+  // }
 
 }
