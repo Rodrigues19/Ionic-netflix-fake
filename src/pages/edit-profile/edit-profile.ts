@@ -23,6 +23,9 @@ export class EditProfilePage {
       image: [this.user.image]
     })
   }
+  public goAvatar():void {
+    this.navCtrl.push('ListAvatarPage')
+  }
 
   public cancelEdit():void {
     this.navCtrl.push('ProfilemanagementPage');
