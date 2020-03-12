@@ -10,16 +10,16 @@
         <ion-title size="large">{{selectMovie.title}}</ion-title>
 
         <ion-segment fab-ion>
-          <p p-segment>{{selectMovie.release_date}}</p>
+          <p p-segment>{{selectMovie?.release_date}}</p>
          
         </ion-segment>
 
         <ion-row ion-row>
           <h2>
-            {{selectMovie.title}}
+            {{selectMovie?.title}}
           </h2>
           <p ion-p>
-            {{selectMovie.overview}}
+            {{selectMovie?.overview}}
           </p>
 
           <p ion-p>Elenco:</p>
