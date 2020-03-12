@@ -1,7 +1,7 @@
 import { CommingSoonModel } from './../../model/comming-soon.model';
 import { MovieModel } from './../../model/movie.model';
 import { HttpRequestProvider } from "./../../providers/http-request/http-request";
-import { Component, EventEmitter, Output, Input } from "@angular/core";
+import { Component} from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { CommingSoonRequestProvider } from '../../providers/comming-soon-request/comming-soon-request';
 import { Storage } from "@ionic/storage";
@@ -14,11 +14,8 @@ export class HomePage {
   public popularMovies: MovieModel[]=[]
   public rateMovies:MovieModel[]=[]
   public nowPlayMovies:MovieModel[]=[]
-  public commingSoonMovies: CommingSoonModel[]=[]
+  public commingSoonMovies: MovieModel[]=[]
   public myList:MovieModel[]=[]
-  public add:boolean
-  @Input() movie:MovieModel
-  @Output() addList=new EventEmitter();
 
   constructor(
     public navCtrl: NavController,
@@ -36,22 +33,17 @@ export class HomePage {
     this.requestCommingSoon();
   }
 
-  public addMyList():void {
-    this.add=!this.add
-    // this.movie.add_myList= !this.movie.add_myList;
-    // this.addList.emit({movie:this.movie});
-    // this.storage
+  public async addMyList(movie:MovieModel):Promise<void> {
+    movie.add_myList=!movie.add_myList;
+    if(movie.add_myList){
+      
+      this.myList.push(movie);
+     await this.storage.set('myList',this.myList);
+    }else{
+      this.myList= this.myList.filter(movie=>movie.add_myList);
+     await this.storage.set('myList',this.myList);
+    }
   }
-  
-  // public adicionarFavorit(event:{movie:MovieModel}){
-  //   if(event.movie.add_myList){
-  //     this.myList.push(event.movie);
-  //     this.storage.set('MyList',this.myList);
-  //   }else{
-  //     this.myList= this.myList.filter(movie=>movie.add_myList);
-  //     this.storage.set('MyList',this.myList);
-  //   }
-  // }
 
   public goSeries():void {
     this.navCtrl.push('SeriesPage')
@@ -62,14 +54,17 @@ export class HomePage {
   public goMyList():void {
     this.navCtrl.push('MyListPage')
   }
+  public goMovieDetail(movie:MovieModel) :any{
+    this.navCtrl.push('DetailMoviePage',{movie:movie})
+  }
 
   public requestPopularMovie():any {
     this.httpRequest.getPopularMovies().subscribe((response: any) => {
       this.popularMovies = response.results.map(movie =>{
        return{
         title:movie.title,
-        posterPath:movie.poster_path,
-        backdropPath:movie.backdrop_path,
+        poster_path:movie.poster_path,
+        backdrop_path:movie.backdrop_path,
         release_date:movie.release_date,
         overview:movie.overview,
         add_myList:movie.add_myList
@@ -83,8 +78,8 @@ export class HomePage {
       this.rateMovies = response.results.map(movieRate =>{
         return{
           title:movieRate.title,
-          posterPath:movieRate.poster_path,
-          backdropPath:movieRate.backdrop_path,
+          poster_path:movieRate.poster_path,
+          backdrop_path:movieRate.backdrop_path,
           release_date:movieRate.release_date,
           overview:movieRate.overview,
           add_myList:movieRate.add_myList
@@ -98,8 +93,8 @@ export class HomePage {
       this.nowPlayMovies= response.results.map(moviePlay =>{
         return{
           title:moviePlay.title,
-          posterPath:moviePlay.poster_path,
-          backdropPath:moviePlay.backdrop_path,
+          poster_path:moviePlay.poster_path,
+          backdrop_path:moviePlay.backdrop_path,
           release_date:moviePlay.release_date,
           overview:moviePlay.overview,
           add_myList:moviePlay.add_myList
@@ -117,8 +112,8 @@ export class HomePage {
           title: movieComming.title,
           posterPath: movieComming.poster_path,
           overview: movieComming.overview,
-          add_myList:movieComming.add_myList
-
+          add_myList:movieComming.add_myList,
+          releaseDate:movieComming.release_date
         }
       })
     })

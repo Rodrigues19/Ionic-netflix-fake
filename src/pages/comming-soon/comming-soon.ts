@@ -1,3 +1,4 @@
+import { MovieModel } from './../../model/movie.model';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CommingSoonRequestProvider } from '../../providers/comming-soon-request/comming-soon-request';
@@ -11,9 +12,9 @@ import { CommingSoonModel, GenerModel } from "../../model/comming-soon.model"
 })
 export class CommingSoonPage {
 
-  public movies: CommingSoonModel[] = [];
+  public movies: MovieModel[] = [];
   public genres: GenerModel[] = [];
-  public videos: CommingSoonModel[] = []
+  public videos: MovieModel[]=[];
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private httpRequest: CommingSoonRequestProvider) {
@@ -27,12 +28,12 @@ export class CommingSoonPage {
       this.movies = response.results.map(filme => {
         return {
 
-          backdropPath: filme.backdrop_path,
+          backdrop_path: filme.backdrop_path,
           title: filme.title,
-          posterPath: filme.poster_path,
+          poster_path: filme.poster_path,
           overview: filme.overview,
           genreIds: filme.genre_ids,
-          releaseDate: filme.release_date
+          release_date: filme.release_date
 
 
         }

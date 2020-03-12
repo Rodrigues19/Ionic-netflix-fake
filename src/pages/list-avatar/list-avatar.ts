@@ -9,8 +9,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ListAvatarPage {
 
-  private click: boolean;
-  private listAvatars: []=[];
+  // private click: boolean;
+  // private listAvatars: []
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
@@ -32,15 +32,15 @@ export class ListAvatarPage {
     {img: '../../assets/imgs/avatar10.png', id: 6}
   ];
 
-  public getAvatar() {
-    this.click =! this.click;
-    this.listAvatars=this.storage.get('AvatarProfile')
-    console.log(this.listAvatars)
-  }
+  // public getAvatar() {
+  //   this.click =! this.click;
+  //   this.listAvatars=this.storage.get('AvatarProfile')
+  //   console.log(this.listAvatars)
+  // }
 
-  ionViewDidLoad() {
-    this.storage.set('AvatarProfile', this.listAvatars)
-    console.log('ionViewDidLoad ListAvatarPage');
-  }
+  // ionViewDidLoad() {
+  //   this.storage.set('AvatarProfile', this.listAvatars)
+  //   console.log('ionViewDidLoad ListAvatarPage');
+  // }
 
 }

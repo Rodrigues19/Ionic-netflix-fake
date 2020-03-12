@@ -14,7 +14,7 @@
 <ion-content justify-content-arround>
   <img
     size
-    [src]="popularMovies.length ? 'https://image.tmdb.org/t/p/w780'+popularMovies[13].posterPath : ''"
+    [src]="popularMovies.length ? 'https://image.tmdb.org/t/p/w780'+popularMovies[13].poster_path : ''"
     class="img-banner"
     alt="serie"
   />
@@ -27,8 +27,8 @@
   <ion-row justify-content-center>
     <ion-fab btn-detail>
       <ion-icon
-        (click)="addMyList()"
-        [name]="add ? 'checkmark' : 'add'"
+        (click)="addMyList(popularMovies[13])"
+        [name]="popularMovies[13]?.add_myList ? 'checkmark' : 'add'"
       ></ion-icon>
       Minha lista
     </ion-fab>
@@ -49,10 +49,11 @@
   </ion-row>
   <h3 padding>Prévias</h3>
   <ion-row nowrap overflow-x>
-    <ion-col margin-rigth margin-left col-4 *ngFor="let movie of rateMovies">
+    <ion-col margin-rigth margin-left col-6  *ngFor="let movie of rateMovies">
       <img
-        [src]="'https://image.tmdb.org/t/p/w154'+movie?.posterPath"
+        [src]="'https://image.tmdb.org/t/p/w154'+movie?.poster_path"
         class="imgPrevias"
+        (click)="goMovieDetail(movie)"
       />
     </ion-col>
   </ion-row>
@@ -96,11 +97,8 @@
   <h3 padding>Já disponivel para coleção</h3>
   <ion-row justify-content-center align-items-center>
     <img
-      [src]="nowPlayMovies.length ? 'https://image.tmdb.org/t/p/original'+nowPlayMovies[2].backdropPath : ''"
+      [src]="nowPlayMovies.length ? 'https://image.tmdb.org/t/p/original'+nowPlayMovies[2].backdrop_path : ''"
     />
-    <!-- <button position  color="opacity" >
-        <ion-icon name="play" color="light"></ion-icon>
-      </button> -->
 
     <button text-capitalize="false" ion-button icon-start padding-h>
       <ion-icon name="play"></ion-icon>
@@ -113,10 +111,11 @@
       button-conf
       icon-start
       padding-h
-      (click)="addMyList()"
+      (click)="addMyList(nowPlayMovies[2])"
+
     >
       <ion-icon 
-      [name]="add? 'checkmark' : 'add'">
+      [name]="nowPlayMovies[2]?.add_myList? 'checkmark' : 'add'">
     </ion-icon>
       Minha lista
     </button>
