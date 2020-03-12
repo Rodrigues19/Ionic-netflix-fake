@@ -1,21 +1,21 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>comming-soon</ion-title>
+    <ion-title></ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
   <ion-row *ngFor="let filme of movies">
 
-    <div>
+    <div img-Filme>
       <img [src]="'https://image.tmdb.org/t/p/w780'+filme.backdrop_path" alt="imagem filme">
-      <button ion-fab color="opacity">
-        <ion-icon name="play" color="light"></ion-icon>
-      </button>
-      <div class="Logo-breve">
+      
+      
+      <div class="Logo-breve"  margin-start>
         <img src="../../assets/imgs/logo-netflix-2.png" alt="" />
         Filme
       </div>
+      <ion-title >{{filme.title}}</ion-title>
 
       <ion-row row-Comming-btn>
 
@@ -30,6 +30,7 @@
 
         </button>
       </ion-row>
+      Estreia em {{filme.release_date}}
 
 
 

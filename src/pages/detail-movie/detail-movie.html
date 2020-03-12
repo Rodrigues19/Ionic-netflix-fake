@@ -1,5 +1,5 @@
 <ion-header linear>
-  <ion-icon name="arrow-back" color="light"></ion-icon>
+  <ion-icon name="arrow-back" color="light" (click)="backHome()"></ion-icon>
 </ion-header>
 
 <ion-content>
@@ -10,20 +10,20 @@
         <ion-title size="large">{{selectMovie.title}}</ion-title>
 
         <ion-segment fab-ion>
-          <p p-segment>{{selectMovie.release_date}}</p>
+          <p p-segment>{{selectMovie?.release_date}}</p>
          
         </ion-segment>
 
         <ion-row ion-row>
           <h2>
-            {{selectMovie.title}}
+            {{selectMovie?.title}}
           </h2>
           <p ion-p>
-            {{selectMovie.overview}}
+            {{selectMovie?.overview}}
           </p>
 
-          <p ion-p>Elenco: Amybeth McNulty, Geraldine James, R.H Thomson</p>
-          <p ion-p>Criação: Moira Walley-Beckett</p>
+          <p ion-p>Elenco:</p>
+          <p ion-p>Criação:</p>
         </ion-row>
 
         <ion-row>
