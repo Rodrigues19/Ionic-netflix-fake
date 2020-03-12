@@ -11,6 +11,7 @@ export class CommingSoonModel {
   public originalLanguage: string = '';
   public backdropPath: string = '';
   public video: false;
+  
 
 
 }

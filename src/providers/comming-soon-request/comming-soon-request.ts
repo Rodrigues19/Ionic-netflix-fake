@@ -19,4 +19,8 @@ export class CommingSoonRequestProvider {
 
   }
 
+  public getVideos(): any {
+    return this.http.get(CommonEnum.HOST+'/movie/{movie_id}/videos?api_key='+CommonEnum.API_KEY+`&language=pt-BR`);
+  }
+
 }

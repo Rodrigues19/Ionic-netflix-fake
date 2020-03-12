@@ -10,6 +10,10 @@ page-comming-soon {
     border: 1.5px solid white;
   }
 
+  [row-Comming-btn]{
+    display: flex;
+    justify-content: flex-end;
+  }
   
   [btn-Comming]{
     display: flex;
@@ -22,14 +26,7 @@ page-comming-soon {
     padding-left: 5px;
   }
 
-  // [Line] {
-  //   display: flex;
-  //   align-items: center;
-  //   justify-content: space-between;
-  //   height: 90px;
-  // }
-
-  [Logo-breve] {
+  .Logo-breve {
     display: flex;
     align-items: center;
     justify-content: flex-start;

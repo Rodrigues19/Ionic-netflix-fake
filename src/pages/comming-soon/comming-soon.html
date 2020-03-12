@@ -12,33 +12,35 @@
       <button ion-fab color="opacity">
         <ion-icon name="play" color="light"></ion-icon>
       </button>
+      <div class="Logo-breve">
+        <img src="../../assets/imgs/logo-netflix-2.png" alt="" />
+        Filme
+      </div>
 
-      <img src="../../assets/imgs/logo-netflix-2.png" Logo-breve alt="" />
-      <p Logo-breve>Filme</p>
+      <ion-row row-Comming-btn>
+
+        <button color="light" text-capitalize="false" clear btn-Comming>
+          <ion-icon name="notifications"></ion-icon>
+          Receber aviso
+        </button>
+
+        <button color="light" text-capitalize="false" clear btn-Comming>
+          <ion-icon ios="ios-send" md="md-share"></ion-icon>
+          Compartilhe
+
+        </button>
+      </ion-row>
+
+
 
       <ion-title justify-content-start>{{filme.title}}</ion-title>
+      <p>Lançamento: {{filme.releaseDate}}</p>
 
 
       <p>{{filme.overview}}</p>
       <p justify-content-around>{{getNameGener(filme)}}</p>
     </div>
 
-
-    <ion-row>
-
-      <button color="light" text-capitalize="false" clear btn-Comming>
-        <ion-icon name="notifications"></ion-icon>
-        Receber aviso
-      </button>
-
-      <button color="light" text-capitalize="false" clear btn-Comming>
-        <ion-icon ios="ios-send" md="md-share"></ion-icon>
-        Compartilhe
-
-      </button>
-
-
-    </ion-row>
   </ion-row>
 
 

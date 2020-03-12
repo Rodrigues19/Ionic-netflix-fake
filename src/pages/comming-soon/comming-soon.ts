@@ -13,11 +13,13 @@ export class CommingSoonPage {
 
   public movies: CommingSoonModel[] = [];
   public genres: GenerModel[] = [];
+  public videos: CommingSoonModel[] = []
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private httpRequest: CommingSoonRequestProvider) {
     this.getComming()
     this.getGenres()
+    this.getVideo()
   }
 
   public getComming(): any {
@@ -30,6 +32,7 @@ export class CommingSoonPage {
           posterPath: filme.poster_path,
           overview: filme.overview,
           genreIds: filme.genre_ids,
+          releaseDate: filme.release_date
 
 
         }
@@ -44,6 +47,17 @@ export class CommingSoonPage {
         return {
           id: genre.id,
           name: genre.name
+        }
+      })
+    })
+  }
+
+  public getVideo(): any {
+    console.log(this.videos)
+    this.httpRequest.getVideos().subscribe((response: any) =>{
+      this.videos = response.results.map(video =>{
+        return{
+          id: video.id,
         }
       })
     })
