@@ -4,9 +4,9 @@ page-home {
     height: 40px;
   }
   .imgPrevias{
-    width: 233px;
+    width: 180px;
     height: 180px;
-    border-radius: 50%;
+    border-radius: 100%;
     border: solid 2px white;
   }
   [btn-detail] {
@@ -28,7 +28,7 @@ page-home {
     color: #222;
   }
 
-   [button-conf] {
+  [button-conf] {
     background-color: #3d3a3a !important;
     color: #fff !important;
   }
@@ -38,15 +38,19 @@ page-home {
   }
   [header-position] {
     position: absolute;
-    top:10px;
+    background:linear-gradient(to top, rgba(0,0,0,0.0),  rgba(0,0,0,0.4),  rgba(0,0,0,0.7));
     z-index: 5;
     width: 100%;
-    height: 50px;
+    height: 40px;
   }
+  [ positon-header]{
+    position: relative;
+  }
+
   [decoration]{
     text-decoration: none;
     color: white;
-  
+
   }
   [position]{
     position: relative;
@@ -68,17 +72,14 @@ page-home {
     overflow: scroll;
     overflow-y: hidden;
   }
-  // li:first-of-type {
-  //   list-style-type: none;
-  // }
 
   .toolbar-title-md {
-    font-weight: 100;
-    font-size: 15px;
+    font-weight: 300;
+    font-size: 20px;
   }
   .toolbar-title-ios {
-    font-weight: 100;
-    font-size: 15px;
+    font-weight: 300;
+    font-size: 20px;
   }
   [size]{
     font-size: 10px;

@@ -10,6 +10,115 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content justify-content-arround>
+  <img
+    size
+    [src]="popularMovies.length ? 'https://image.tmdb.org/t/p/w780'+popularMovies[13].poster_path : ''"
+    class="img-banner"
+    alt="serie"
+  />
 
+  <ion-row nowrap margin-bottom justify-content-center>
+    <p nowrap no-margin no-padding tex-justify>
+      Alto astral • Crianças • Série • Crescer não é facil • irmãos
+    </p>
+  </ion-row>
+  <ion-row justify-content-center>
+    <ion-fab btn-detail>
+      <ion-icon
+        (click)="addMyList(popularMovies[13])"
+        [name]="popularMovies[13]?.add_myList ? 'checkmark' : 'add'"
+      ></ion-icon>
+      Minha lista
+    </ion-fab>
+    <button
+      margin-left
+      margin-right
+      text-capitalize="false"
+      ion-button
+      ion-button-style
+      icon-start
+    >
+      <ion-icon name="play"></ion-icon>
+      Assistir
+    </button>
+    <ion-fab btn-detail>
+      <ion-icon name="ios-alert-outline"></ion-icon>
+      Saiba mais
+    </ion-fab>
+  </ion-row>
+  <h3 padding>Prévias</h3>
+  <ion-row nowrap overflow-x>
+    <ion-col margin-rigth margin-left col-6  *ngFor="let movie of rateMovies">
+      <img
+        [src]="'https://image.tmdb.org/t/p/w154'+movie?.poster_path"
+        class="imgPrevias"
+        (click)="goMovieDetail(movie)"
+      />
+    </ion-col>
+  </ion-row>
+  <h3 padding>Populares</h3>
+  <ion-row nowrap overflow-x>
+    <ion-col margin-rigth margin-left col-6 *ngFor="let movie of popularMovies">
+      <card-movie [movie]="movie"></card-movie>
+    </ion-col>
+  </ion-row>
+
+  <h3 padding>Assistidos recente</h3>
+  <ion-row nowrap overflow-x>
+    <ion-col col-6 *ngFor="let movie of nowPlayMovies">
+      <card-movie [movie]="movie"></card-movie>
+    </ion-col>
+  </ion-row>
+  <h3 padding>Top 10</h3>
+  <ion-row nowrap overflow-x>
+    <ion-col
+      col-6
+      margin-rigth
+      margin-left
+      col-6
+      *ngFor="let movie of rateMovies"
+    >
+      <card-movie [movie]="movie"></card-movie>
+    </ion-col>
+  </ion-row>
+  <h3 padding>Proximos</h3>
+  <ion-row nowrap overflow-x>
+    <ion-col
+      col-6
+      margin-rigth
+      margin-left
+      col-6
+      *ngFor="let movie of commingSoonMovies"
+    >
+      <card-movie [movie]="movie"></card-movie>
+    </ion-col>
+  </ion-row>
+  <h3 padding>Já disponivel para coleção</h3>
+  <ion-row justify-content-center align-items-center>
+    <img
+      [src]="nowPlayMovies.length ? 'https://image.tmdb.org/t/p/original'+nowPlayMovies[2].backdrop_path : ''"
+    />
+
+    <button text-capitalize="false" ion-button ion-button-style icon-start padding-h>
+      <ion-icon name="play"></ion-icon>
+      Assistir
+    </button>
+    <button
+      margin-left
+      text-capitalize="false"
+      ion-button
+      button-conf
+      icon-start
+      padding-h
+      (click)="addMyList(nowPlayMovies[2])"
+
+    >
+      <ion-icon
+      [name]="nowPlayMovies[2]?.add_myList? 'checkmark' : 'add'">
+    </ion-icon>
+      Minha lista
+    </button>
+  </ion-row>
 </ion-content>
+

@@ -107,12 +107,12 @@ export class HomePage {
       this.commingSoonMovies = response.results.map(movieComming => {
         return {
 
-          backdropPath: movieComming.backdrop_path,
+          backdrop_path: movieComming.backdrop_path,
           title: movieComming.title,
-          posterPath: movieComming.poster_path,
+          poster_path: movieComming.poster_path,
           overview: movieComming.overview,
           add_myList:movieComming.add_myList,
-          releaseDate:movieComming.release_date
+          release_date:movieComming.release_date
         }
       })
     })
