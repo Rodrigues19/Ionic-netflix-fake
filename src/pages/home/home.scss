@@ -1,13 +1,12 @@
 page-home {
-  [Image-size] {
+  [image-size] {
     width: 45px;
     height: 40px;
   }
-  [Size-banner] {
+  [size-banner] {
     margin-bottom: 20px;
-    background-color: yellow;
     z-index: 4;
-    height: 20%;
+    height: 510px;
   }
   .imgPrevias{
     width: 115px;
@@ -29,17 +28,29 @@ page-home {
     background-color: #fff;
     color: #222;
   }
-  [Flex-direction-row] {
+  [flex-direction-row] {
     display: flex;
     flex-direction: row;
   }
   [header-position] {
     position: absolute;
+    top:10px;
     z-index: 5;
     width: 100%;
     height: 50px;
   }
+  [decoration]{
+    text-decoration: none;
+    color: white;
   
+  }
+  .ion-app{
+
+  }
+
+  [padding-left-m]{
+    padding-left: 5px;
+  }
   [title-size] {
     width: 30%;
   }

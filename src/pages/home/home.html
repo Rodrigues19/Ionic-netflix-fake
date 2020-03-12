@@ -1,73 +1,71 @@
-<header >
+<header>
   <nav flex-direction-row justify-content-around header-position>
-  <img src="../../assets//imgs/logo-netflix-2.png" Image-size align-self-start />
-  <ion-title (click)="goSeries()" text-center>Séries</ion-title>
-  <ion-title (click)="goMovie()" text-center>Filmes</ion-title>
-  <ion-title (click)="goMyList()" text-center>Minha lista</ion-title>
-</nav>
+    <img
+      src="../../assets//imgs/logo-netflix-2.png"
+      image-size
+      align-self-start
+    />
+    <ion-title (click)="goSeries()" text-center>Séries</ion-title>
+    <ion-title (click)="goMovie()" text-center>Filmes</ion-title>
+    <ion-title (click)="goMyList()" text-center>Minha lista</ion-title>
+  </nav>
 </header>
 
-<ion-content padding>
-  <section Size-banner>
-    <!-- <img src="" class="img-banner" alt="serie" /> -->
+<ion-content padding justify-content-arround>
+  <ion-row size-banner no-margin no-padding>
+    <img size [src]="popularMovies.length ? 'https://image.tmdb.org/t/p/w780'+popularMovies[5].image : ''" class="img-banner" alt="serie" />
+  </ion-row>
 
-  </section>
-
-  <ion-row justify-content-between  >
-    <ion-col   no-padding >
-      Alto astral
-    </ion-col>
-
-    <ion-col no-padding >
-      • Crianças
-    </ion-col>
-    <ion-col    no-padding >
-      • Série
-    </ion-col>
-    <ion-col  no-padding nowrap >
-      • Crescer não é facil
-    </ion-col>
-    <ion-col  no-padding >
-      • irmãos
-    </ion-col>
+  <ion-row nowrap margin-bottom justify-content-center>
+   <p nowrap no-margin no-padding tex-justify>Alto astral • Crianças • Série • Crescer não é facil • irmãos</p> 
   </ion-row>
   <ion-row justify-content-center>
-  <ion-fab btn-detail>
-    <ion-icon
-      (click)="addMyList()"
-      [name]="add ? 'checkmark' : 'add'"
-    ></ion-icon>
-    Minha lista
-  </ion-fab>
-  <button margin-left margin-right text-capitalize="false" ion-button  icon-start>
-    <ion-icon
-      name="play"
-    ></ion-icon>
-    Assistir
-  </button>
-  <ion-fab btn-detail>
-    <ion-icon
-      name="ios-alert-outline"
-    ></ion-icon>
-    Saiba mais
-  </ion-fab>
-</ion-row>
+    <ion-fab btn-detail>
+      <ion-icon
+        (click)="addMyList()"
+        [name]="add ? 'checkmark' : 'add'"
+      ></ion-icon>
+      Minha lista
+    </ion-fab>
+    <button
+      margin-left
+      margin-right
+      text-capitalize="false"
+      ion-button
+      icon-start
+    >
+      <ion-icon name="play"></ion-icon>
+      Assistir
+    </button>
+    <ion-fab btn-detail>
+      <ion-icon name="ios-alert-outline"></ion-icon>
+      Saiba mais
+    </ion-fab>
+  </ion-row>
   <h2>Prévias</h2>
-  <ion-row  nowrap overflow-x >
-    <ion-col margin-rigth margin-left  col-4 *ngFor="let movie of popularMovies">
-      <img [src]="'https://image.tmdb.org/t/p/w154'+movie?.image" class="imgPrevias">
+  <ion-row nowrap overflow-x>
+    <ion-col margin-rigth margin-left col-4 *ngFor="let movie of popularMovies">
+      <img
+        [src]="'https://image.tmdb.org/t/p/w154'+movie?.image"
+        class="imgPrevias"
+      />
     </ion-col>
   </ion-row>
-  <h2>Continuar Assistindo como usuário 2</h2>
-  <ion-row  nowrap overflow-x >
-    <ion-col margin-rigth margin-left  col-4 *ngFor="let movie of rateMovies">
-      <card-movie [movie]="movie" ></card-movie>
+  <h2>Top 10</h2>
+  <ion-row nowrap overflow-x>
+    <ion-col margin-rigth margin-left col-6 *ngFor="let movie of rateMovies">
+      <card-movie [movie]="movie"></card-movie>
     </ion-col>
   </ion-row>
 
-  <h2>Prévias</h2>
+  <h2>Populares</h2>
   <ion-row nowrap overflow-x>
-    <ion-col col-4 *ngFor="let movie of popularMovies">
+    <ion-col col-6 *ngFor="let movie of popularMovies">
+      <card-movie [movie]="movie"></card-movie>
+    </ion-col>
+  </ion-row>
+  <ion-row nowrap overflow-x>
+    <ion-col col-6 margin-rigth margin-left col-4 *ngFor="let movie of nowPlayMovies">
       <card-movie [movie]="movie"></card-movie>
     </ion-col>
   </ion-row>

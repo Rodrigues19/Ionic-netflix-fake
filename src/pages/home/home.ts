@@ -12,6 +12,7 @@ export class HomePage {
   public popularMovies: MovieModel[]=[]
   public add: boolean;
   public rateMovies:MovieModel[]=[]
+  public nowPlayMovies:MovieModel[]=[]
 
   constructor(
     public navCtrl: NavController,
@@ -22,7 +23,8 @@ export class HomePage {
   }
   ionViewDidEnter(){
     this.requestPopularMovie();
-    this.requestMovieTopRated()
+    this.requestMovieTopRated();
+    this.requestMovieNowPlay()
   }
 
   public goSeries():void {
@@ -39,9 +41,11 @@ export class HomePage {
     this.httpRequest.getPopularMovies().subscribe((response: any) => {
       this.popularMovies = response.results.map(movie =>{
        return{
-          backdrop_path: movie.backdrop_path,
-          title: movie.title,
-          image:movie.poster_path
+        title:movie.title,
+        image:movie.poster_path,
+        backdrop_path:movie.backdrop_path,
+        release_date:movie.release_date,
+        overview:movie.overview
       }
       })
     });
@@ -51,18 +55,36 @@ export class HomePage {
     this.httpRequest.getMovieTopRated().subscribe((response) =>{
       this.rateMovies = response.results.map(movieRate =>{
         return{
+          title:movieRate.title,
           image:movieRate.poster_path,
           backdrop_path:movieRate.backdrop_path,
+          release_date:movieRate.release_date,
+          overview:movieRate.overview
         }
       })    
     })
   }
-  public addMyList() {
-    this.add = !this.add;
+
+  public requestMovieNowPlay(){
+    this.httpRequest.getMovieNowPlay().subscribe((response:any)=>{
+      console.log(response)
+      this.nowPlayMovies= response.results.map(moviePlay =>{
+        return{
+          title:moviePlay.title,
+          image:moviePlay.poster_path,
+          backdrop_path:moviePlay.backdrop_path,
+          release_date:moviePlay.release_date,
+          overview:moviePlay.overview
+        }
+        
+      })
+
+    })
   }
 
-  openMyList() {
-    this.navCtrl.push("MyListPage");
+
+  public addMyList():any {
+    this.add = !this.add;
   }
 }
   

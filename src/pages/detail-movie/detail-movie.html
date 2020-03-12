@@ -9,15 +9,15 @@
     <ion-row>
       <ion-col>
         <img
-          src="https://i2.wp.com/mixdeseries.com.br/wp-content/uploads/2018/07/Anne.jpg?fit=1920%2C1080&ssl=1"
-          alt=""
+          [src]="'https://image.tmdb.org/t/p/w154'+selectMovie.image"
+          alt={{selectMovie.title}}
         />
-        <ion-title size="large">Anne with an E</ion-title>
+        <ion-title size="large">{{selectMovie.title}}</ion-title>
 
         <ion-segment fab-ion>
-          <p p-segment>2019</p>
+          <p p-segment>{{selectMovie.release_date}}</p>
           <p recomend-fab>12</p>
-          <p p-segment>3 Temporadas</p>
+          <!-- <p p-segment>3 Temporadas</p> -->
         </ion-segment>
 
         <ion-row>
