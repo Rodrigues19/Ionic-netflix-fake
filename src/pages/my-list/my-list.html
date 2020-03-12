@@ -6,7 +6,16 @@
 </ion-header>
 
 <ion-content padding>
-  
+  <h5>Favoritos</h5>
+  <ion-row nowrap overflow-x padding>
+    <ion-col col-5 *ngFor="let movie of myList">
+      <div>
+        <card-movie
+          [movie]="movie"
+        ></card-movie>
+      </div>
+    </ion-col>
+  </ion-row>
   <div text-center cont-myList>
   <ion-icon name="checkmark-circle" color="gray" checkList></ion-icon>
   <p p-myList>Adicione filmes e séries à sua lista para encontrá-los quando quiser.</p>
