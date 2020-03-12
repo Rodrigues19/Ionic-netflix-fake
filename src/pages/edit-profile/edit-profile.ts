@@ -24,6 +24,7 @@ export class EditProfilePage {
     })
   }
   public goAvatar():void {
+    this.user = this.formProfile.value;
     this.navCtrl.push('ListAvatarPage', {user: this.user})
   }
 
