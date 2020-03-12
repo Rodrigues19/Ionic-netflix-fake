@@ -1,4 +1,3 @@
-
 import { MovieModel, GenerModel } from './../../model/movie.model';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
