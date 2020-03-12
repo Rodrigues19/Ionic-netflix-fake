@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { CommingSoonModel } from "../../model/comming-soon.model";
 import { CommingSoonRequestProvider } from "../../providers/comming-soon-request/comming-soon-request";
@@ -12,12 +12,15 @@ export class SearchPage {
   public movies: CommingSoonModel[] = [];
   public title: string;
 
+  @Input()movie:CommingSoonModel;
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     private httpRequest: CommingSoonRequestProvider
   ) {
     this.getComming();
+    
   }
 
   public search() {
@@ -30,6 +33,10 @@ export class SearchPage {
       });
     });
     console.log(this.title);
+  }
+
+  public detail(movie:CommingSoonModel){
+    this.navCtrl.push('DetailMoviePage',{movie:movie})
   }
 
   public getComming(): any {
