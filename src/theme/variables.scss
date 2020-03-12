@@ -41,8 +41,7 @@ $colors: (
   gray:       gray,
   fontgray:   #c4c4c4,
   dark:       #222,
-  opacity:    rgba(0, 0, 0, 0.5),
-  
+  opacity:    rgba(0, 0, 0, 0.2),
 );
 
 $searchbar-md-input-placeholder-color :map-get($colors, light);

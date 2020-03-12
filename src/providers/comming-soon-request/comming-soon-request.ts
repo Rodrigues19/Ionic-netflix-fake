@@ -7,7 +7,6 @@ import { CommonEnum } from '../../enums/common.enum';
 export class CommingSoonRequestProvider {
 
   constructor(public http: HttpClient) {
-    console.log('Hello CommingSoonRequestProvider Provider');
   }
 
   public UploadSoon():any {
