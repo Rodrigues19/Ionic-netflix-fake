@@ -54,7 +54,7 @@ page-detail-movie{
 [linear] {
     background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0,0,0,0.1), rgba(0, 0, 0, 0.8));
     position: relative;
-    top: 16px;
+    top: 17px;
     left: 5px;
     bottom: none;
 }
@@ -70,6 +70,25 @@ page-detail-movie{
     content: "";
 }
 
+.segment-md .segment-button {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    width: 0;
+    height: 4.2rem;
+    border-bottom-width: 2px;
+    border-bottom-color: rgba(0, 0, 0, 0.1);
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 4rem;
+    text-transform: uppercase;
+    background-color: transparent;
+    opacity: 0.7;
+    -webkit-transition: 100ms all linear;
+    transition: 100ms all linear;
+    padding: 0 6px;
+}
 [ion-label]{
     color: gray;
 }  

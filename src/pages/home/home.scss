@@ -1,13 +1,7 @@
 page-home {
-  [Image-size] {
+  [image-size] {
     width: 45px;
     height: 40px;
-  }
-  [Size-banner] {
-    margin-bottom: 20px;
-    background-color: yellow;
-    z-index: 4;
-    height: 20%;
   }
   .imgPrevias{
     width: 115px;
@@ -25,21 +19,48 @@ page-home {
     text-align: center;
     position: relative;
   }
+  [padding-h]{
+    padding-left: 40px;
+    padding-right: 40px;
+  }
   [ion-button] {
     background-color: #fff;
     color: #222;
   }
-  [Flex-direction-row] {
+
+   [button-conf] {
+    background-color: #3d3a3a !important;
+    color: #fff !important;
+  }
+  [flex-direction-row] {
     display: flex;
     flex-direction: row;
   }
   [header-position] {
     position: absolute;
+    top:10px;
     z-index: 5;
     width: 100%;
     height: 50px;
   }
+  [decoration]{
+    text-decoration: none;
+    color: white;
   
+  }
+  [position]{
+    position: relative;
+    left: 180px;
+    bottom: 124px;
+    height: 42px;
+    width: 45px;
+    border: 1.5px solid white;
+    border-radius: 100px;
+  }
+
+  [padding-left-m]{
+    padding-left: 5px;
+  }
   [title-size] {
     width: 30%;
   }

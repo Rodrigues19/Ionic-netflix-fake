@@ -7,7 +7,6 @@ import { CommonEnum } from '../../enums/common.enum';
 export class CommingSoonRequestProvider {
 
   constructor(public http: HttpClient) {
-    console.log('Hello CommingSoonRequestProvider Provider');
   }
 
   public UploadSoon():any {
@@ -17,6 +16,10 @@ export class CommingSoonRequestProvider {
   public getGenre(): any{
     return  this.http.get(CommonEnum.HOST+'genre/movie/list?api_key='+CommonEnum.API_KEY+`&language=pt-BR`);
 
+  }
+
+  public getVideos(): any {
+    return this.http.get(CommonEnum.HOST+'/movie/{movie_id}/videos?api_key='+CommonEnum.API_KEY+`&language=pt-BR`);
   }
 
 }
