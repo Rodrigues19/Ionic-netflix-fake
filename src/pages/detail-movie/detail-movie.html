@@ -6,13 +6,12 @@
   <ion-row>
     <ion-col>
      
-        <img [src]="'https://image.tmdb.org/t/p/w500'+selectMovie.backdropPath" alt={{selectMovie.title}} />
+        <img [src]="'https://image.tmdb.org/t/p/w500'+selectMovie?.backdrop_path" alt={{selectMovie.title}} />
         <ion-title size="large">{{selectMovie.title}}</ion-title>
 
         <ion-segment fab-ion>
           <p p-segment>{{selectMovie.release_date}}</p>
-          <p recomend-fab>12</p>
-          <!-- <p p-segment>3 Temporadas</p> -->
+         
         </ion-segment>
 
         <ion-row ion-row>
@@ -29,7 +28,7 @@
 
         <ion-row>
           <button btn-detail>
-            <ion-icon (click)="addMyList()" [name]="add ? 'checkmark' : 'add'"></ion-icon>
+            <ion-icon (click)="addMyList(selectMovie?.add_myList)" [name]="selectMovie?.add_myList ? 'md-checkmark' : 'add'"></ion-icon>
             Minha lista
           </button>
 
