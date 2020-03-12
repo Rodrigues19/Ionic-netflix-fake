@@ -1,6 +1,6 @@
+import { MovieModel } from './../../model/movie.model';
 import { Component, Input } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
-import { CommingSoonModel } from "../../model/comming-soon.model";
 import { CommingSoonRequestProvider } from "../../providers/comming-soon-request/comming-soon-request";
 
 @IonicPage()
@@ -9,10 +9,10 @@ import { CommingSoonRequestProvider } from "../../providers/comming-soon-request
   templateUrl: "search.html"
 })
 export class SearchPage {
-  public movies: CommingSoonModel[] = [];
+  public movies: MovieModel[] = [];
   public title: string;
 
-  @Input()movie:CommingSoonModel;
+  @Input()movie:MovieModel;
 
   constructor(
     public navCtrl: NavController,
@@ -28,14 +28,14 @@ export class SearchPage {
       this.movies = response.results.map(movie => {
         return {
           title: movie.title,
-          posterPath: movie.poster_path
+          poster_path: movie.poster_path
         };
       });
     });
     console.log(this.title);
   }
 
-  public detail(movie:CommingSoonModel){
+  public detail(movie:MovieModel){
     this.navCtrl.push('DetailMoviePage',{movie:movie})
   }
 
@@ -45,7 +45,7 @@ export class SearchPage {
         return {
           backdropPath: filme.backdrop_path,
           title: filme.title,
-          posterPath: filme.poster_path,
+          poster_path: filme.poster_path,
           overview: filme.overview,
           genreIds: filme.genre_ids
         };

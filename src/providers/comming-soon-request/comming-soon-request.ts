@@ -1,4 +1,4 @@
-import { SearchPage } from './../../pages/search/search';
+
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { CommonEnum } from '../../enums/common.enum';
