@@ -1,3 +1,5 @@
+import { MovieModel } from './../../model/movie.model';
+import { Storage } from '@ionic/storage';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 @IonicPage()
@@ -6,15 +8,22 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'my-list.html',
 })
 export class MyListPage {
+  public myList:MovieModel[] = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,private storage:Storage) {
   }
 
   public backHome():void {
     this.navCtrl.push('HomePage');
   }
-
-  ionViewDidLoad() {
+  getList(){
+    this.storage.get('myList').then((val)=> 
+      this.myList=val||[]
+    );
+  }
+  ionViewDidEnter(){
+   this.getList();
   }
 
+ 
 }
