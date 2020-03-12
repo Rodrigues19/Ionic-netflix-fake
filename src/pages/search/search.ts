@@ -52,7 +52,7 @@ export class SearchPage {
     this.httpRequest.UploadSoon().subscribe((response: any) => {
       this.movies = response.results.map(filme => {
         return {
-          backdropPath: filme.backdrop_path,
+          backdrop_path: filme.backdrop_path,
           title: filme.title,
           poster_path: filme.poster_path,
           overview: filme.overview,

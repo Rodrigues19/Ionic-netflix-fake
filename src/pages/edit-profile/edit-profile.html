@@ -1,5 +1,5 @@
 <ion-content >
-  <form [formGroup]="formProfile" (ngSubmit)="submit()">
+  <form [formGroup]="formProfile">
     <ion-navbar hideBackButton no-padding >
       <ion-row justify-content-between>
         <ion-col color-btn-black  >
@@ -11,7 +11,7 @@
 
 
         <ion-col border-left color-btn-black  >
-          <button
+          <button (click)="submit()"
           color="light"
             ion-button
             clear

@@ -22,7 +22,7 @@ export class EditProfilePage {
     })
   }
   public goAvatar():void {
-    this.user = this.formProfile.value;
+    this.user.name = this.formProfile.controls["name"].value;
     this.navCtrl.push('ListAvatarPage', {user: this.user})
   }
 
@@ -39,17 +39,20 @@ export class EditProfilePage {
   async submit() {
     if(this.formProfile.valid){
       this.listProfiles = await this.storage.get('userProfile') || [];
-
-      let index = this.listProfiles.findIndex(f => f.name == this.user.name);
+      console.log(this.user);
+      console.log(this.listProfiles)
+      let index = this.listProfiles.findIndex(f => f.id == this.user.id);
       if(index != -1){
         let profileEdited: ProfileModel = this.listProfiles[index]
         profileEdited = this.formProfile.value;
         profileEdited.image = this.user.image;
+        profileEdited.id = this.user.id;
         this.listProfiles[index] = profileEdited;
       } else {
         let newUser = new ProfileModel();
         newUser=this.formProfile.value;
         newUser.image=this.user.image;
+        newUser.id = (this.listProfiles.length + 1).toString();
         this.listProfiles.push(this.formProfile.value)
       }
 

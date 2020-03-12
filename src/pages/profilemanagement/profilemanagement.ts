@@ -25,6 +25,7 @@ export class ProfilemanagementPage {
     this.navCtrl.push('TabsPage');
   }
   public editProfile(profile: ProfileModel):void{
+    console.log(profile);
     this.navCtrl.push('EditProfilePage',{user: profile});
   }
   public editIcon():void {

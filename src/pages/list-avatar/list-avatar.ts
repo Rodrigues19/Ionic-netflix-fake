@@ -1,6 +1,5 @@
 import { ProfileModel } from './../../model/profile.model';
 import { AvatarModel } from './../../model/avatar.model';
-import { Storage } from '@ionic/storage';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -13,7 +12,7 @@ export class ListAvatarPage {
 
   public user:ProfileModel;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
   public avatarsClassic: AvatarModel[] = [
     { img: '../../assets/imgs/avatar7.jpg', id: 10 },

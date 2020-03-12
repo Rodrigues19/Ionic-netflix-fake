@@ -43,6 +43,11 @@ export class HomePage {
      await this.storage.set('myList',this.myList);
     }
   }
+  public  getList():any{
+    this.storage.get('myList').then(async (val)=> 
+      this.myList=val||[]
+    );
+  }
 
   public goSeries():void {
     this.navCtrl.push('SeriesPage')
@@ -61,6 +66,7 @@ export class HomePage {
     this.httpRequest.getPopularMovies().subscribe((response: any) => {
       this.popularMovies = response.results.map(movie =>{
        return{
+        id:movie.id,
         title:movie.title,
         poster_path:movie.poster_path,
         backdrop_path:movie.backdrop_path,
@@ -72,10 +78,19 @@ export class HomePage {
     });
   }
 
+  public async isAddList(){
+    const myList: MovieModel[] = await this.storage.get("myList");
+    if(myList.length > 0){
+    const popMovie = myList.find(m => m.id === this.popularMovies[13].id);
+    this.popularMovies[13].add_myList = popMovie.add_myList
+    }
+  }
+
   public requestMovieTopRated():any{
     this.httpRequest.getMovieTopRated().subscribe((response) =>{
       this.rateMovies = response.results.map(movieRate =>{
         return{
+          id:movieRate.id,
           title:movieRate.title,
           poster_path:movieRate.poster_path,
           backdrop_path:movieRate.backdrop_path,
@@ -91,6 +106,7 @@ export class HomePage {
     this.httpRequest.getMovieNowPlay().subscribe((response:any)=>{
       this.nowPlayMovies= response.results.map(moviePlay =>{
         return{
+          id:moviePlay.id,
           title:moviePlay.title,
           poster_path:moviePlay.poster_path,
           backdrop_path:moviePlay.backdrop_path,
@@ -106,7 +122,7 @@ export class HomePage {
     this.commingRequest.UploadSoon().subscribe((response: any) => {
       this.commingSoonMovies = response.results.map(movieComming => {
         return {
-
+          id:movieComming.id,
           backdrop_path: movieComming.backdrop_path,
           title: movieComming.title,
           poster_path: movieComming.poster_path,
