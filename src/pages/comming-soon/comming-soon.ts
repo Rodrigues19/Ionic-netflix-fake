@@ -1,8 +1,8 @@
-import { MovieModel } from './../../model/movie.model';
+import { MovieModel, GenerModel } from './../../model/movie.model';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CommingSoonRequestProvider } from '../../providers/comming-soon-request/comming-soon-request';
-import { CommingSoonModel, GenerModel } from "../../model/comming-soon.model"
+
 
 
 @IonicPage()
@@ -68,7 +68,7 @@ export class CommingSoonPage {
     console.log('ionViewDidLoad CommingSoonPage');
   }
 
-  getNameGener(movie: CommingSoonModel): string[] {
+  getNameGener(movie: MovieModel): string[] {
     return this.genres.filter((g) => movie.genreIds.indexOf(g.id) != -1).map(ge => ' ' + ge.name);
   }
 
