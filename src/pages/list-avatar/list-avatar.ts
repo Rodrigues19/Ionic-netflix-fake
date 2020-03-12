@@ -11,7 +11,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ListAvatarPage {
 
-  public user: ProfileModel;
+  public user:ProfileModel;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
   }
