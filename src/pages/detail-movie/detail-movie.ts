@@ -16,14 +16,8 @@ export class DetailMoviePage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.selectMovie= navParams.get("movie");
   }
-  public addMyList() {
+  public addMyList():void{
     this.add = !this.add;
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad DetailMoviePage');
-  }
-
- 
+  } 
 
 }

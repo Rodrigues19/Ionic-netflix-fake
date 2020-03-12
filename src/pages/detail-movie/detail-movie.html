@@ -1,15 +1,12 @@
 <ion-header linear>
-    <ion-icon name="arrow-back" color="light"></ion-icon>
+  <ion-icon name="arrow-back" color="light"></ion-icon>
 </ion-header>
 
 <ion-content>
   <ion-row>
     <ion-col>
-      <div>
-        <img
-          [src]="'https://image.tmdb.org/t/p/w154'+selectMovie.image"
-          alt={{selectMovie.title}}
-        />
+     
+        <img [src]="'https://image.tmdb.org/t/p/w500'+selectMovie.backdropPath" alt={{selectMovie.title}} />
         <ion-title size="large">{{selectMovie.title}}</ion-title>
 
         <ion-segment fab-ion>
@@ -18,80 +15,71 @@
           <!-- <p p-segment>3 Temporadas</p> -->
         </ion-segment>
 
-  <ion-row ion-row>
-    <h2>
-      A escolha de Cindy Bishop para o dia Internacional da Mulher
-    </h2>
-    <p ion-p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint iure sunt
-      sequi libero maxime modi possimus veniam. Optio ad, perspiciatis
-      voluptates debitis, sit animi corporis illo non voluptas dignissimos quae.
-    </p>
+        <ion-row ion-row>
+          <h2>
+            {{selectMovie.title}}
+          </h2>
+          <p ion-p>
+            {{selectMovie.overview}}
+          </p>
 
-    <p ion-p>Elenco: Amybeth McNulty, Geraldine James, R.H Thomson</p>
-    <p ion-p>Criação: Moira Walley-Beckett</p>
+          <p ion-p>Elenco: Amybeth McNulty, Geraldine James, R.H Thomson</p>
+          <p ion-p>Criação: Moira Walley-Beckett</p>
+        </ion-row>
+
+        <ion-row>
+          <button btn-detail>
+            <ion-icon (click)="addMyList()" [name]="add ? 'checkmark' : 'add'"></ion-icon>
+            Minha lista
+          </button>
+
+          <button btn-detail>
+            <ion-icon name="thumbs-up"></ion-icon>
+            Classifique
+          </button>
+
+          <button btn-detail>
+            <ion-icon name="md-share"></ion-icon>
+            Compartilhe
+          </button>
+        </ion-row>
+
+        <ion-segment [(ngModel)]="type" ion-segment-options overflow-x>
+          <ion-segment-button value="episodes">
+            <ion-label ion-label>EPISÓDIOS</ion-label>
+          </ion-segment-button>
+
+          <ion-segment-button value="trailers">
+            <ion-label ion-label>TRAILERS E MAIS</ion-label>
+          </ion-segment-button>
+
+          <ion-segment-button value="options">
+            <ion-label ion-label>OPÇÕES SEMELHANTES</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+
+        <ion-card [ngSwitch]="type">
+          <ion-list *ngSwitchCase="'episodes'">
+            <ion-item>
+              <img src="https://i2.wp.com/mixdeseries.com.br/wp-content/uploads/2018/07/Anne.jpg?fit=1920%2C1080&ssl=1"
+                alt="" />
+            </ion-item>
+          </ion-list>
+
+          <ion-list *ngSwitchCase="'trailers'">
+            <ion-item>
+              <img src="https://i.ytimg.com/vi/TTIbWKEUPnc/maxresdefault.jpg" alt="" />
+            </ion-item>
+          </ion-list>
+
+          <ion-list *ngSwitchCase="'options'">
+            <ion-item>
+              <img
+                src="https://a-static.mlcdn.com.br/470x352/tnt-painel-minnie-piffer/extrafestas/10096/163f4936e5f5e3ceb2de38860e216563.jpg"
+                alt="" />
+            </ion-item>
+          </ion-list>
+        </ion-card>
+     </ion-col>
   </ion-row>
-
-  <ion-row>
-    <button btn-detail>
-      <ion-icon
-        (click)="addMyList()"
-        [name]="add ? 'checkmark' : 'add'"
-      ></ion-icon>
-      Minha lista
-    </button>
-
-    <button btn-detail>
-      <ion-icon name="thumbs-up"></ion-icon>
-      Classifique
-    </button>
-
-    <button btn-detail>
-      <ion-icon name="md-share"></ion-icon>
-      Compartilhe
-    </button>
-  </ion-row>
-
-  <ion-segment [(ngModel)]="type" ion-segment-options overflow-x>
-    <ion-segment-button value="episodes">
-      <ion-label ion-label>EPISÓDIOS</ion-label>
-    </ion-segment-button>
-
-    <ion-segment-button value="trailers">
-      <ion-label ion-label>TRAILERS E MAIS</ion-label>
-    </ion-segment-button>
-
-    <ion-segment-button value="options">
-      <ion-label ion-label>OPÇÕES SEMELHANTES</ion-label>
-    </ion-segment-button>
-  </ion-segment>
-
-  <ion-card [ngSwitch]="type">
-    <ion-list *ngSwitchCase="'episodes'">
-      <ion-item>
-        <img
-          src="https://i2.wp.com/mixdeseries.com.br/wp-content/uploads/2018/07/Anne.jpg?fit=1920%2C1080&ssl=1"
-          alt=""
-        />
-      </ion-item>
-    </ion-list>
-
-    <ion-list *ngSwitchCase="'trailers'">
-      <ion-item>
-        <img
-          src="https://i.ytimg.com/vi/TTIbWKEUPnc/maxresdefault.jpg"
-          alt=""
-        />
-      </ion-item>
-    </ion-list>
-
-    <ion-list *ngSwitchCase="'options'">
-      <ion-item>
-        <img
-          src="https://a-static.mlcdn.com.br/470x352/tnt-painel-minnie-piffer/extrafestas/10096/163f4936e5f5e3ceb2de38860e216563.jpg"
-          alt=""
-        />
-      </ion-item>
-    </ion-list>
-  </ion-card>
 </ion-content>

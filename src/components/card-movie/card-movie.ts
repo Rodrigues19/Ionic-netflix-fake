@@ -11,8 +11,9 @@ export class CardMovieComponent {
 
   constructor(public navCtrl: NavController) {}
 
-  public goMovieDetail() {
-    this.navCtrl.push('DetailMoviePage')
+  public goMovieDetail(movie:MovieModel) :any{
+    this.navCtrl.push('DetailMoviePage',{movie:movie})
   }
+ 
 
 }

@@ -16,8 +16,11 @@ export class CommingSoonPage {
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private httpRequest: CommingSoonRequestProvider) {
-    this.getComming()
-    this.getGenres()
+   
+  }
+  ionViewDidEnter(){
+    this.getComming();
+    this.getGenres();
   }
 
   public getComming(): any {
@@ -47,10 +50,6 @@ export class CommingSoonPage {
         }
       })
     })
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CommingSoonPage');
   }
 
   getNameGener(movie: CommingSoonModel): string[] {

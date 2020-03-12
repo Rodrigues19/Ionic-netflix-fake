@@ -3,11 +3,6 @@ page-home {
     width: 45px;
     height: 40px;
   }
-  [size-banner] {
-    margin-bottom: 20px;
-    z-index: 4;
-    height: 510px;
-  }
   .imgPrevias{
     width: 115px;
     height: 107px;
@@ -24,9 +19,18 @@ page-home {
     text-align: center;
     position: relative;
   }
+  [padding-h]{
+    padding-left: 40px;
+    padding-right: 40px;
+  }
   [ion-button] {
     background-color: #fff;
     color: #222;
+  }
+
+   [button-conf] {
+    background-color: #3d3a3a !important;
+    color: #fff !important;
   }
   [flex-direction-row] {
     display: flex;
@@ -44,8 +48,14 @@ page-home {
     color: white;
   
   }
-  .ion-app{
-
+  [position]{
+    position: relative;
+    left: 180px;
+    bottom: 124px;
+    height: 42px;
+    width: 45px;
+    border: 1.5px solid white;
+    border-radius: 100px;
   }
 
   [padding-left-m]{
