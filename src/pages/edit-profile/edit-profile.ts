@@ -49,9 +49,9 @@ export class EditProfilePage {
         profileEdited.image = this.user.image;
         this.listProfiles[index] = profileEdited;
       } else {
-        // let newUser = new ProfileModel();
-        // newUser.id =
-
+        let newUser = new ProfileModel();
+        newUser=this.formProfile.value;
+        newUser.image=this.user.image;
         this.listProfiles.push(this.formProfile.value)
       }
 

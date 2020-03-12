@@ -39,6 +39,6 @@ export class ListAvatarPage {
   }
 
   ionViewDidEnter() {
-    this.user = this.navParams.get('user');
+    this.user = this.navParams.get('user')|| new ProfileModel();
   }
 }
