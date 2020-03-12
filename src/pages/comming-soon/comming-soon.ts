@@ -1,3 +1,4 @@
+
 import { MovieModel, GenerModel } from './../../model/movie.model';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -71,5 +72,7 @@ export class CommingSoonPage {
   getNameGener(movie: MovieModel): string[] {
     return this.genres.filter((g) => movie.genreIds.indexOf(g.id) != -1).map(ge => ' ' + ge.name);
   }
+
+  
 
 }
