@@ -12,19 +12,21 @@
       <button ion-fab color="opacity">
         <ion-icon name="play" color="light"></ion-icon>
       </button>
-      <ion-title>{{filme.title}}</ion-title>
+
+      <img src="../../assets/imgs/logo-netflix-2.png" Logo-breve alt="" />
+      <p Logo-breve>Filme</p>
+
+      <ion-title justify-content-start>{{filme.title}}</ion-title>
 
 
       <p>{{filme.overview}}</p>
       <p justify-content-around>{{getNameGener(filme)}}</p>
     </div>
 
-    <ion-col Line>
-      <img src="../../assets/imgs/logo-netflix-2.png" Logo-breve alt="" />
-      <p Logo-breve>Filme</p>
 
-      <button color="light" text-capitalize="false" clear align-items-center justify-content-center ion-button
-        icon-start>
+    <ion-row>
+
+      <button color="light" text-capitalize="false" clear btn-Comming>
         <ion-icon name="notifications"></ion-icon>
         Receber aviso
       </button>
@@ -37,7 +39,7 @@
       </button>
 
 
-    </ion-col>
+    </ion-row>
   </ion-row>
 
 

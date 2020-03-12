@@ -1,13 +1,11 @@
-<ion-header>
-  <ion-navbar>
+<ion-header linear>
     <ion-icon name="arrow-back" color="light"></ion-icon>
-  </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-grid>
-    <ion-row>
-      <ion-col>
+  <ion-row>
+    <ion-col>
+      <div>
         <img
           [src]="'https://image.tmdb.org/t/p/w154'+selectMovie.image"
           alt={{selectMovie.title}}
@@ -20,44 +18,41 @@
           <!-- <p p-segment>3 Temporadas</p> -->
         </ion-segment>
 
-        <ion-row>
-          <h4 title-h4>
-            A escolha de Cindy Bishop para o dia Internacional da Mulher
-          </h4>
+  <ion-row ion-row>
+    <h2>
+      A escolha de Cindy Bishop para o dia Internacional da Mulher
+    </h2>
+    <p ion-p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint iure sunt
+      sequi libero maxime modi possimus veniam. Optio ad, perspiciatis
+      voluptates debitis, sit animi corporis illo non voluptas dignissimos quae.
+    </p>
 
-          <p p-content>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint iure
-            sunt sequi libero maxime modi possimus veniam. Optio ad,
-            perspiciatis voluptates debitis, sit animi corporis illo non
-            voluptas dignissimos quae.
-          </p>
-          
-          <p p-cont><b>Elenco:</b> Amybeth McNulty, Geraldine James, R.H Thomson</p>
-          <p p-cont><b>Criação:</b> Moira Walley-Beckett</p>
-        </ion-row>
+    <p ion-p>Elenco: Amybeth McNulty, Geraldine James, R.H Thomson</p>
+    <p ion-p>Criação: Moira Walley-Beckett</p>
+  </ion-row>
 
-        <ion-fab display size="end">
-          <button btn-detail>
-            <ion-icon name="thumbs-up"></ion-icon>
-            Classifique
-          </button>
-          <ion-fab btn-detail>
-            <ion-icon
-              (click)="addMyList()"
-              [name]="add ? 'checkmark' : 'add'"
-            ></ion-icon>
-            Minha lista
-          </ion-fab>
-          <button btn-detail>
-            <ion-icon name="md-share"></ion-icon>
-            Compartilhe
-          </button>
-        </ion-fab>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  <ion-row>
+    <button btn-detail>
+      <ion-icon
+        (click)="addMyList()"
+        [name]="add ? 'checkmark' : 'add'"
+      ></ion-icon>
+      Minha lista
+    </button>
 
-  <ion-segment [(ngModel)]="type" ion-segmet-button>
+    <button btn-detail>
+      <ion-icon name="thumbs-up"></ion-icon>
+      Classifique
+    </button>
+
+    <button btn-detail>
+      <ion-icon name="md-share"></ion-icon>
+      Compartilhe
+    </button>
+  </ion-row>
+
+  <ion-segment [(ngModel)]="type" ion-segment-options overflow-x>
     <ion-segment-button value="episodes">
       <ion-label ion-label>EPISÓDIOS</ion-label>
     </ion-segment-button>
