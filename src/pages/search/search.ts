@@ -1,5 +1,3 @@
-// import { CommingSoonModel } from './../../model/comming-soon.model';
-// import { SearchPage } from './search';
 import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { CommingSoonModel } from "../../model/comming-soon.model";
@@ -17,21 +15,21 @@ export class SearchPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    private httpRequest: CommingSoonRequestProvider,
+    private httpRequest: CommingSoonRequestProvider
   ) {
     this.getComming();
   }
 
-  public search (){
-
-this.httpRequest.UploadSoon().subscribe((response:any)=>{
-  this.movies=response.Search.map(movies=>{
-    return{
-      title: movies.title,
-    };
-  });
-});
-    console.log(this.movies)
+  public search() {
+    this.httpRequest.searchFilm(this.title).subscribe((response: any) => {
+      this.movies = response.results.map(movie => {
+        return {
+          title: movie.title,
+          posterPath: movie.poster_path
+        };
+      });
+    });
+    console.log(this.title);
   }
 
   public getComming(): any {
@@ -51,4 +49,3 @@ this.httpRequest.UploadSoon().subscribe((response:any)=>{
     console.log("ionViewDidLoad SearchPage");
   }
 }
-

@@ -8,7 +8,7 @@
   <ion-row *ngFor="let filme of movies">
 
     <div img-Filme>
-      <img [src]="'https://image.tmdb.org/t/p/w780'+filme.backdropPath" alt="imagem filme">
+      <img [src]="'https://image.tmdb.org/t/p/w780'+filme.backdrop_path" alt="imagem filme">
       
       
       <div class="Logo-breve"  margin-start>
@@ -30,11 +30,12 @@
 
         </button>
       </ion-row>
-      Estreia em {{filme.releaseDate}}
+      Estreia em {{filme.release_date}}
 
 
-      <ion-title justify-content-end>{{filme.title}}</ion-title>
 
+      <ion-title justify-content-start>{{filme.title}}</ion-title>
+      <p>Lançamento: {{filme.release_date}}</p>
 
 
       <p>{{filme.overview}}</p>

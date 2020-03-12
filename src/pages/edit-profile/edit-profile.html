@@ -9,14 +9,14 @@
           </button>
         </ion-col>
 
-        
+
         <ion-col border-left color-btn-black  >
-          <button 
-          
+          <button
+
           color="light"
             ion-button
             clear
-            [disabled]="!formProfile.valid" 
+            [disabled]="!formProfile.valid"
             type="submit"
             item-end
           >
@@ -26,7 +26,7 @@
         </ion-col>
       </ion-row>
     </ion-navbar>
-    
+
     <ion-list padding-horizontal>
       <ion-item >
         <ion-label stacked>NOME</ion-label>
@@ -38,12 +38,12 @@
         <ion-label>
           <p>Imagem</p>
         </ion-label>
-        <ion-input
-          type="text"
+        <<ion-input (click)="goAvatar()"
+          type="button"
           name="image"
           formControlName="image"
           alt=""
-        ></ion-input>
+        ></ion-input>>
       </ion-item >
     </ion-list>
   </form>
