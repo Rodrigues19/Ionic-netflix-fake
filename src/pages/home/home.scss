@@ -6,7 +6,7 @@ page-home {
   .imgPrevias{
     width: 233px;
     height: 180px;
-    border-radius: 50%;
+    border-radius: 100%;
     border: solid 2px white;
   }
   [btn-detail] {
@@ -37,7 +37,7 @@ page-home {
     flex-direction: row;
   }
   [header-position] {
-    position: absolute;
+    position: fixed;
     top:10px;
     z-index: 5;
     width: 100%;
