@@ -24,7 +24,7 @@ export class EditProfilePage {
     })
   }
   public goAvatar():void {
-    this.navCtrl.push('ListAvatarPage')
+    this.navCtrl.push('ListAvatarPage', {user: this.user})
   }
 
   public cancelEdit():void {
@@ -45,10 +45,12 @@ export class EditProfilePage {
       if(index != -1){
         let profileEdited: ProfileModel = this.listProfiles[index]
         profileEdited = this.formProfile.value;
+        profileEdited.image = this.user.image;
         this.listProfiles[index] = profileEdited;
       } else {
         // let newUser = new ProfileModel();
         // newUser.id =
+
         this.listProfiles.push(this.formProfile.value)
       }
 

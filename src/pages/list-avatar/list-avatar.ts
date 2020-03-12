@@ -1,3 +1,5 @@
+import { ProfileModel } from './../../model/profile.model';
+import { AvatarModel } from './../../model/avatar.model';
 import { Storage } from '@ionic/storage';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -9,19 +11,24 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ListAvatarPage {
 
+<<<<<<< HEAD
+  public user:ProfileModel;
+=======
   // private click: boolean;
   // private listAvatars: []
 
+>>>>>>> d8da125fee91d88458bd806cdebd7409b8bfc486
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
   }
-  public avatarsClassic : Array<any> = [
+  public avatarsClassic : AvatarModel[] = [
     {img: '../../assets/imgs/avatar7.jpg', id: 10},
     {img: '../../assets/imgs/avatar12.png', id: 11},
     {img: '../../assets/imgs/avatar13.jpg', id: 12},
     {img: '../../assets/imgs/avatar15.png', id: 13},
     {img: '../../assets/imgs/avatar16.png', id: 14},
-    {img: '../../assets/imgs/avatar8.jpg', id: 15},    {img: '../../assets/imgs/avatar11.jpg', id: 7},
+    {img: '../../assets/imgs/avatar8.jpg', id: 15},
+    {img: '../../assets/imgs/avatar11.jpg', id: 7},
     {img: '../../assets/imgs/avatar5.png', id: 8},
     {img: '../../assets/imgs/avatar1.webp', id: 9},
     {img: '../../assets/imgs/avatar2.png', id: 1},
@@ -32,6 +39,15 @@ export class ListAvatarPage {
     {img: '../../assets/imgs/avatar10.png', id: 6}
   ];
 
+  public async getAvatar(a: AvatarModel) {
+    this.user.image = a.img;
+    await this.navCtrl.pop();
+  }
+
+  ionViewDidEnter() {
+   this.user= this.navParams.get('user') || new ProfileModel();
+    console.log('ionViewDidLoad ListAvatarPage');
+  }
   // public getAvatar() {
   //   this.click =! this.click;
   //   this.listAvatars=this.storage.get('AvatarProfile')
