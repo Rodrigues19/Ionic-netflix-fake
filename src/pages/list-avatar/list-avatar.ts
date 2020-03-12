@@ -11,13 +11,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ListAvatarPage {
 
-<<<<<<< HEAD
   public user:ProfileModel;
-=======
-  // private click: boolean;
-  // private listAvatars: []
-
->>>>>>> d8da125fee91d88458bd806cdebd7409b8bfc486
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
   }
