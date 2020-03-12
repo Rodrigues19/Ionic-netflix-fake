@@ -1,4 +1,3 @@
-
 <ion-header>
   <ion-navbar>
     <ion-title>Minha Lista</ion-title>
@@ -6,16 +5,12 @@
 </ion-header>
 
 <ion-content padding>
+  <ion-row nowrap overflow-x padding>
+    <ion-col col-5 *ngFor="let movie of myList" >
+      <div class="">
+        <card-movie [movie]="movie"></card-movie>
+      </div>
+    </ion-col>
+  </ion-row>
   
-  <div text-center cont-myList>
-  <ion-icon name="checkmark-circle" color="gray" checkList></ion-icon>
-  <p p-myList>Adicione filmes e séries à sua lista para encontrá-los quando quiser.</p>
-</div>
-
-<ion-row>
-<ion-col cont-button-myList>
-  <button (click)="backHome()" ion-button color="light">NAVEGAR POR SÉRIES E FILMES</button>
-</ion-col>
-</ion-row>
-
 </ion-content>

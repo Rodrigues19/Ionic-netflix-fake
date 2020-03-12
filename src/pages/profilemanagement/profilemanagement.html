@@ -15,7 +15,7 @@
           <div [class]= "edited ? 'ion-show' : 'ion-hidden'" class="ion-icon">
             <ion-icon flexcenter name="brush" (click)="editProfile(user)"></ion-icon>
           </div>
-          <img (click)="goHome()" [src]="user.image">
+          <img (click)="goHome(user)" [src]="user.image">
         </div>
         <ion-title>{{user.name}}</ion-title>
       </ion-col>

@@ -67,7 +67,7 @@
 
           <ion-list *ngSwitchCase="'trailers'">
             <ion-item>
-              <img src="https://i.ytimg.com/vi/TTIbWKEUPnc/maxresdefault.jpg" alt="" />
+              <img [src]="'https://image.tmdb.org/t/p/w500'+selectMovie?.backdrop_path" alt={{selectMovie.title}} />
             </ion-item>
           </ion-list>
 

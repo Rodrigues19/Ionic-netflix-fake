@@ -8,7 +8,7 @@
   <h1>Os clássicos</h1>
   <ion-row >
     <ion-col col-4 *ngFor="let a of avatarsClassic">
-      <img [src]="a.img" alt="" (click)="getAvatar()">
+      <img [src]="a.img" alt="" (click)="getAvatar(a)">
     </ion-col>
   </ion-row>
 

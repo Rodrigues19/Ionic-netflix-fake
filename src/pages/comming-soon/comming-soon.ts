@@ -65,9 +65,6 @@ export class CommingSoonPage {
     })
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CommingSoonPage');
-  }
 
   getNameGener(movie: MovieModel): string[] {
     return this.genres.filter((g) => movie.genreIds.indexOf(g.id) != -1).map(ge => ' ' + ge.name);
