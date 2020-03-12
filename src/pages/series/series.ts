@@ -26,7 +26,7 @@ export class SeriesPage {
   ) {
 
   }
-  ionViewDidEnter(){
+  ionViewWillEnter(){
     this.requestPopularMovie();
     this.requestMovieTopRated();
     this.requestMovieNowPlay();

@@ -1,4 +1,3 @@
-
 import { MovieModel } from './../../model/movie.model';
 import { HttpRequestProvider } from "./../../providers/http-request/http-request";
 import { Component} from "@angular/core";
@@ -26,7 +25,7 @@ export class HomePage {
   ) {
     
   }
-  ionViewDidEnter(){
+  ionViewWillEnter(){
     this.requestPopularMovie();
     this.requestMovieTopRated();
     this.requestMovieNowPlay();

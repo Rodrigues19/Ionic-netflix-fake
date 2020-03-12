@@ -5,13 +5,6 @@ import { MovieModel } from '../../model/movie.model';
 import { HttpRequestProvider } from '../../providers/http-request/http-request';
 import { CommingSoonRequestProvider } from '../../providers/comming-soon-request/comming-soon-request';
 
-/**
- * Generated class for the MoviesPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-movies',
@@ -33,7 +26,7 @@ export class MoviesPage {
   ) {
 
   }
-  ionViewDidEnter(){
+  ionViewWillEnter(){
     this.requestPopularMovie();
     this.requestMovieTopRated();
     this.requestMovieNowPlay();

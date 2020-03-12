@@ -17,7 +17,9 @@ export class ProfilemanagementPage {
   }
 
   public addUser():void {
-    this.navCtrl.push('EditProfilePage',{user:""});
+    let user=new ProfileModel();
+    user.image='../../assets/imgs/avatar3.jpg'
+    this.navCtrl.push('EditProfilePage',{user:user});
   }
   public goHome():void {
     this.navCtrl.push('TabsPage');

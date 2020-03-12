@@ -13,8 +13,6 @@ export class EditProfilePage {
   public user : ProfileModel;
   private listProfiles: ProfileModel[] = [];
 
-
-
   constructor(private storage: Storage, public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder) {
     this.user = this.navParams.get('user');
     console.log(this.user)
@@ -49,9 +47,9 @@ export class EditProfilePage {
         profileEdited.image = this.user.image;
         this.listProfiles[index] = profileEdited;
       } else {
-        // let newUser = new ProfileModel();
-        // newUser.id =
-
+        let newUser = new ProfileModel();
+        newUser=this.formProfile.value;
+        newUser.image=this.user.image;
         this.listProfiles.push(this.formProfile.value)
       }
 
