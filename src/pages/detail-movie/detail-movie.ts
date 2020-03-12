@@ -2,6 +2,7 @@
 import { MovieModel } from './../../model/movie.model';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { HomePage } from '../home/home';
 
 @IonicPage()
 @Component({
@@ -10,14 +11,21 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 
 export class DetailMoviePage {
+  
   public add: boolean;
   public selectMovie:MovieModel= new MovieModel()
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.selectMovie= navParams.get("movie");
   }
+
   public addMyList():void{
     this.add = !this.add;
-  } 
+  }
+  
+  public backHome():void{
+    this.navCtrl.push(HomePage);
+  }
+ 
 
 }
