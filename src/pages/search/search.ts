@@ -18,11 +18,12 @@ export class SearchPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     private httpRequest: CommingSoonRequestProvider
-  ) {
+  ) {}
+  
+  ionViewDidEnter() {
     this.getComming();
   }
-
-  public search() {
+  public search(): any {
     this.httpRequest.searchFilm(this.title).subscribe((response: any) => {
       console.log(response);
       this.movies = response.results.map(movie => {
@@ -40,12 +41,12 @@ export class SearchPage {
         };
       });
     });
-    console.log(this.title);
   }
 
   public detail(movie: MovieModel) {
     this.navCtrl.push("DetailMoviePage", { movie: movie });
   }
+
 
   public getComming(): any {
     this.httpRequest.UploadSoon().subscribe((response: any) => {
@@ -60,7 +61,5 @@ export class SearchPage {
       });
     });
   }
-  ionViewDidLoad() {
-    console.log("ionViewDidLoad SearchPage");
-  }
+
 }

@@ -14,3 +14,22 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+.ion-md-home:before{
+    color: white;
+}
+.ion-md-search:before{
+    color: white;
+}
+.ion-md-play:before{
+    color: white;
+}
+.ion-md-paper:before{
+    color: white;
+}
+.ion-md-cog:before{
+    color: white;
+}
+.tabs-md[tabsLayout=icon-top] .has-icon .tab-button-text{
+    color: white;
+}

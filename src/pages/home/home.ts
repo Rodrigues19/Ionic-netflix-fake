@@ -26,7 +26,7 @@ export class HomePage {
   ) {
     
   }
-  ionViewDidEnter(){
+  ionViewWillEnter(){
     this.requestPopularMovie();
     this.requestMovieTopRated();
     this.requestMovieNowPlay();

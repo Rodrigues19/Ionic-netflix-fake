@@ -13,8 +13,6 @@ export class EditProfilePage {
   public user : ProfileModel;
   private listProfiles: ProfileModel[] = [];
 
-
-
   constructor(private storage: Storage, public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder) {
     this.user = this.navParams.get('user');
     console.log(this.user)
