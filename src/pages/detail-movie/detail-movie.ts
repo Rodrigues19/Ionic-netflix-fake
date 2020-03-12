@@ -11,6 +11,7 @@ import { HomePage } from '../home/home';
 })
 
 export class DetailMoviePage {
+  
   public selectMovie:MovieModel= new MovieModel()
   public myList:MovieModel[]=[]
   constructor(public navCtrl: NavController, public navParams: NavParams,private storage:Storage) {
