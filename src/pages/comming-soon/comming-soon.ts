@@ -15,13 +15,13 @@ export class CommingSoonPage {
 
   public movies: MovieModel[] = [];
   public genres: GenerModel[] = [];
-  public videos: MovieModel[]=[];
+  
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private httpRequest: CommingSoonRequestProvider) {
     this.getComming()
     this.getGenres()
-    this.getVideo()
+  
   }
 
   public getComming(): any {
@@ -53,18 +53,6 @@ export class CommingSoonPage {
       })
     })
   }
-
-  public getVideo(): any {
-    console.log(this.videos)
-    this.httpRequest.getVideos().subscribe((response: any) =>{
-      this.videos = response.results.map(video =>{
-        return{
-          id: video.id,
-        }
-      })
-    })
-  }
-
 
   getNameGener(movie: MovieModel): string[] {
     return this.genres.filter((g) => movie.genreIds.indexOf(g.id) != -1).map(ge => ' ' + ge.name);
