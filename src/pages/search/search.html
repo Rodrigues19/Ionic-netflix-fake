@@ -23,7 +23,7 @@
   <ion-list no-margin *ngFor="let movie of movies" >
     <ion-item no-padding (click)="detail(movie)"  >
       <ion-thumbnail no-margin item-start>
-        <img [src]="'https://image.tmdb.org/t/p/w154'+movie.posterPath"  />
+        <img [src]="'https://image.tmdb.org/t/p/w154'+movie.poster_path"  />
       </ion-thumbnail>
       <h2>{{ movie.title }}</h2>
       <ion-icon name="play" item-end padding padding-left></ion-icon>
