@@ -11,7 +11,8 @@ export class CommingSoonRequestProvider {
     throw new Error("Method not implemented.");
   }
   similarFilm() {
-    throw new Error("Method not implemented.");
+    return  this.http.get(CommonEnum.HOST+'movie/upcoming?api_key='+CommonEnum.API_KEY+`&language=pt-BR`);
+
   }
 
   constructor(public http: HttpClient) {

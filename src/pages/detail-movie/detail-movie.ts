@@ -15,6 +15,8 @@ export class DetailMoviePage {
   
   public selectMovie:MovieModel= new MovieModel()
   public myList:MovieModel[]=[]
+  public optionSimilar: MovieModel[]=[]
+  public options: MovieModel[]=[]
  
  
   
@@ -40,4 +42,17 @@ export class DetailMoviePage {
   }
   
 
+  public similarOptions(): any {
+    this.httpRequest.similarFilm().subscribe((response: any) => {
+      this.optionSimilar = response.results.map(options => {
+        return {
+          poster_path: options.poster_path,
+        };
+      });
+    });
+  }
+
+ionViewWillEnter(){
+  this.similarOptions();
+}
 }
