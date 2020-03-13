@@ -66,16 +66,20 @@
           <ion-label ion-label>OPÇÕES SEMELHANTES</ion-label>
         </ion-segment-button>
       </ion-segment>
+    </ion-col>
 
 
       
-      <ion-card [ngSwitch]="type">
-        <ion-col *ngSwitchCase="'options'">
-          <ion-item *ngFor="let option of optionSimilar">
+      <ion-row nowrap  no-padding [ngSwitch]="type" >
+        <ion-col col-4 *ngSwitchCase="'options'">
+         
+          <ion-item  *ngFor="let option of optionSimilar" >
+           
             <img [src]="'https://image.tmdb.org/t/p/w780'+ option.poster_path" alt="imagem filme" img-card-detail>
+        
           </ion-item>
+
         </ion-col>
-      </ion-card>
-    </ion-col>
+      </ion-row>
   </ion-row>
 </ion-content>

@@ -7,10 +7,7 @@ import { CommonEnum } from '../../enums/common.enum';
 @Injectable()
 export class CommingSoonRequestProvider {
   
-  similarFilm() {
-    return  this.http.get(CommonEnum.HOST+'movie/upcoming?api_key='+CommonEnum.API_KEY+`&language=pt-BR`);
-
-  }
+ 
 
   constructor(public http: HttpClient) {
   }

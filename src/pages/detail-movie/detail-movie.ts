@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { CommingSoonRequestProvider } from '../../providers/comming-soon-request/comming-soon-request';
+import { DetailRequestProvider } from '../../providers/detail-request/detail-request';
 
 @IonicPage()
 @Component({
@@ -21,10 +22,10 @@ export class DetailMoviePage {
  
   
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,private storage:Storage, private httpRequest: CommingSoonRequestProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,private storage:Storage,private detailRequest:DetailRequestProvider) {
     this.selectMovie= navParams.get("movie");
     this.myList=this.getList()
-   
+    this.isAddList(this.selectMovie)
   }
 
   public backHome():void{
@@ -59,17 +60,18 @@ export class DetailMoviePage {
   }
   
 
-  public similarOptions(): any {
-    this.httpRequest.similarFilm().subscribe((response: any) => {
+  public requestGenre(): any {
+    this.detailRequest.getGenreMovie().subscribe((response: any) => {
       this.optionSimilar = response.results.map(options => {
         return {
           poster_path: options.poster_path,
+
         };
       });
     });
   }
 
 ionViewWillEnter(){
-  this.similarOptions();
+  this.requestGenre();
 }
 }
