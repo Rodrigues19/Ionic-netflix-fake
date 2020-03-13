@@ -9,6 +9,7 @@ export class MovieModel {
   public overview:string='';
   public release_date:string='';
   public add_myList:boolean;
+  
 }
 export class GenerModel {
   id: number;

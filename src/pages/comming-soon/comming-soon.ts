@@ -27,15 +27,12 @@ export class CommingSoonPage {
     this.httpRequest.UploadSoon().subscribe((response: any) => {
       this.movies = response.results.map(filme => {
         return {
-
           backdrop_path: filme.backdrop_path,
           title: filme.title,
           poster_path: filme.poster_path,
           overview: filme.overview,
           genreIds: filme.genre_ids,
           release_date: filme.release_date
-
-
         }
       })
     })
@@ -53,7 +50,7 @@ export class CommingSoonPage {
     })
   }
 
-  getNameGener(movie: MovieModel): string[] {
+  public getNameGener(movie: MovieModel): string[] {
     return this.genres.filter((g) => movie.genreIds.indexOf(g.id) != -1).map(ge => ' ' + ge.name);
   }
 
