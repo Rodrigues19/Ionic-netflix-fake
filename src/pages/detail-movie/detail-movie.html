@@ -1,28 +1,35 @@
-<ion-header>
+<ion-header content-header>
   <ion-icon name="arrow-back" color="light" (click)="backHome()"></ion-icon>
 </ion-header>
 
-<ion-content>
+<ion-content content-detail>
   <ion-row>
-    <ion-col>
-      <img
-        [src]="'https://image.tmdb.org/t/p/w500'+selectMovie?.backdrop_path"
-        alt="{{selectMovie?.title}}"
-        img-detailMovie
-      />
-      <ion-title title-h1>{{selectMovie?.title}}</ion-title>
-
-      <div>
-        <button ion-only color="opacity" ion-button btn-icon>
-          <ion-icon name="play" color="light"></ion-icon>
-        </button>
+    <ion-col col-12 nopadding>
+      <div detail-position>
+        <div detail-align-center>
+          <button
+            ion-only
+            color="opacity"
+            ion-button
+            btn-icon
+            justify-content-center
+          >
+            <ion-icon name="play" color="light"></ion-icon>
+          </button>
+        </div>
+        <ion-title title-detail>{{selectMovie?.title}}</ion-title>
+        <img
+          [src]="'https://image.tmdb.org/t/p/w500'+selectMovie?.backdrop_path"
+          alt="{{selectMovie?.title}}"
+          img-detail-movie
+        />
       </div>
 
       <ion-segment p-segment>
         <p>{{selectMovie?.release_date}}</p>
       </ion-segment>
 
-      <ion-row ion-row>
+      <ion-row>
         <p ion-p>
           {{selectMovie?.overview}}
         </p>
@@ -31,12 +38,10 @@
         <p ion-p>Criação:</p>
       </ion-row>
 
-      <ion-row cont-row>
+      <ion-row cont-row-detail>
         <button btn-detail>
-          <ion-icon
-            (click)="addMyList(selectMovie)"
-            [name]="selectMovie?.add_myList ? 'md-checkmark' : 'add'"
-          ></ion-icon>
+          <ion-icon (click)="addMyList(selectMovie)" [name]="selectMovie?.add_myList ? 'md-checkmark' : 'add'">
+          </ion-icon>
           Minha lista
         </button>
 
@@ -64,11 +69,9 @@
 
       <ion-card [ngSwitch]="type">
         <ion-list *ngSwitchCase="'options'">
+
+         
           <ion-item>
-            <img
-              [src]="'https://image.tmdb.org/t/p/w780'+selectMovie?.backdrop_path"
-              alt="imagem filme"
-            />
           </ion-item>
         </ion-list>
       </ion-card>

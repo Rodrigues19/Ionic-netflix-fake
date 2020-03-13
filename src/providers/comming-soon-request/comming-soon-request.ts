@@ -6,6 +6,10 @@ import { CommonEnum } from '../../enums/common.enum';
 
 @Injectable()
 export class CommingSoonRequestProvider {
+  
+  similarFilm() {
+    throw new Error("Method not implemented.");
+  }
 
   constructor(public http: HttpClient) {
   }

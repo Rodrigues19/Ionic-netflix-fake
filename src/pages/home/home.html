@@ -1,7 +1,10 @@
-
-<header >
+<header>
   <nav flex-direction-row justify-content-around header>
-    <img src="../../assets//imgs/logo-netflix-2.png" image-size align-self-start />
+    <img
+      src="../../assets//imgs/logo-netflix-2.png"
+      image-size
+      align-self-start
+    />
     <ion-title (click)="goSeries()" text-center>Séries</ion-title>
     <ion-title (click)="goMovie()" text-center>Filmes</ion-title>
     <ion-title (click)="goMyList()" text-center>Minha lista</ion-title>
@@ -24,6 +27,16 @@
       </ion-icon>
       Minha lista
     </ion-fab>
+    <button
+      margin-left
+      margin-right
+      text-capitalize="false"
+      ion-button
+      icon-start
+    >
+      <ion-icon name="play"></ion-icon>
+      Assistir
+    </button>
     <button margin-left margin-right text-capitalize="false" ion-button icon-start>
       <ion-icon name="play" color="dark"></ion-icon>
       Assistir
@@ -32,7 +45,7 @@
       <ion-icon name="ios-alert-outline"></ion-icon>
       Saiba mais
     </ion-fab>
-  </ion-row>
+ 
   <h3 padding>Prévias</h3>
   <ion-row nowrap overflow-x>
     <ion-col no-margin col-5 *ngFor="let movie of rateMovies">
@@ -73,11 +86,21 @@
       <ion-icon name="play"></ion-icon>
       Assistir
     </button>
-    <button margin-left text-capitalize="false" ion-button button-conf icon-start padding-h
-      (click)="addMyList(nowPlayMovies[2])">
+    <button
+      margin-left
+      text-capitalize="false"
+      ion-button
+      button-conf
+      icon-start
+      padding-h
+      (click)="addMyList(nowPlayMovies[2])"
+    >
       <ion-icon [name]="nowPlayMovies[2]?.add_myList? 'checkmark' : 'add'">
       </ion-icon>
       Minha lista
     </button>
   </ion-row>
+
+</ion-row>
 </ion-content>
+
