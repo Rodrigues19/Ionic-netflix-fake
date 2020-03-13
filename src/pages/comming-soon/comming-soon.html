@@ -4,12 +4,13 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content no-padding>
   <ion-row *ngFor="let filme of movies">
 
     <div img-Filme>
+      <div img-center >
       <img [src]="'https://image.tmdb.org/t/p/w780'+filme.backdrop_path" alt="imagem filme">
-    
+    </div  >
       <div class="Logo-breve"  margin-start>
         <img src="../../assets/imgs/logo-netflix-2.png" alt="" />
         Filme
