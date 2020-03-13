@@ -23,6 +23,7 @@ export class SearchPage {
   ionViewDidEnter() {
     this.getComming();
   }
+  
   public search(): any {
     this.httpRequest.searchFilm(this.title).subscribe((response: any) => {
       console.log(response);
