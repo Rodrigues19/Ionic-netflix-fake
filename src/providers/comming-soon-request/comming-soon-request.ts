@@ -8,7 +8,8 @@ import { CommonEnum } from '../../enums/common.enum';
 export class CommingSoonRequestProvider {
   
   similarFilm() {
-    throw new Error("Method not implemented.");
+    return  this.http.get(CommonEnum.HOST+'movie/upcoming?api_key='+CommonEnum.API_KEY+`&language=pt-BR`);
+
   }
 
   constructor(public http: HttpClient) {

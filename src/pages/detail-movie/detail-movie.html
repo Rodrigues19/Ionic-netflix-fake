@@ -67,13 +67,14 @@
         </ion-segment-button>
       </ion-segment>
 
-      <ion-card [ngSwitch]="type">
-        <ion-list *ngSwitchCase="'options'">
 
-         
-          <ion-item>
+      
+      <ion-card [ngSwitch]="type">
+        <ion-col *ngSwitchCase="'options'">
+          <ion-item *ngFor="let option of optionSimilar">
+            <img [src]="'https://image.tmdb.org/t/p/w780'+ option.poster_path" alt="imagem filme" img-card-detail>
           </ion-item>
-        </ion-list>
+        </ion-col>
       </ion-card>
     </ion-col>
   </ion-row>
