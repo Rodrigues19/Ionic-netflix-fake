@@ -14,17 +14,27 @@ export class DetailMoviePage {
   
   public selectMovie:MovieModel= new MovieModel()
   public myList:MovieModel[]=[]
-  
-
   constructor(public navCtrl: NavController, public navParams: NavParams,private storage:Storage) {
     this.selectMovie= navParams.get("movie");
+    
   }
-
+ 
   public backHome():void{
     this.navCtrl.push(HomePage);
   }
 
+  public async isAddList(movie:MovieModel){
+    let myList: MovieModel[] = await this.storage.get("myList");
+    if(!myList){
+      myList=[]
+    }
+    const popMovie = myList.find(m => m.id === movie.id);
+    if(popMovie){
+      movie.add_myList = popMovie.add_myList
+    }
+  }
   public async addMyList(movie:MovieModel):Promise<void> {
+    await this.isAddList(movie);
     movie.add_myList=!movie.add_myList;
     if(movie.add_myList){
       this.myList.push(movie);
@@ -33,6 +43,8 @@ export class DetailMoviePage {
       this.myList= this.myList.filter(movie=>movie.add_myList);
      await this.storage.set('myList',this.myList);
     }
+   
   }
+  
 
 }

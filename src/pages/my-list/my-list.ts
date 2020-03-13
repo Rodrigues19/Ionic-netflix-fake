@@ -1,3 +1,4 @@
+
 import { MovieModel } from './../../model/movie.model';
 import { Storage } from '@ionic/storage';
 import { Component } from '@angular/core';
@@ -16,14 +17,17 @@ export class MyListPage {
   public backHome():void {
     this.navCtrl.push('HomePage');
   }
-  getList(){
-    this.storage.get('myList').then((val)=> 
+  public getList():any{
+    this.storage.get('myList').then(async (val)=> 
       this.myList=val||[]
     );
   }
   ionViewDidEnter(){
-   this.getList();
-  }
+    this.getList();
+   }
+
+  
+
 
  
 }

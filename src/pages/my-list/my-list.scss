@@ -1,47 +1,7 @@
 page-my-list {
-
-  div {
-    height: 90%;
-    font-size: 14.2rem;
+  [overflow-x]{
+    overflow-y: hidden;
+    overflow-x: scroll;
   }
-  
-  [cont-row] {
-    border-radius: 50%;
-    width: 180px;
-    height: 180px;
-    background: #323232;
-    display: flex;
-    justify-content: center;
-  }
-
-  [circle] {
-    display: flex;
-    justify-content: center;
-    font-size: 50px;
-    align-self: center;
-  }
-
-  [cont-button-myList] {
-    display: flex;
-    flex-direction: column;
-  }
-
-  [p-myList] {
-    font-size: 28px;
-    color: gray;
-    text-align: center;
-    margin: 0;
-  }
-
-  [cont-myList]{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-
-  .ion-md-checkmark:before {
-    content: "\f2bc";
-    color: black;
-  }
+ 
 }

@@ -35,7 +35,7 @@ import { CommingSoonRequestProvider } from '../providers/comming-soon-request/co
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     HttpRequestProvider,
     DetailRequestProvider,
-    CommingSoonRequestProvider
+    CommingSoonRequestProvider,
   ]
 })
 export class AppModule {}
