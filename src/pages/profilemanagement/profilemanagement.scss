@@ -32,12 +32,10 @@ page-profilemanagement {
         margin-bottom: 10px;
     }
     ion-row {
-        // display: flex;
-        // justify-content: center;
         .col-profile {
             flex-direction: column;
             .image-profile {
-                width: 35vw;
+                width: 34vw;
                 height: 35vw;
                 position: relative;
                 .ion-show {

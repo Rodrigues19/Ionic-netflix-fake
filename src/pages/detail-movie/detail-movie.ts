@@ -3,6 +3,7 @@ import { MovieModel } from './../../model/movie.model';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
+import { CommingSoonRequestProvider } from '../../providers/comming-soon-request/comming-soon-request';
 
 @IonicPage()
 @Component({
@@ -14,10 +15,13 @@ export class DetailMoviePage {
   
   public selectMovie:MovieModel= new MovieModel()
   public myList:MovieModel[]=[]
+ 
+ 
   
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,private storage:Storage) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,private storage:Storage, private httpRequest: CommingSoonRequestProvider) {
     this.selectMovie= navParams.get("movie");
+   
   }
 
   public backHome():void{
@@ -34,5 +38,6 @@ export class DetailMoviePage {
      await this.storage.set('myList',this.myList);
     }
   }
+  
 
 }

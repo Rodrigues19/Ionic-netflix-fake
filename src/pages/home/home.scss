@@ -3,7 +3,7 @@ page-home {
     width: 45px;
     height: 40px;
   }
-  .imgPrevias{
+  .imgPrevias {
     width: 180px;
     height: 180px;
     border-radius: 100%;
@@ -19,7 +19,10 @@ page-home {
     text-align: center;
     position: relative;
   }
-  [padding-h]{
+  .ion-md-play:before {
+    color: black;
+  }
+  [padding-h] {
     padding-left: 35px;
     padding-right: 35px;
   }
@@ -36,21 +39,25 @@ page-home {
     display: flex;
     flex-direction: row;
   }
- 
-  [header]{
+
+  [header] {
     position: absolute;
-    background:linear-gradient(to top, rgba(0,0,0,0.0),  rgba(0,0,0,0.4),  rgba(0,0,0,0.7));
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.7)
+    );
     z-index: 5;
     width: 100%;
     padding-top: 10px;
   }
 
-  [decoration]{
+  [decoration] {
     text-decoration: none;
     color: white;
-
   }
-  [position]{
+  [position] {
     position: relative;
     left: 180px;
     bottom: 124px;
@@ -60,7 +67,7 @@ page-home {
     border-radius: 100px;
   }
 
-  [padding-left-m]{
+  [padding-left-m] {
     padding-left: 5px;
   }
   [title-size] {
@@ -79,7 +86,7 @@ page-home {
     font-weight: 300;
     font-size: larger;
   }
-  [size]{
+  [size] {
     font-size: 10px;
   }
 }

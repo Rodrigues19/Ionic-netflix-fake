@@ -33,3 +33,9 @@
 .tabs-md[tabsLayout=icon-top] .has-icon .tab-button-text{
     color: white;
 }
+.tabs-ios .tab-button-icon::before{
+    color: white;
+}
+.has-icon .tab-button-icon, .has-title .tab-button-text{
+    color: white;
+}
