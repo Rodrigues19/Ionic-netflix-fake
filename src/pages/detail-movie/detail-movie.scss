@@ -185,4 +185,9 @@ page-detail-movie {
     border-bottom: red;
     opacity: 1;
   }
+
+  [img-center]{
+    display: flex;
+    justify-content: center;
+  }
 }

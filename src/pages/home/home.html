@@ -12,10 +12,11 @@
 </header>
 
 <ion-content justify-content-arround>
-
+  
+<div img-center >
   <img size [src]="popularMovies.length ? 'https://image.tmdb.org/t/p/w780'+popularMovies[14].poster_path : ''"
     class="img-banner" alt="serie" />
-
+  </div>
   <ion-row nowrap margin-bottom justify-content-center>
     <p nowrap no-margin no-padding tex-justify>
       Alto astral • Crianças • Série • Crescer não é facil • irmãos
@@ -43,32 +44,32 @@
         (click)="goMovieDetail(movie)" />
     </ion-col>
   </ion-row>
-  <h3 padding>Populares</h3>
+  <h3 no-padding>Populares</h3>
   <ion-row nowrap overflow-x>
     <ion-col no-margin col-3 *ngFor="let movie of popularMovies">
       <card-movie [movie]="movie"></card-movie>
     </ion-col>
   </ion-row>
 
-  <h3 padding>Assistidos recente</h3>
+  <h3 no-padding>Assistidos recente</h3>
   <ion-row nowrap overflow-x>
     <ion-col no-margin col-3 *ngFor="let movie of nowPlayMovies">
       <card-movie [movie]="movie"></card-movie>
     </ion-col>
   </ion-row>
-  <h3 padding>Top 10</h3>
+  <h3 no-padding>Top 10</h3>
   <ion-row nowrap overflow-x>
     <ion-col  no-margin col-3 *ngFor="let movie of rateMovies">
       <card-movie [movie]="movie"></card-movie>
     </ion-col>
   </ion-row>
-  <h3 padding>Proximos</h3>
+  <h3 no-padding>Proximos</h3>
   <ion-row nowrap overflow-x>
     <ion-col no-margin col-3 *ngFor="let movie of commingSoonMovies">
       <card-movie [movie]="movie"></card-movie>
     </ion-col>
   </ion-row>
-  <h3 padding>Já disponivel para coleção</h3>
+  <h3 no-padding>Já disponivel para coleção</h3>
   <ion-row justify-content-center align-items-center>
     <img [src]="nowPlayMovies.length ? 'https://image.tmdb.org/t/p/original'+nowPlayMovies[2].backdrop_path : ''" />
 
