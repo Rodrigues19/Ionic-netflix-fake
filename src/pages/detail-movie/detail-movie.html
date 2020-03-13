@@ -5,11 +5,8 @@
 <ion-content>
   <ion-row>
     <ion-col>
-      <img
-        [src]="'https://image.tmdb.org/t/p/w500'+selectMovie?.backdrop_path"
-        alt="{{selectMovie?.title}}"
-        img-detailMovie
-      />
+      <img [src]="'https://image.tmdb.org/t/p/w500'+selectMovie?.backdrop_path" alt="{{selectMovie?.title}}"
+        img-detailMovie />
       <ion-title title-h1>{{selectMovie?.title}}</ion-title>
 
       <div>
@@ -33,10 +30,8 @@
 
       <ion-row cont-row>
         <button btn-detail>
-          <ion-icon
-            (click)="addMyList(selectMovie)"
-            [name]="selectMovie?.add_myList ? 'md-checkmark' : 'add'"
-          ></ion-icon>
+          <ion-icon (click)="addMyList(selectMovie)" [name]="selectMovie?.add_myList ? 'md-checkmark' : 'add'">
+          </ion-icon>
           Minha lista
         </button>
 
@@ -64,11 +59,9 @@
 
       <ion-card [ngSwitch]="type">
         <ion-list *ngSwitchCase="'options'">
+
+         
           <ion-item>
-            <img
-              [src]="'https://image.tmdb.org/t/p/w780'+selectMovie?.backdrop_path"
-              alt="imagem filme"
-            />
           </ion-item>
         </ion-list>
       </ion-card>

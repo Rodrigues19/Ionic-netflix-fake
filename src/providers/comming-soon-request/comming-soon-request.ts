@@ -6,6 +6,9 @@ import { CommonEnum } from '../../enums/common.enum';
 
 @Injectable()
 export class CommingSoonRequestProvider {
+  similarFilm() {
+    throw new Error("Method not implemented.");
+  }
 
   constructor(public http: HttpClient) {
   }
@@ -19,9 +22,6 @@ export class CommingSoonRequestProvider {
 
   }
 
-  public searchFilm(nomeFilme:string){
-
-    return this.http.get(CommonEnum.HOST+'search/movie?api_key='+CommonEnum.API_KEY+`&query=${nomeFilme}`);
-
-  }
+ 
+ 
 }
