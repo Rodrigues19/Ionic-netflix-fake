@@ -34,7 +34,6 @@ export class SearchPage {
   }
   public search(): any {
     this.httpRequest.searchFilm(this.title).subscribe((response: any) => {
-      console.log(response);
       this.movies = response.results.map(movie => {
         return {
           id: movie.id,
