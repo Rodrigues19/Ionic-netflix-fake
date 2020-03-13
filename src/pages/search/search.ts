@@ -1,3 +1,4 @@
+import { Storage } from '@ionic/storage';
 import { MovieModel } from "./../../model/movie.model";
 import { Component, Input } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
@@ -13,15 +14,23 @@ export class SearchPage {
   public title: string;
 
   @Input() movie: MovieModel;
-
+  public myList:MovieModel[]=[]
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    private httpRequest: CommingSoonRequestProvider
-  ) {}
+    private httpRequest: CommingSoonRequestProvider,
+    private storage:Storage
+  ) {
+    this.myList=this.getList()
+  }
   
   ionViewDidEnter() {
     this.getComming();
+  }
+  public getList():any{
+    this.storage.get('myList').then(async (val)=> 
+      this.myList=val||[]
+    );
   }
   public search(): any {
     this.httpRequest.searchFilm(this.title).subscribe((response: any) => {
@@ -46,7 +55,16 @@ export class SearchPage {
   public detail(movie: MovieModel) {
     this.navCtrl.push("DetailMoviePage", { movie: movie });
   }
-
+  public async isAddList(movie:MovieModel){
+    let myList: MovieModel[] = await this.storage.get("myList");
+    if(!myList){
+      myList=[]
+    }
+    const popMovie = myList.find(m => m.id === movie.id);
+    if(popMovie){
+      movie.add_myList = popMovie.add_myList
+    }
+  }
 
   public getComming(): any {
     this.httpRequest.UploadSoon().subscribe((response: any) => {
@@ -59,6 +77,7 @@ export class SearchPage {
           genreIds: filme.genre_ids
         };
       });
+      // this.isAddList(this.movie)
     });
   }
 

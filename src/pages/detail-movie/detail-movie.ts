@@ -16,11 +16,17 @@ export class DetailMoviePage {
   public myList:MovieModel[]=[]
   constructor(public navCtrl: NavController, public navParams: NavParams,private storage:Storage) {
     this.selectMovie= navParams.get("movie");
-    
+    this.myList=this.getList()
   }
  
   public backHome():void{
     this.navCtrl.push(HomePage);
+  }
+
+  public getList():any{
+    this.storage.get('myList').then(async (val)=> 
+      this.myList=val||[]
+    );
   }
 
   public async isAddList(movie:MovieModel){

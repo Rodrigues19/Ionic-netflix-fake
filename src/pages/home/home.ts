@@ -92,7 +92,7 @@ export class HomePage {
       }
       })
       
-      this.isAddList(this.popularMovies[13]);
+      this.isAddList(this.popularMovies[14]);
 
     });
   }

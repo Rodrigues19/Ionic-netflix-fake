@@ -3,9 +3,12 @@ page-home {
     width: 45px;
     height: 40px;
   }
+  [col-6] {
+    max-width: 30vh;
+  }
   .imgPrevias {
     width: 180px;
-    height: 180px;
+    height: 170px;
     border-radius: 100%;
     border: solid 2px white;
   }
@@ -23,8 +26,8 @@ page-home {
     color: black;
   }
   [padding-h] {
-    padding-left: 35px;
-    padding-right: 35px;
+    padding-left: 32px;
+    padding-right: 32px;
   }
   [ion-button] {
     background-color: #fff;

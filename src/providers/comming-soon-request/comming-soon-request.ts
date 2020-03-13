@@ -20,7 +20,6 @@ export class CommingSoonRequestProvider {
   }
 
   public searchFilm(nomeFilme:string){
-
     return this.http.get(CommonEnum.HOST+'search/movie?api_key='+CommonEnum.API_KEY+`&query=${nomeFilme}`);
 
   }

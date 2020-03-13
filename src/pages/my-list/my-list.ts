@@ -23,7 +23,7 @@ export class MyListPage {
     );
   }
   ionViewDidEnter(){
-    this.getList();
+    this.myList=this.getList();
    }
 
   
