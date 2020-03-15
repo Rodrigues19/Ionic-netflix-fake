@@ -14,6 +14,7 @@ export class EditProfilePage {
   private listProfiles: ProfileModel[] = [];
 
   constructor(private storage: Storage, public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder) {
+    this.formBuilder;
     this.user = this.navParams.get('user');
     this.formProfile = formBuilder.group({
       name: [this.user.name, Validators.required],

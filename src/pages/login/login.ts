@@ -41,7 +41,7 @@ export class LoginPage {
     });
   }
 
-  private submit():void {
+  public submit():void {
     this.submitAttempt = true;
     if (this.form.valid) {
       this.usersRegistered.push(this.form.value);

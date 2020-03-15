@@ -1,5 +1,4 @@
 import { MyListRequestProvider } from './../../providers/my-list-request/my-list-request';
-import { Storage } from '@ionic/storage';
 import { MovieModel } from './../../model/movie.model';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -19,7 +18,7 @@ export class DetailMoviePage {
   public optionSimilar: MovieModel[] = []
   public options: MovieModel[] = []
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage, private detailRequest: DetailRequestProvider, private listRequest: MyListRequestProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,private detailRequest: DetailRequestProvider, private listRequest: MyListRequestProvider) {
     this.selectMovie = navParams.get("movie");
     this.myList = this.listRequest.getList();
     this.listRequest.isAddList(this.selectMovie);
