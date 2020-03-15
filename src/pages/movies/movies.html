@@ -20,7 +20,7 @@
   <ion-row justify-content-center>
     <ion-fab btn-detail>
       <ion-icon
-        (click)="addMyList(popularMovies[13])"
+        (click)="addList(popularMovies[13])"
         [name]="popularMovies[13]?.add_myList ? 'checkmark' : 'add'"
       ></ion-icon>
       Minha lista
@@ -105,11 +105,11 @@
       button-conf
       icon-start
       padding-h
-      (click)="addMyList(nowPlayMovies[2])"
+      (click)="addList(nowPlayMovies[8])"
 
     >
       <ion-icon
-      [name]="nowPlayMovies[2]?.add_myList? 'checkmark' : 'add'">
+      [name]="nowPlayMovies[8]?.add_myList? 'checkmark' : 'add'">
     </ion-icon>
       Minha lista
     </button>

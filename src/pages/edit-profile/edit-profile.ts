@@ -15,7 +15,6 @@ export class EditProfilePage {
 
   constructor(private storage: Storage, public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder) {
     this.user = this.navParams.get('user');
-    console.log(this.user)
     this.formProfile = formBuilder.group({
       name: [this.user.name, Validators.required],
       image: [this.user.image]
@@ -39,8 +38,6 @@ export class EditProfilePage {
   async submit() {
     if(this.formProfile.valid){
       this.listProfiles = await this.storage.get('userProfile') || [];
-      console.log(this.user);
-      console.log(this.listProfiles)
       let index = this.listProfiles.findIndex(f => f.id == this.user.id);
       if(index != -1){
         let profileEdited: ProfileModel = this.listProfiles[index]

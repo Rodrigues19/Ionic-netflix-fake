@@ -1,3 +1,4 @@
+import { MyListRequestProvider } from './../../providers/my-list-request/my-list-request';
 
 import { MovieModel } from './../../model/movie.model';
 import { Storage } from '@ionic/storage';
@@ -11,7 +12,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class MyListPage {
   public myList:MovieModel[] = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,private storage:Storage) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,private storage:Storage,private listRqest:MyListRequestProvider) {
   }
 
   public backHome():void {

@@ -19,7 +19,7 @@
   </ion-grid>
 <h1>Talvez você goste</h1>
   <ion-list no-margin *ngFor="let movie of movies" >
-    <ion-item no-padding (click)="detail(movie)"  >
+    <ion-item no-padding (click)="goDetail(movie)"  >
       <ion-thumbnail no-margin item-start>
         <img [src]="'https://image.tmdb.org/t/p/w154'+movie.poster_path"  />
       </ion-thumbnail>

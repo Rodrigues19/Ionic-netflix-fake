@@ -18,15 +18,19 @@ export class CommingSoonPage {
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private httpRequest: CommingSoonRequestProvider) {
-    this.getComming()
-    this.getGenres()
   
+  }
+
+  ionViewWillEnter(){
+   this.getComming();
+   this.getGenres();
   }
 
   public getComming(): any {
     this.httpRequest.UploadSoon().subscribe((response: any) => {
       this.movies = response.results.map(filme => {
         return {
+          id:filme.id,
           backdrop_path: filme.backdrop_path,
           title: filme.title,
           poster_path: filme.poster_path,

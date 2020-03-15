@@ -11,6 +11,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { HttpRequestProvider } from '../providers/http-request/http-request';
 import { DetailRequestProvider } from '../providers/detail-request/detail-request';
 import { CommingSoonRequestProvider } from '../providers/comming-soon-request/comming-soon-request';
+import { MyListRequestProvider } from '../providers/my-list-request/my-list-request';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { CommingSoonRequestProvider } from '../providers/comming-soon-request/co
     HttpRequestProvider,
     DetailRequestProvider,
     CommingSoonRequestProvider,
+    MyListRequestProvider,
   ]
 })
 export class AppModule {}

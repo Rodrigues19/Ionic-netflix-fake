@@ -1,6 +1,7 @@
 import { Storage } from '@ionic/storage';
+import { MyListRequestProvider } from './../../providers/my-list-request/my-list-request';
 import { MovieModel } from "./../../model/movie.model";
-import { Component, Input } from "@angular/core";
+import { Component} from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { CommingSoonRequestProvider } from "../../providers/comming-soon-request/comming-soon-request";
 
@@ -12,29 +13,34 @@ import { CommingSoonRequestProvider } from "../../providers/comming-soon-request
 export class SearchPage {
   public movies: MovieModel[] = [];
   public title: string;
-
-  @Input() movie: MovieModel;
   public myList:MovieModel[]=[]
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     private httpRequest: CommingSoonRequestProvider,
+    private listRequest:MyListRequestProvider,
     private storage:Storage
   ) {
     this.myList=this.getList()
   }
   
-  ionViewDidEnter() {
-    this.getComming();
+ async ionViewDidEnter() {
+    await this.getComming();
   }
   public getList():any{
     this.storage.get('myList').then(async (val)=> 
       this.myList=val||[]
     );
   }
+  public goDetail(movie: MovieModel) {
+    this.navCtrl.push("DetailMoviePage", { movie: movie });
+  }
+
   public search(): any {
     this.httpRequest.searchFilm(this.title).subscribe((response: any) => {
-      this.movies = response.results.map(movie => {
+      let indexM;
+      this.movies = response.results.map((movie,index) => {
+        indexM=index;
         return {
           id: movie.id,
           title: movie.title,
@@ -48,27 +54,20 @@ export class SearchPage {
           add_myList: movie.add_myList
         };
       });
+      this.listRequest.isAddList(this.movies[indexM])
     });
   }
 
-  public detail(movie: MovieModel) {
-    this.navCtrl.push("DetailMoviePage", { movie: movie });
-  }
-  public async isAddList(movie:MovieModel){
-    let myList: MovieModel[] = await this.storage.get("myList");
-    if(!myList){
-      myList=[]
-    }
-    const popMovie = myList.find(m => m.id === movie.id);
-    if(popMovie){
-      movie.add_myList = popMovie.add_myList
-    }
-  }
+ 
+ 
 
   public getComming(): any {
     this.httpRequest.UploadSoon().subscribe((response: any) => {
-      this.movies = response.results.map(filme => {
+      let indexM;
+      this.movies = response.results.map((filme,index) => {
+        indexM=index;
         return {
+          id:filme.id,
           backdrop_path: filme.backdrop_path,
           title: filme.title,
           poster_path: filme.poster_path,
@@ -76,7 +75,7 @@ export class SearchPage {
           genreIds: filme.genre_ids
         };
       });
-      // this.isAddList(this.movie)
+      this.listRequest.isAddList(this.movies[indexM])
     });
   }
 
