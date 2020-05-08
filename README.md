@@ -9,7 +9,7 @@ Projeto para criar uma fake Netflix seguindo especificações de telas em `Ionic
 #### Versões Utilizadas
 
 
-* Ionic- 3.20.0
+* Ionic 3.20.0
 * Cordova 8.0.0
 * Node 8.17.0
 * Npm 6.13.4
